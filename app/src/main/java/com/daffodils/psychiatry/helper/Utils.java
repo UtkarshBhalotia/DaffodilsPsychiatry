@@ -6,6 +6,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 
+import com.daffodils.psychiatry.R;
+
 public class Utils {
 
     @SuppressLint("ClickableViewAccessibility")
