@@ -1,3 +1,61 @@
 <resources>
-    <string name="app_name">DaffodilsPsychiatry</string>
+    <string name="app_name">Daffodils Psychiatry</string>
+    <string name="change_pass">Change Password</string>
+    <string name="title_home">Home</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_about">About Us</string>
+    <string name="title_help">Help &amp; Support</string>
+    <string name="title_sample_vdo">Sample Videos</string>
+    <string name="title_subs_vdo">Subscribed Videos</string>
+    <string name="title_pricing">Pricing</string>
+    <string name="title_change_pass">Change Password</string>
+    <string name="title_share">Share</string>
+    <string name="title_logout">Logout</string>
+
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email">Enter email address</string>
+    <string name="enter_valid_email">Enter valid email address</string>
+    <string name="enter_country_code">Enter country code</string>
+    <string name="enter_mobile_no">Enter mobile number</string>
+    <string name="enter_valid_mobile_no">Enter valid mobile number</string>
+    <string name="enter_pass">Enter password</string>
+    <string name="enter_old_pass">Enter old password</string>
+    <string name="enter_new_pass">Enter new password</string>
+    <string name="enter_confirm_pass">Enter Confirm password</string>
+    <string name="no_match_old_pass">Old password not matched</string>
+    <string name="pass_not_match">Password not matched</string>
+
+    <string name="is_login">Welcome Guest !</string>
+    <string name="share_via">Share via</string>
+    <string name="take_a_look">Take a Look at&#160;</string>
+    <string name="exit_msg">Please click BACK again to exit</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+
+    <!--Firebase AUTH -->
+    <string name="phone_number">Phone Number</string>
+    <string name="generate_otp">Generate OTP</string>
+    <string name="otp_receive_alert">Not received OTP resend and try</string>
+    <string name="otp_resend_alert">An OTP (One-Time-Password) has been sent to your registered mobile number.</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="verify_sign_in">Verify and Sign In</string>
+    <string name="sign_out">sign out</string>
+    <string name="mobile_send_msg">We will send you an OTP on this mobile number to verify. </string>
+    <string name="paypal">PayPal</string>
+    <string name="resend">Resend</string>
+    <string name="resend_cap">RE-SEND</string>
+    <string name="not_receive_msg">Don\'t receive verify otp ?</string>
+    <string name="verify_message">Verify your registered number and reset your password. </string>
+    <string name="alert_register_num1">Mobile number is not registered on&#160;</string>
+    <string name="alert_register_num2">. Please register to continue. Return to Log In screen and select Sign Up.</string>
+    <string name="verify_alert_1">Mobile number already registered with&#160;</string>
+    <string name="verify_alert_2">. You can sign into account using your credentials.</string>
+    <string name="reset_alert_msg">Are you sure, you want to reset password?</string>
+    <string name="msg_forget_otp">OTP sent to this mobile number</string>
+    <string name="verify_your_mobile">Verify Your Mobile </string>
+    <string name="mobile">Mobile No</string>
+    <string name="next">Next</string>
+    <string name="otp">Enter OTP</string>
+    <string name="verify">Verify</string>
+    <string name="please_type_verification_code_sent_to">Please Enter OTP sent via SMS on</string>
 </resources>

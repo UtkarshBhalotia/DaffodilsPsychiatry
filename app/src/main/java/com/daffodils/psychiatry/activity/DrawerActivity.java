@@ -1,4 +1,6 @@
 package com.daffodils.psychiatry.activity;
 
-public class DrawerActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class DrawerActivity extends AppCompatActivity {
 }

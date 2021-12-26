@@ -1,4 +1,7 @@
 package com.daffodils.psychiatry.activity;
 
-public class SplashScreen {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class SplashScreen extends AppCompatActivity {
+
 }

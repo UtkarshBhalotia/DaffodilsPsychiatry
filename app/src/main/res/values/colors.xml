@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
+    <color name="PrimaryDark">#03334e</color>
+    <color name="purple_200">#03334e</color>
+    <color name="logocolor">#0066b3</color>
+    <color name="purple_700">#065379</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#ec3237</color>
+    <color name="gray">#bebbbb</color>
+    <color name="MainBg">#065379</color>
+    <color name="green">#2E8D35</color>
+    <color name="lightgray">#e4e4e4</color>
+    <color name="colorAccent">#4997da</color>
+    <color name="transprent">#00000000</color>
+    <color name="mtrl_textinput_default_box_stroke_color">#0066b3</color>
+    <color name="colorPrimary">#007dc5</color>
+    <color name="colorPrimaryDark">#0276b9</color>
+    <color name="hintext">#81baec</color>
+    <color name="White">#f2f2f2</color>
+    <color name="button_color_normal">#fbfcfd</color>
+    <color name="button_color_pressed">#77167db7</color>
+    <color name="button_color_pres">#77585a5b</color>
+    <color name="darkgray">#774b4c4e</color>
+    <color name="lighte">#D9E1E6</color>
+    <color name="lightes">#accbdc</color>
+    <color name="transparent">#23000000</color>
+    <color name="bg_color">#ececef</color>
+    <color name="txt_color">#191919</color>
 </resources>
