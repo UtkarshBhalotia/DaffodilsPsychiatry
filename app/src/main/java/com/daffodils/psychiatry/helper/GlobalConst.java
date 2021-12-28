@@ -4,7 +4,7 @@ import android.app.Application;
 
 public class GlobalConst extends Application {
 
-    public static String URL = "https://serviceondoors.com/Services/CustomerApp.ashx";
+    public static String URL = "https://daffodilspsychiatry.com/DaffodilsServices.ashx";
     // public static String URL = "https://service.jiyasoft.in/Services/CustomerApp.ashx";
 
     public static String TOOLBAR_TITLE;

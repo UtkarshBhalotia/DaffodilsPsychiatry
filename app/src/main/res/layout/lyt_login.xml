@@ -12,7 +12,7 @@
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/logo_white" />
+        android:src="@drawable/logo" />
 
     <RelativeLayout
         android:layout_width="match_parent"

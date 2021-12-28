@@ -42,9 +42,15 @@ public class ProfileFragment extends Fragment {
         txtImageTitle = root.findViewById(R.id.image_title);
         txtMobileNo = root.findViewById(R.id.txtMobileNo);
 
-        String a = String.valueOf(GlobalConst.Name.charAt(0));
-        txtImageTitle.setText(a.toUpperCase());
-        txtMobileNo.setText("Mob. " + GlobalConst.Mobile);
+        if (GlobalConst.Name.equals("")){
+            String a = "G";
+            txtImageTitle.setText(a.toUpperCase());
+        } else {
+            String a = String.valueOf(GlobalConst.Name.charAt(0));
+            txtImageTitle.setText(a.toUpperCase());
+            txtMobileNo.setText("Mob. " + GlobalConst.Mobile);
+        }
+
 
         edtName.setText(GlobalConst.Name);
         edtEmail.setText(GlobalConst.Username);

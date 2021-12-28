@@ -124,7 +124,7 @@
                         android:layout_weight="1">
 
                         <LinearLayout
-                            android:id="@+id/llAddNew"
+                            android:id="@+id/llSampleVdo"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_margin="2dp"
@@ -140,7 +140,7 @@
                                 android:gravity="center">
 
                                 <com.daffodils.psychiatry.ui.CircleImageView
-                                    android:id="@+id/imgAddNew"
+                                    android:id="@+id/imgSampleVdo"
                                     android:layout_width="100dp"
                                     android:layout_height="100dp"
                                     android:layout_centerHorizontal="true"
@@ -158,12 +158,13 @@
                                 android:gravity="center"
                                 android:maxLines="2"
                                 android:minLines="2"
+                                android:text="@string/title_sample_vdo"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/small_size" />
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/llPrevComp"
+                            android:id="@+id/llSubsVdo"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_margin="2dp"
@@ -179,7 +180,7 @@
                                 android:gravity="center">
 
                                 <com.daffodils.psychiatry.ui.CircleImageView
-                                    android:id="@+id/imgPrevComp"
+                                    android:id="@+id/imgSubscribeVdo"
                                     android:layout_width="100dp"
                                     android:layout_height="100dp"
                                     android:layout_centerHorizontal="true"
@@ -197,6 +198,7 @@
                                 android:gravity="center"
                                 android:maxLines="2"
                                 android:minLines="2"
+                                android:text="@string/title_subs_vdo"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/small_size" />
                         </LinearLayout>
@@ -211,6 +213,45 @@
                         android:weightSum="2"
                         android:layout_weight="1">
 
+                        <LinearLayout
+                            android:id="@+id/llPricing"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/card_shadow_light"
+                            android:orientation="vertical"
+                            android:weightSum="0.9">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.8"
+                                android:gravity="center">
+
+                                <com.daffodils.psychiatry.ui.CircleImageView
+                                    android:id="@+id/imgPricing"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginStart="@dimen/margin_5dp"
+                                    android:layout_marginTop="@dimen/margin_5dp"
+                                    android:layout_marginEnd="@dimen/margin_5dp" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginEnd="3dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="2"
+                                android:minLines="2"
+                                android:textColor="@color/black"
+                                android:text="@string/title_pricing"
+                                android:textSize="@dimen/small_size" />
+                        </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/llUpdateProfile"
@@ -249,46 +290,6 @@
                                 android:minLines="2"
                                 android:textColor="@color/black"
                                 android:text = "Update Profile"
-                                android:textSize="@dimen/small_size" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/llHelp"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_margin="2dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/card_shadow_light"
-                            android:orientation="vertical"
-                            android:weightSum="0.9">
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.8"
-                                android:gravity="center">
-
-                                <com.daffodils.psychiatry.ui.CircleImageView
-                                    android:id="@+id/imgHelp"
-                                    android:layout_width="100dp"
-                                    android:layout_height="100dp"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginStart="@dimen/margin_5dp"
-                                    android:layout_marginTop="@dimen/margin_5dp"
-                                    android:layout_marginEnd="@dimen/margin_5dp" />
-                            </RelativeLayout>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="3dp"
-                                android:layout_marginEnd="3dp"
-                                android:ellipsize="end"
-                                android:gravity="center"
-                                android:maxLines="2"
-                                android:minLines="2"
-                                android:textColor="@color/black"
-                                android:text="@string/title_help"
                                 android:textSize="@dimen/small_size" />
                         </LinearLayout>
 

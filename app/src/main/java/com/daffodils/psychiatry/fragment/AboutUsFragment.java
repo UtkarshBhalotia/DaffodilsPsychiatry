@@ -40,7 +40,7 @@ public class AboutUsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:" + "18001038583"));
+                intent.setData(Uri.parse("tel:" + "+91-8512812518"));
                 startActivity(intent);
             }
         });
@@ -48,7 +48,7 @@ public class AboutUsFragment extends Fragment {
         www.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.serviceondoors.com/"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://daffodilspsychiatry.com/"));
                 startActivity(browserIntent);
             }
         });
@@ -56,7 +56,7 @@ public class AboutUsFragment extends Fragment {
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/ServiceOnDoors"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.facebook.com/PsychMasterClasses"));
                 startActivity(browserIntent);
             }
         });
@@ -65,17 +65,15 @@ public class AboutUsFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent intent = new Intent(Intent.ACTION_SEND);
-                String[] emails_in_to = {"info@serviceondoors.com"};
+                String[] emails_in_to = {"daffodils.psych@gmail.com"};
                 intent.putExtra(Intent.EXTRA_EMAIL, emails_in_to);
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Enquiry from Customer App");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Enquiry from Daffodils Psychiatry App");
                 intent.setType("text/html");
                 intent.setPackage("com.google.android.gm");
                 startActivity(intent);
             }
         });
-        txt1.setText("ServiceOnDoors.Com is one of the leading AC and RO service provider company in India. The reason why we have been able to recognize ourselves in such a positive influence among customers is a remarkable quality of service. All of our staff is 100% certified professional. Due to this, we leave a positive outlook on our clients regarding our behavior and services which makes us noteworthy. We aim to provide a top RO service and AC service to all our customers in a short amount of time.\n" +
-                "\n" +
-                "To reach us call on Call @ 1800-103-8583; each and every person can call on this phone no matter where you are in the country.");
+        txt1.setText("Daffodils Psych learning master classes is an initiative by DAFFODILS BRAIN CARE CENTER to provide world class education in field of Psychiatry & Psychology. We aim to provide extra edge to our students with great learning opportunities and knowledge about theoritical and practical aspects of the subject by providing evidence based learning platform.");
 
         return root;
 

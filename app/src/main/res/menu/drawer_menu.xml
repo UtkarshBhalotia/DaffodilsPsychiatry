@@ -7,16 +7,16 @@
         android:title="@string/title_home" />
     <item
         android:id="@+id/menu_sample_vdo"
-        android:icon="@drawable/ic_addnew"
+        android:icon="@drawable/ic_video"
         android:title="@string/title_sample_vdo" />
     <item
         android:id="@+id/menu_subs_vdo"
-        android:icon="@drawable/ic_allprev"
+        android:icon="@drawable/ic_subs_vdo"
         android:title="@string/title_subs_vdo"/>
 
     <item
         android:id="@+id/menu_pricing"
-        android:icon="@drawable/ic_allprev"
+        android:icon="@drawable/ic_pricing"
         android:title="@string/title_pricing"/>
 
     <item

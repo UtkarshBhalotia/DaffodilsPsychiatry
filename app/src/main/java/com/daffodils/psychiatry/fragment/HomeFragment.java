@@ -50,8 +50,8 @@ public class HomeFragment extends Fragment {
     private Handler handler;
     private Runnable Update;
     private int currentPage = 0;
-    CircleImageView imgAddNew, imgPrevComp, imgProfile, imgHelp;
-    private LinearLayout llAddNew, llProfile, llHelpSupport, llPreviousComplain;
+    CircleImageView imgSampleVdo, imgSubsVdo, imgProfile, imgPricing;
+    private LinearLayout llSampleVdo, llSubsVdo, llUpdateProfile, llPricing;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -65,20 +65,20 @@ public class HomeFragment extends Fragment {
 
         progressBar = root.findViewById(R.id.progressBar);
         swipeLayout = root.findViewById(R.id.swipeLayout);
-        llAddNew = root.findViewById(R.id.llAddNew);
-        llProfile = root.findViewById(R.id.llUpdateProfile);
-        llHelpSupport = root.findViewById(R.id.llHelp);
-        llPreviousComplain = root.findViewById(R.id.llPrevComp);
+        llPricing = root.findViewById(R.id.llPricing);
+        llUpdateProfile = root.findViewById(R.id.llUpdateProfile);
+        llSampleVdo = root.findViewById(R.id.llSampleVdo);
+        llSubsVdo = root.findViewById(R.id.llSubsVdo);
 
-        imgHelp = root.findViewById(R.id.imgHelp);
+        imgPricing = root.findViewById(R.id.imgPricing);
         imgProfile = root.findViewById(R.id.imgUpdateProf);
-        imgPrevComp = root.findViewById(R.id.imgPrevComp);
-        imgAddNew = root.findViewById(R.id.imgAddNew);
+        imgSampleVdo = root.findViewById(R.id.imgSampleVdo);
+        imgSubsVdo = root.findViewById(R.id.imgSubscribeVdo);
 
-        imgAddNew.setDefaultImageResId(R.drawable.edit);
-        imgPrevComp.setDefaultImageResId(R.drawable.previous);
+        imgSampleVdo.setDefaultImageResId(R.drawable.sample_vdo);
+        imgSubsVdo.setDefaultImageResId(R.drawable.subscribe_vdo);
         imgProfile.setDefaultImageResId(R.drawable.profile);
-        imgHelp.setDefaultImageResId(R.drawable.help);
+        imgPricing.setDefaultImageResId(R.drawable.pricing);
 
         nestedScrollView = root.findViewById(R.id.nestedScrollView);
         mMarkersLayout = root.findViewById(R.id.layout_markers);
@@ -114,7 +114,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        llAddNew.setOnClickListener(new View.OnClickListener() {
+        llSampleVdo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -126,7 +126,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        llPreviousComplain.setOnClickListener(new View.OnClickListener() {
+        llSubsVdo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -138,7 +138,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        llProfile.setOnClickListener(new View.OnClickListener() {
+        llUpdateProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -151,7 +151,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        llHelpSupport.setOnClickListener(new View.OnClickListener() {
+        llPricing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

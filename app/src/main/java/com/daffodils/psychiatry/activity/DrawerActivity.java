@@ -60,8 +60,12 @@ public class DrawerActivity extends AppCompatActivity {
         tvMobile = header.findViewById(R.id.tvMobile);
         lytProfile = header.findViewById(R.id.lytProfile);
 
-        tvName.setText("Welcome " + GlobalConst.Name);
-        tvMobile.setText("Mob. " + GlobalConst.Mobile);
+        if(GlobalConst.Name.equals("")){
+
+        } else {
+            tvName.setText("Welcome " + GlobalConst.Name);
+            tvMobile.setText("Mob. " + GlobalConst.Mobile);
+        }
 
 
         lytProfile.setOnClickListener(new View.OnClickListener() {
