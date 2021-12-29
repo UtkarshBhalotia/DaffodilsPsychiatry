@@ -1,0 +1,249 @@
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/card_shadow_light"
+        android:padding="@dimen/margin_10dp"
+        android:weightSum="3">
+
+        <TextView
+            android:text="@string/full_found_course"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textSize="16dp"
+            android:textColor="@color/txt_color"/>
+
+        <TextView
+            android:text="@string/full_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/card_shadow_light"
+        android:padding="@dimen/margin_10dp"
+        android:weightSum="3">
+
+        <TextView
+            android:text="@string/mod_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+        <TextView
+            android:text="@string/mod1_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/card_shadow_light"
+        android:padding="@dimen/margin_10dp"
+        android:weightSum="3">
+
+        <TextView
+            android:text="@string/mod_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+        <TextView
+            android:text="@string/mod2_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/card_shadow_light"
+        android:padding="@dimen/margin_10dp"
+        android:weightSum="3">
+
+        <TextView
+            android:text="@string/mod_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+        <TextView
+            android:text="@string/mod3_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/card_shadow_light"
+        android:padding="@dimen/margin_10dp"
+        android:weightSum="3">
+
+        <TextView
+            android:text="@string/mod_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+        <TextView
+            android:text="@string/mod4_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/card_shadow_light"
+        android:padding="@dimen/margin_10dp"
+        android:weightSum="3">
+
+        <TextView
+            android:text="@string/mod_5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+        <TextView
+            android:text="@string/mod5_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/card_shadow_light"
+        android:padding="@dimen/margin_10dp"
+        android:weightSum="3">
+
+        <TextView
+            android:text="@string/mod_6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+        <TextView
+            android:text="@string/mod6_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/card_shadow_light"
+        android:padding="@dimen/margin_10dp"
+        android:weightSum="3">
+
+        <TextView
+            android:text="@string/mod_7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+        <TextView
+            android:text="@string/mod7_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/card_shadow_light"
+        android:padding="@dimen/margin_10dp"
+        android:weightSum="3">
+
+        <TextView
+            android:text="@string/mod_8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+        <TextView
+            android:text="@string/mod8_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/card_shadow_light"
+        android:padding="@dimen/margin_10dp"
+        android:weightSum="3">
+
+        <TextView
+            android:text="@string/mod_9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+        <TextView
+            android:text="@string/mod9_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:textColor="@color/txt_color"/>
+
+    </TableRow>
+
+</TableLayout>

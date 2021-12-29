@@ -118,11 +118,11 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-               /* Fragment fragment = new AddServiceRequest();
+                Fragment fragment = new FreeSampleVideosFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("from", "AddLead");
+                bundle.putString("from", "SampleVdos");
                 fragment.setArguments(bundle);
-                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();*/
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
 
@@ -155,9 +155,9 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Fragment fragment = new HelpSupportFragment();
+                Fragment fragment = new FeeStructureFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("from", "HelpSupport");
+                bundle.putString("from", "FeeStructure");
                 fragment.setArguments(bundle);
                 MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
 

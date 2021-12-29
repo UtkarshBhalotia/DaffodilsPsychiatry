@@ -58,4 +58,27 @@
     <string name="otp">Enter OTP</string>
     <string name="verify">Verify</string>
     <string name="please_type_verification_code_sent_to">Please Enter OTP sent via SMS on</string>
+
+    <!--Pricing Plans -->
+    <string name="full_found_course">AVAIL FULL FOUNDATION COURSE 2021</string>
+    <string name="mod_1">MOD:1 CHILD PSYCHIATRY</string>
+    <string name="mod_2">MOD:2 ADULT PSYCHIATRY (PART-1)</string>
+    <string name="mod_3">MOD:3 ADULT PSYCHIATRY (PART-2)</string>
+    <string name="mod_4">MOD:4 FORENSIC &amp; COMMUNITY PSYCHIATRY</string>
+    <string name="mod_5">MOD:5 SUBSTANCE USE DISORDER</string>
+    <string name="mod_6">MOD:6 PSYCHOLOGY</string>
+    <string name="mod_7">MOD:7 NEUROPSYCHIATRY &amp; NEUROANATOMY</string>
+    <string name="mod_8">MOD:8 CLINICAL CASE DISCUSSION (CCD)</string>
+    <string name="mod_9">MOD:9 PSYCHOPHARMACOLOGY</string>
+
+    <string name="full_price">Rs 15000</string>
+    <string name="mod1_price">Rs 3500</string>
+    <string name="mod2_price">Rs 5000</string>
+    <string name="mod3_price">Rs 2500</string>
+    <string name="mod4_price">Rs 2500</string>
+    <string name="mod5_price">Rs 2500</string>
+    <string name="mod6_price">Rs 3500</string>
+    <string name="mod7_price">Rs 2500</string>
+    <string name="mod8_price">Rs 5000</string>
+    <string name="mod9_price">Rs 5000</string>
 </resources>
