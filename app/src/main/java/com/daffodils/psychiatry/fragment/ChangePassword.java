@@ -85,7 +85,7 @@ public class ChangePassword extends Fragment {
 
             Map<String, String> params = new HashMap<String, String>();
 
-            params.put("SC", GlobalConst.SC_CUSTOMER_CHANGE_PWD);
+            params.put("SC", GlobalConst.SC_GET_SAMPLE_VIDEOS);
             params.put("OldPassword", OldPassword);
             params.put("NewPassword", NewPassword);
             params.put("UserID", GlobalConst.User_id);

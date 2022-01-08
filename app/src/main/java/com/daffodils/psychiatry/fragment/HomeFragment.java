@@ -130,11 +130,11 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                /*Fragment fragment = new PreviousComplain();
+                Fragment fragment = new SubscribedVideosFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("from", "PrevComplain");
+                bundle.putString("from", "SubsVdo");
                 fragment.setArguments(bundle);
-                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();*/
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
 

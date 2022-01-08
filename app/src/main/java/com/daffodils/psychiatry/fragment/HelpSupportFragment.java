@@ -77,7 +77,7 @@ public class HelpSupportFragment extends Fragment {
 
             Map<String, String> params = new HashMap<String, String>();
 
-            params.put("SC", GlobalConst.SC_HELP_SUPPORT);
+            params.put("SC", GlobalConst.SC_GET_SAMPLE_VIDEOS);
             params.put("Subject", edtSubject.getText().toString());
             params.put("Message", edtShortDesc.getText().toString());
             params.put("UserID", GlobalConst.User_id);

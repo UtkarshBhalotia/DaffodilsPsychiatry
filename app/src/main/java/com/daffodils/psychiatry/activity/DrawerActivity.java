@@ -27,8 +27,11 @@ import androidx.fragment.app.Fragment;
 
 import com.daffodils.psychiatry.R;
 import com.daffodils.psychiatry.fragment.ChangePassword;
+import com.daffodils.psychiatry.fragment.FeeStructureFragment;
+import com.daffodils.psychiatry.fragment.FreeSampleVideosFragment;
 import com.daffodils.psychiatry.fragment.HelpSupportFragment;
 import com.daffodils.psychiatry.fragment.ProfileFragment;
+import com.daffodils.psychiatry.fragment.SubscribedVideosFragment;
 import com.daffodils.psychiatry.helper.DbHelper;
 import com.daffodils.psychiatry.helper.GlobalConst;
 import com.google.android.material.navigation.NavigationView;
@@ -106,20 +109,27 @@ public class DrawerActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                         break;
-                    /*case R.id.menu_AddNew:
-                        fragment = new AddServiceRequest();
+                    case R.id.menu_sample_vdo:
+                        fragment = new FreeSampleVideosFragment();
                         bundle = new Bundle();
-                        bundle.putString("type", "AddLead");
+                        bundle.putString("type", "SampleVdo");
                         fragment.setArguments(bundle);
                         getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
                         break;
-                    case R.id.menu_AllPrev:
-                        fragment = new PreviousComplain();
+                    case R.id.menu_subs_vdo:
+                        fragment = new SubscribedVideosFragment();
                         bundle = new Bundle();
-                        bundle.putString("type", "PrevComp");
+                        bundle.putString("type", "SubscribedVdo");
                         fragment.setArguments(bundle);
                         getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                        break;*/
+                        break;
+                    case R.id.menu_pricing:
+                        fragment = new FeeStructureFragment();
+                        bundle = new Bundle();
+                        bundle.putString("type", "FeeStructure");
+                        fragment.setArguments(bundle);
+                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                        break;
                     case R.id.menu_Profile:
                         fragment = new ProfileFragment();
                         bundle = new Bundle();

@@ -62,14 +62,14 @@ public class SplashScreen extends Activity {
 
 
         if (AppController.isConnected(activity)) {
-            fetchVersionCode();
+            fetchLoginData(context);
         } else {
             Toast.makeText(context, "Please check that whether you are connected to Internet or try again later.", Toast.LENGTH_LONG).show();
         }
 
     }
 
-    public void fetchVersionCode() {
+   /* public void fetchVersionCode() {
 
         if (AppController.isConnected(activity)) {
             Map<String, String> params = new HashMap<String, String>();
@@ -98,7 +98,7 @@ public class SplashScreen extends Activity {
             }, activity, GlobalConst.URL.trim() , params, true);
 
         }
-    }
+    }*/
 
     private void fetchLoginData(Context applicationContext) {
 
