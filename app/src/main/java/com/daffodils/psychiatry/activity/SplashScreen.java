@@ -43,11 +43,8 @@ import java.util.Map;
 public class SplashScreen extends Activity {
 
     TextView txtRelease;
-    Dialog progressdialog;
     Context context;
     Activity activity;
-    private static final int MY_SOCKET_TIMEOUT_MS = 5000;
-    String m_ServiceVersion;
     DbHelper dBhelper = new DbHelper(this);
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,32 +59,33 @@ public class SplashScreen extends Activity {
 
 
         if (AppController.isConnected(activity)) {
-            fetchLoginData(context);
+            fetchVersionCode();
         } else {
             Toast.makeText(context, "Please check that whether you are connected to Internet or try again later.", Toast.LENGTH_LONG).show();
         }
 
     }
 
-   /* public void fetchVersionCode() {
+    public void fetchVersionCode() {
 
         if (AppController.isConnected(activity)) {
             Map<String, String> params = new HashMap<String, String>();
-            params.put("SC", GlobalConst.SC_COMPATIBILITY_VER);
+            params.put("SC", GlobalConst.SC_APP_COMPATIBILITY_VERSION);
 
             ApiConfig.RequestToVolley(new VolleyCallback() {
                 @Override
                 public void onSuccess(boolean result, String response) {
                     if (result) {
                         try {
-
-                            m_ServiceVersion = response;
-                            if (GlobalConst.APP_COMPATABILITY_VERSION.equals(m_ServiceVersion)) {
-                               // fetchLoginData(context);
-                            } else {
-                                Intent intent = new Intent(Intent.ACTION_VIEW ,Uri.parse(GlobalConst.PLAY_STORE_LINK + getPackageName()));
-                                startActivity(intent);
+                            if (GlobalConst.Result.equals("T")){
+                                if (GlobalConst.APP_COMPATABILITY_VERSION.equals(GlobalConst.AppVersion)) {
+                                     fetchLoginData(context);
+                                } else {
+                                    Intent intent = new Intent(Intent.ACTION_VIEW ,Uri.parse(GlobalConst.PLAY_STORE_LINK + getPackageName()));
+                                    startActivity(intent);
+                                }
                             }
+
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -98,7 +96,7 @@ public class SplashScreen extends Activity {
             }, activity, GlobalConst.URL.trim() , params, true);
 
         }
-    }*/
+    }
 
     private void fetchLoginData(Context applicationContext) {
 
@@ -113,13 +111,8 @@ public class SplashScreen extends Activity {
                     GlobalConst.Password = cursor.getString(cursor.getColumnIndex(dBhelper.PASSWORD));
                     GlobalConst.Name = cursor.getString(cursor.getColumnIndex(dBhelper.NAME));
                     GlobalConst.Mobile = cursor.getString(cursor.getColumnIndex(dBhelper.MOBILE));
-                    GlobalConst.UserType = cursor.getString(cursor.getColumnIndex(dBhelper.USERTYPE));
                     GlobalConst.User_id = cursor.getString(cursor.getColumnIndex(dBhelper.USER_ID));
-                    GlobalConst.CompName = cursor.getString(cursor.getColumnIndex(dBhelper.COMP_NAME));
-                    GlobalConst.City_id = cursor.getString(cursor.getColumnIndex(dBhelper.CITY_ID));
-                    GlobalConst.State_id = cursor.getString(cursor.getColumnIndex(dBhelper.STATE_ID));
-                    GlobalConst.Address = cursor.getString(cursor.getColumnIndex(dBhelper.ADDRESS));
-                    GlobalConst.Role_id = Integer.valueOf(cursor.getString(cursor.getColumnIndex(dBhelper.ROLE_ID)));
+                    GlobalConst.ModuleID = cursor.getString(cursor.getColumnIndex(dBhelper.MODULE_ID));
 
                     Intent i = new Intent(SplashScreen.this, MainActivity.class);
                     startActivity(i);
@@ -141,21 +134,6 @@ public class SplashScreen extends Activity {
             e.printStackTrace();
 
         }
-    }
-
-    public boolean isJSONValid(String test) {
-        try {
-            new JSONObject(test);
-        } catch (JSONException ex) {
-            // edited, to include @Arthur's comment
-            // e.g. in case JSONArray is valid as well...
-            try {
-                new JSONArray(test);
-            } catch (JSONException ex1) {
-                return false;
-            }
-        }
-        return true;
     }
 
 }

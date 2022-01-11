@@ -5,7 +5,9 @@ import android.app.Application;
 public class GlobalConst extends Application {
 
     public static String URL = "https://daffodilspsychiatry.com/DaffodilsServices.ashx";
-    // public static String URL = "https://service.jiyasoft.in/Services/CustomerApp.ashx";
+
+    public static int MAJOR_VER = 1;
+    public static int MINOR_VER = 0;
 
     public static String TOOLBAR_TITLE;
     public static String ERROR = "error";
@@ -20,18 +22,12 @@ public class GlobalConst extends Application {
     public static String SC_CHANGE_PASSWORD = "6";
     public static String SC_FORGET_PASSWORD = "7";
     public static String SC_LOGIN = "8";
+    public static String SC_APP_COMPATIBILITY_VERSION = "9";
+    public static String SC_UPDATE_USER_PROFILE = "10";
+    public static String SC_HELP_AND_SUPPORT = "11";
 
-    public static String Username = "", Name = "", Mobile = "", Address = "";
-    public static String Password = "";
-    public static String UserType = "";
-    public static String State_id = "", City_id = "", User_id = "", CompName = "", Cust_Mob, City_Name, State_Name;
-    public static String country_code = "", Result = "";
-    public static Integer Role_id = 0;
-
-    public static int MAJOR_VER = 1;
-    public static int MINOR_VER = 0;
-
-    static String USERNAME = "", USERID = "", USERPASSWORD = "", EMAILID = "", MOBILENO = "", USERTYPE ="", STATEID = "", CITYID ="", ROLEID="";
+    public static String Username = "", Name = "", Mobile = "", Address = "", ModuleID = "", User_id = "", Password = "";
+    public static String Result = "", Description="", GetPassword ="", AppVersion = "";
 
 
 }

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
@@ -130,11 +131,15 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Fragment fragment = new SubscribedVideosFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("from", "SubsVdo");
-                fragment.setArguments(bundle);
-                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                if(GlobalConst.ModuleID.equals("")){
+                    Toast.makeText(activity, "Please register yourself to view subscribed videos", Toast.LENGTH_LONG).show();
+                } else {
+                    Fragment fragment = new SubscribedVideosFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("from", "SubsVdo");
+                    fragment.setArguments(bundle);
+                    MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                }
             }
         });
 

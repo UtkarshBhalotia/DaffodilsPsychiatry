@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -36,6 +37,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static android.content.Context.INPUT_METHOD_SERVICE;
 
 public class FreeSampleVideosFragment extends Fragment {
 
@@ -135,6 +138,24 @@ public class FreeSampleVideosFragment extends Fragment {
 
             }, activity, GlobalConst.URL.trim() , params, true);
 
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        GlobalConst.TOOLBAR_TITLE = getString(R.string.title_sample_vdo);
+        getActivity().invalidateOptionsMenu();
+        hideKeyboard();
+    }
+
+    public void hideKeyboard() {
+        try {
+            InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(INPUT_METHOD_SERVICE);
+            assert inputMethodManager != null;
+            inputMethodManager.hideSoftInputFromWindow(root.getApplicationWindowToken(), 0);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

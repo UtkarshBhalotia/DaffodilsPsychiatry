@@ -77,9 +77,9 @@ public class HelpSupportFragment extends Fragment {
 
             Map<String, String> params = new HashMap<String, String>();
 
-            params.put("SC", GlobalConst.SC_GET_SAMPLE_VIDEOS);
+            params.put("SC", GlobalConst.SC_HELP_AND_SUPPORT);
             params.put("Subject", edtSubject.getText().toString());
-            params.put("Message", edtShortDesc.getText().toString());
+            params.put("Description", edtShortDesc.getText().toString());
             params.put("UserID", GlobalConst.User_id);
 
             ApiConfig.RequestToVolley(new VolleyCallback() {
@@ -88,12 +88,10 @@ public class HelpSupportFragment extends Fragment {
                     if (result) {
                         try {
 
-                            if (response.equals("1")){
+                            if (GlobalConst.Result.equals("T")){
                                 setSnackBar("Your request has been added.", "OK");
-                                //Toast.makeText(context, "Your request has been added.", Toast.LENGTH_LONG).show();
                             } else {
                                 setSnackBar("Error in processing request.", "OK");
-                                //Toast.makeText(context, response, Toast.LENGTH_LONG).show();
                             }
 
                         } catch (Exception e) {

@@ -10,8 +10,8 @@ import java.io.File;
 
 public class DbHelper {
 
-    public static final String DATABASE_NAME = "CustomerApp.db";
-    public static final int DATABASE_VERSION = 2;
+    public static final String DATABASE_NAME = "Daffodils.db";
+    public static final int DATABASE_VERSION = 1;
     public static final String UNIQUE_ID = "_uniqueid";
     public static final String TABLE_LOGIN = "_login_table";
 
@@ -20,13 +20,8 @@ public class DbHelper {
     public static final String PASSWORD = "_password";
     public static final String NAME = "_name";
     public static final String MOBILE = "_mobile";
-    public static final String USERTYPE = "_usertype";
     public static final String USER_ID = "_userid";
-    public static final String CITY_ID = "_cityid";
-    public static final String STATE_ID = "_stateid";
-    public static final String COMP_NAME = "_compname";
-    public static final String ADDRESS = "_address";
-    public static final String ROLE_ID = "_roleid";
+    public static final String MODULE_ID = "_moduleid";
 
 
     public static final String LOGINTABLE = ""
@@ -37,22 +32,17 @@ public class DbHelper {
             + PASSWORD + " string,"
             + NAME + " string,"
             + MOBILE + " string,"
-            + USERTYPE + " string,"
             + USER_ID + " string,"
-            + CITY_ID + " string,"
-            + STATE_ID + " string,"
-            + COMP_NAME + " string,"
-            + ADDRESS + " string,"
-            + ROLE_ID + " String ) ;";
+            + MODULE_ID + " String ) ;";
 
 
-    public void insert_LoginTime_into_database(String Username, String Password, String Name, String Mobile, String UserType, String User_id, String City_id, String State_id, String CompName, String Address, String Role_id) {
-        sqLiteDatabase.execSQL(" INSERT INTO " + TABLE_LOGIN + " ( " + USERNAME + "," + PASSWORD + "," + NAME + "," + MOBILE + "," + USERTYPE + "," + USER_ID + "," + CITY_ID + "," + STATE_ID + "," + COMP_NAME + "," + ADDRESS + "," + ROLE_ID +") VALUES ( '" + Username + "','" + Password + "','" + Name + "','" + Mobile + "','" + UserType + "','" + User_id + "','" + City_id + "','" + State_id + "','" + CompName + "','" + Address + "','" + Role_id + "')");
+    public void insert_LoginTime_into_database(String Username, String Password, String Name, String Mobile, String User_id, String Module_id) {
+        sqLiteDatabase.execSQL(" INSERT INTO " + TABLE_LOGIN + " ( " + USERNAME + "," + PASSWORD + "," + NAME + "," + MOBILE + "," + USER_ID + "," + MODULE_ID +") VALUES ( '" + Username + "','" + Password + "','" + Name + "','" + Mobile + "','" + User_id + "','" + Module_id + "')");
 
     }
 
-    public void update_into_LOGIN_Table(String Username, String Password, String Name, String Mobile, String UserType, String User_id, String City_id, String State_id, String CompName, String Address, String Role_id) {
-        sqLiteDatabase.execSQL("UPDATE " + TABLE_LOGIN + " SET " + USERNAME + " = '" + Username + "' , " + PASSWORD + " = '" + Password + "' , " + NAME + " = '" + Name + "' , " + MOBILE + " = '" + Mobile + "' , " + USERTYPE + " = '" + UserType + "' , " + USER_ID + " = '" + User_id + "' , " + CITY_ID + " = '" + City_id + "' , " + STATE_ID + " = '" + State_id + "' , " + COMP_NAME + " = '" + CompName + "' , " + ADDRESS + " = '" + Address + "' , " + ROLE_ID + " = '" + Role_id + "' WHERE " + USERNAME + "='" + Username + "'");
+    public void update_into_LOGIN_Table(String Username, String Password, String Name, String Mobile, String User_id, String Module_id) {
+        sqLiteDatabase.execSQL("UPDATE " + TABLE_LOGIN + " SET " + USERNAME + " = '" + Username + "' , " + PASSWORD + " = '" + Password + "' , " + NAME + " = '" + Name + "' , " + MOBILE + " = '" + Mobile + "' , " + USER_ID + " = '" + User_id + "' , " + MODULE_ID + " = '" + Module_id + "' WHERE " + USERNAME + "='" + Username + "'");
     }
 
 

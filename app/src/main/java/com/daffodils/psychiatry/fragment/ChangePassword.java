@@ -85,9 +85,9 @@ public class ChangePassword extends Fragment {
 
             Map<String, String> params = new HashMap<String, String>();
 
-            params.put("SC", GlobalConst.SC_GET_SAMPLE_VIDEOS);
-            params.put("OldPassword", OldPassword);
-            params.put("NewPassword", NewPassword);
+            params.put("SC", GlobalConst.SC_CHANGE_PASSWORD);
+            params.put("OldPwd", OldPassword);
+            params.put("NewPwd", NewPassword);
             params.put("UserID", GlobalConst.User_id);
 
             ApiConfig.RequestToVolley(new VolleyCallback() {
@@ -96,27 +96,21 @@ public class ChangePassword extends Fragment {
                     if (result) {
                         try {
 
-                            if (response.equals("1")) {
+                            if (GlobalConst.Result.equals("T")) {
 
                                 GlobalConst.Password = edtNewPass.getText().toString();
                                 try {
                                     dbHelper.openToWrite();
-                                    dbHelper.update_into_LOGIN_Table(GlobalConst.Username, GlobalConst.Password, GlobalConst.Name, GlobalConst.Mobile, GlobalConst.UserType, GlobalConst.User_id, GlobalConst.City_id, GlobalConst.State_id, GlobalConst.CompName, GlobalConst.Address, GlobalConst.Role_id.toString());
+                                    dbHelper.update_into_LOGIN_Table(GlobalConst.Username, GlobalConst.Password, GlobalConst.Name, GlobalConst.Mobile, GlobalConst.User_id, GlobalConst.ModuleID);
                                     dbHelper.close();
 
-                                    setSnackBar("Password Chnaged Successfully", "OK");
-
-                                    //  Toast.makeText(context, "Password changed successfully.", Toast.LENGTH_LONG).show();
-                                    //success_popup();
-                                    // Toast.makeText(getApplicationContext(), "Password Changed Successfully.", Toast.LENGTH_SHORT).show();
-
+                                    setSnackBar("Password Changed Successfully", "OK");
 
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
                             } else {
-                                setSnackBar("Error", "OK");
-                                //  Toast.makeText(context, "Error", Toast.LENGTH_LONG).show();
+                                setSnackBar("Error : " + GlobalConst.Description , "OK");
                             }
 
                         } catch (Exception e) {

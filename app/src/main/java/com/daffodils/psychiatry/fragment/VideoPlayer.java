@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.MediaController;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -14,6 +15,9 @@ import android.widget.VideoView;
 import androidx.fragment.app.Fragment;
 import com.daffodils.psychiatry.R;
 import com.daffodils.psychiatry.helper.AppController;
+import com.daffodils.psychiatry.helper.GlobalConst;
+
+import static android.content.Context.INPUT_METHOD_SERVICE;
 
 public class VideoPlayer extends Fragment {
 
@@ -57,5 +61,23 @@ public class VideoPlayer extends Fragment {
 
 
         return root;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        GlobalConst.TOOLBAR_TITLE = "Video Player";
+        getActivity().invalidateOptionsMenu();
+        hideKeyboard();
+    }
+
+    public void hideKeyboard() {
+        try {
+            InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(INPUT_METHOD_SERVICE);
+            assert inputMethodManager != null;
+            inputMethodManager.hideSoftInputFromWindow(root.getApplicationWindowToken(), 0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

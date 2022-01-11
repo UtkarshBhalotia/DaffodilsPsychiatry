@@ -265,7 +265,7 @@ public class MainActivity extends DrawerActivity {
             }, 500);
         } else {
             DrawerActivity.drawer_layout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-            bottomNavigationView.setVisibility(View.VISIBLE);
+            bottomNavigationView.setVisibility(View.GONE);
             toolbar.setNavigationIcon(R.drawable.ic_menu);
             toolbar.setTitle(getString(R.string.app_name));
             drawerToggle = new ActionBarDrawerToggle

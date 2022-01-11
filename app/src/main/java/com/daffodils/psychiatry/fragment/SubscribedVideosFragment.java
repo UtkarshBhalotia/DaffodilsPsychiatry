@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -31,6 +32,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static android.content.Context.INPUT_METHOD_SERVICE;
 
 public class SubscribedVideosFragment extends Fragment{
 
@@ -95,6 +98,7 @@ public class SubscribedVideosFragment extends Fragment{
 
             Map<String, String> params = new HashMap<String, String>();
             params.put("SC", GlobalConst.SC_GET_COURSE_VIDEOS);
+            params.put("ModuleID", GlobalConst.ModuleID);
 
             ApiConfig.RequestToVolley(new VolleyCallback() {
                 @Override
@@ -107,6 +111,7 @@ public class SubscribedVideosFragment extends Fragment{
                                 JSONObject jsonObject;
 
                                 for(int i =0; i<jsonArray.length();i++){
+
                                     jsonObject = jsonArray.getJSONObject(i);
                                     String CourseName = jsonObject.getString("CourseName");
                                     String ModuleName = jsonObject.getString("ModuleName");
@@ -130,6 +135,24 @@ public class SubscribedVideosFragment extends Fragment{
 
             }, activity, GlobalConst.URL.trim() , params, true);
 
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        GlobalConst.TOOLBAR_TITLE = getString(R.string.title_subs_vdo);
+        getActivity().invalidateOptionsMenu();
+        hideKeyboard();
+    }
+
+    public void hideKeyboard() {
+        try {
+            InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(INPUT_METHOD_SERVICE);
+            assert inputMethodManager != null;
+            inputMethodManager.hideSoftInputFromWindow(root.getApplicationWindowToken(), 0);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

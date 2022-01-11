@@ -17,18 +17,27 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.daffodils.psychiatry.R;
+import com.daffodils.psychiatry.adapter.VideosAdapter;
 import com.daffodils.psychiatry.helper.ApiConfig;
 import com.daffodils.psychiatry.helper.AppController;
 import com.daffodils.psychiatry.helper.DbHelper;
 import com.daffodils.psychiatry.helper.GlobalConst;
 import com.daffodils.psychiatry.helper.Utils;
 import com.daffodils.psychiatry.helper.VolleyCallback;
+import com.daffodils.psychiatry.model.VideosGetterSetter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -146,7 +155,7 @@ public class LoginActivity extends AppCompatActivity {
             Map<String, String> params = new HashMap<String, String>();
 
             params.put("SC", GlobalConst.SC_LOGIN);
-            params.put("UserName", Email);
+            params.put("EmailID", Email);
             params.put("Password", Password);
 
             ApiConfig.RequestToVolley(new VolleyCallback() {
@@ -155,73 +164,53 @@ public class LoginActivity extends AppCompatActivity {
                     if (result) {
                         try {
 
-                            if (response.contains("Table")){
-                                JSONObject objectbject = new JSONObject(response);
-                                JSONArray jsonArray = objectbject.getJSONArray("Table");
+                            if (GlobalConst.Result.equals("T")) {
 
-                                if (jsonArray.length() == 0){
+                                JSONObject jsonObject = new JSONObject(response);
+
+                                if (jsonObject.length() == 0) {
                                     Toast.makeText(context, "Sorry, No records Found", Toast.LENGTH_LONG).show();
                                 } else {
+                                    GlobalConst.User_id = jsonObject.getString("UserID");
+                                    GlobalConst.Name = jsonObject.getString("Name");
+                                    GlobalConst.Mobile = jsonObject.getString("MobileNo");
+                                    GlobalConst.Password = jsonObject.getString("Password");
+                                    GlobalConst.Username = jsonObject.getString("EmailID");
+                                    GlobalConst.ModuleID = jsonObject.getString("ModuleID");
 
-                                    for (int i = 0; i < jsonArray.length(); i++) {
+                                    dbHelper.openToWrite();
 
-                                        JSONObject innerObj = jsonArray.getJSONObject(i);
+                                    Cursor cursor = dbHelper.fetch_Login_Data_From_TABLE(GlobalConst.Username, GlobalConst.Password);
+                                    if (cursor.getCount() > 0) {
+                                        if (cursor.moveToLast()) {
 
-                                        GlobalConst.Name = (innerObj.getString("Name"));
-                                        GlobalConst.Username = (innerObj.getString("EmailID"));
-                                        GlobalConst.Mobile = (innerObj.getString("MobileNo"));
-                                        GlobalConst.Address = (innerObj.getString("Address"));
-                                        GlobalConst.CompName = (innerObj.getString("CompanyName"));
-                                        GlobalConst.Password = innerObj.getString("Password");
-                                        GlobalConst.UserType = innerObj.getString("UserType");
-                                        GlobalConst.User_id = innerObj.getString("UserID");
-                                        GlobalConst.State_id = innerObj.getString("StateID");
-                                        GlobalConst.City_id = innerObj.getString("CityID");
-
-                                        if (GlobalConst.UserType.equals("A")) {
-                                            GlobalConst.Role_id = innerObj.getInt("RoleID");
-                                        } else {
-                                            GlobalConst.Role_id = 0;
-                                        }
-
-                                        dbHelper.openToWrite();
-
-                                        Cursor cursor = dbHelper.fetch_Login_Data_From_TABLE(GlobalConst.Username, GlobalConst.Password);
-                                        if (cursor.getCount() > 0) {
-                                            if (cursor.moveToLast()) {
-
-                                                GlobalConst.Username = cursor.getString(cursor.getColumnIndex(dbHelper.USERNAME));
-                                                GlobalConst.Password = cursor.getString(cursor.getColumnIndex(dbHelper.PASSWORD));
-                                                GlobalConst.Name = cursor.getString(cursor.getColumnIndex(dbHelper.NAME));
-                                                GlobalConst.Mobile = cursor.getString(cursor.getColumnIndex(dbHelper.MOBILE)); //i.e company mode or party mode
-                                                GlobalConst.UserType = cursor.getString(cursor.getColumnIndex(dbHelper.USERTYPE));
-                                                GlobalConst.User_id = cursor.getString(cursor.getColumnIndex(dbHelper.USER_ID));
-                                                GlobalConst.CompName = cursor.getString(cursor.getColumnIndex(dbHelper.COMP_NAME));
-                                                GlobalConst.City_id = cursor.getString(cursor.getColumnIndex(dbHelper.CITY_ID));
-                                                GlobalConst.State_id = cursor.getString(cursor.getColumnIndex(dbHelper.STATE_ID));
-                                                GlobalConst.Address = cursor.getString(cursor.getColumnIndex(dbHelper.ADDRESS));
-                                                GlobalConst.Role_id = Integer.valueOf(cursor.getString(cursor.getColumnIndex(dbHelper.ROLE_ID)));
-
-                                            } else {
-
-                                            }
+                                            GlobalConst.Username = cursor.getString(cursor.getColumnIndex(dbHelper.USERNAME));
+                                            GlobalConst.Password = cursor.getString(cursor.getColumnIndex(dbHelper.PASSWORD));
+                                            GlobalConst.Name = cursor.getString(cursor.getColumnIndex(dbHelper.NAME));
+                                            GlobalConst.Mobile = cursor.getString(cursor.getColumnIndex(dbHelper.MOBILE));
+                                            GlobalConst.User_id = cursor.getString(cursor.getColumnIndex(dbHelper.USER_ID));
+                                            GlobalConst.ModuleID = cursor.getString(cursor.getColumnIndex(dbHelper.MODULE_ID));
 
                                         } else {
 
-                                            dbHelper.insert_LoginTime_into_database(GlobalConst.Username, GlobalConst.Password, GlobalConst.Name, GlobalConst.Mobile, GlobalConst.UserType, GlobalConst.User_id, GlobalConst.City_id, GlobalConst.State_id, GlobalConst.CompName, GlobalConst.Address, GlobalConst.Role_id.toString());
-                                            dbHelper.close();
-
-                                            Toast.makeText(context, "Login Success", Toast.LENGTH_LONG).show();
-                                            Intent ii = new Intent(LoginActivity.this, MainActivity.class);
-                                            startActivity(ii);
-                                            //fetchDetails();
                                         }
 
+                                    } else {
+
+                                        dbHelper.insert_LoginTime_into_database(GlobalConst.Username, GlobalConst.Password, GlobalConst.Name, GlobalConst.Mobile, GlobalConst.User_id, GlobalConst.ModuleID);
+                                        dbHelper.close();
+
+                                        Toast.makeText(context, "Login Success", Toast.LENGTH_LONG).show();
+                                        Intent ii = new Intent(LoginActivity.this, MainActivity.class);
+                                        startActivity(ii);
+                                        finish();
                                     }
+
+                                    //  }
 
                                 }
                             } else {
-                                Toast.makeText(context, response, Toast.LENGTH_LONG).show();
+                                Toast.makeText(context, GlobalConst.Description, Toast.LENGTH_LONG).show();
                             }
 
                         } catch (Exception e) {
@@ -230,7 +219,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 }
 
-            }, activity, GlobalConst.URL.trim() , params, true);
+            }, activity, GlobalConst.URL.trim(), params, true);
 
         }
 
@@ -260,11 +249,47 @@ public class LoginActivity extends AppCompatActivity {
                     if (result) {
                         try {
 
-                            if (response.equals("1")){
-                                Toast.makeText(context, "Password Sent Successfully.", Toast.LENGTH_LONG).show();
+                            if (GlobalConst.Result.equals("T")) {
+                                String message = "Your password for the registered number is " + GlobalConst.GetPassword + ". Thank You !!";
+                                String encoded_message = URLEncoder.encode(message);
+
+                                String mainUrl = "http://mysms.msg24.in/api/mt/SendSMS?";
+
+                                StringBuilder sbPostData = new StringBuilder(mainUrl);
+                                sbPostData.append("user=" + "RowallaEnterprises");
+                                sbPostData.append("&password=" + "123456");
+                                sbPostData.append("&senderid=" + "RNITBP");
+                                sbPostData.append("&channel=" + "Trans");
+                                sbPostData.append("&DCS=" + "0");
+                                sbPostData.append("&flashsms=" + "0");
+                                sbPostData.append("&number=" + MobileNo);
+                                sbPostData.append("&text=" + encoded_message);
+                                sbPostData.append("&route=" + "08");
+
+                                mainUrl = sbPostData.toString();
+
+                                RequestQueue queue = Volley.newRequestQueue(context);
+                                String url = mainUrl;
+
+                                StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                                        new Response.Listener<String>() {
+                                            @Override
+                                            public void onResponse(String response) {
+                                                Toast.makeText(context, "Password sent successfully.", Toast.LENGTH_LONG).show();
+
+                                            }
+                                        }, new Response.ErrorListener() {
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+                                        Toast.makeText(context, "Failed", Toast.LENGTH_LONG).show();
+                                    }
+                                });
+
+                                queue.add(stringRequest);
                             } else {
-                                Toast.makeText(context, response, Toast.LENGTH_LONG).show();
+                                Toast.makeText(context, GlobalConst.Description, Toast.LENGTH_LONG).show();
                             }
+
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -272,22 +297,9 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 }
 
-            }, activity, GlobalConst.URL.trim() , params, true);
+            }, activity, GlobalConst.URL.trim(), params, true);
 
         }
 
-    }
-
-    public boolean isJSONValid(String test) {
-        try {
-            new JSONObject(test);
-        } catch (JSONException ex) {
-            try {
-                new JSONArray(test);
-            } catch (JSONException ex1) {
-                return false;
-            }
-        }
-        return true;
     }
 }

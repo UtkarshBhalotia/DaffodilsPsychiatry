@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -16,6 +19,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -29,11 +33,13 @@ import com.daffodils.psychiatry.adapter.VideosAdapter;
 import com.daffodils.psychiatry.helper.ApiConfig;
 import com.daffodils.psychiatry.helper.AppController;
 import com.daffodils.psychiatry.helper.GlobalConst;
+import com.daffodils.psychiatry.helper.MyFirebaseMessagingService;
 import com.daffodils.psychiatry.helper.VolleyCallback;
 import com.daffodils.psychiatry.model.CommonGetterSetter;
 import com.daffodils.psychiatry.model.VideosGetterSetter;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -50,8 +56,11 @@ public class RegisterActivity extends AppCompatActivity {
     Spinner select_course, select_module;
     Activity activity;
     Context context;
+    String itemSelect ="";
     RelativeLayout RLSelectCourse, RLSelectModule;
     private static final int MY_SOCKET_TIMEOUT_MS = 10000;
+    private String android_id, token_id;
+    MyFirebaseMessagingService myFirebaseMessagingService = new MyFirebaseMessagingService();
 
     public List<String> m_courseType = new ArrayList<>();
     ArrayList<String> arrayList_Course = new ArrayList<>();
@@ -73,6 +82,11 @@ public class RegisterActivity extends AppCompatActivity {
 
         activity = RegisterActivity.this;
         context = getApplicationContext();
+
+        android_id = Settings.Secure.getString(getApplication().getContentResolver(),
+                Settings.Secure.ANDROID_ID);
+
+        token_id = myFirebaseMessagingService.getTokenId();
 
         edtName = findViewById(R.id.edtname);
         edtEmail = findViewById(R.id.edtemail);
@@ -127,7 +141,7 @@ public class RegisterActivity extends AppCompatActivity {
                 airport_recycler_view.addOnItemTouchListener(new MainActivity.RecyclerTouchListener(context, airport_recycler_view, new MainActivity.ClickListener() {
 
                     public void onClick(View view, int position) {
-                        // itemSelect = arrayList_Service.get(position);
+                       //  itemSelect = m_courseType.get(position);
                         // dialog.dismiss();
                     }
 
@@ -147,7 +161,11 @@ public class RegisterActivity extends AppCompatActivity {
                         for (int i = 0 ; i < date_array.size(); i++){
 
                             txtSelectCourse.setText(txtSelectCourse.getText() + " " + date_array.get(i));
+                            itemSelect = itemSelect + "," + value_array.get(i);
                         }
+
+                        fetchModuleDetails();
+
 
                         dialog.dismiss();
                     }
@@ -223,14 +241,10 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         txtSelectModule.setText("");
 
-                        //   insert_into_database();
-
                         for (int i = 0 ; i < date1_array.size(); i++){
 
                             txtSelectModule.setText(txtSelectModule.getText() + " " + date1_array.get(i));
                         }
-
-                        fetchModuleDetails();
                         dialog.dismiss();
                     }
                 });
@@ -271,6 +285,37 @@ public class RegisterActivity extends AppCompatActivity {
         String Password = edtPass.getText().toString();
         String ConfirmPassword = edtConfirmPass.getText().toString();
 
+        JSONArray jsonArray = new JSONArray();
+        for (int i= 0; i < value_array.size();i++){
+
+            jsonArray.put(value_array.get(i));
+
+        }
+
+        JSONArray jsonArray1 = new JSONArray();
+        for (int i= 0; i < value1_array.size();i++){
+
+            jsonArray1.put(value1_array.get(i));
+
+        }
+
+
+        JSONObject jsonObject = new JSONObject();
+
+        try {
+            jsonObject.put("Name", Name);
+            jsonObject.put("EmailID", Email);
+            jsonObject.put("Password", Password);
+            jsonObject.put("MobileNo", Mobile);
+            jsonObject.put("ModuleID", jsonArray1);
+            jsonObject.put("DeviceID", android_id);
+            jsonObject.put("TokenID", token_id);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("jsonString: "+jsonObject);
+
         if (ApiConfig.CheckValidattion(Name, false,false)) {
             edtName.setError(getString(R.string.enter_name));
         } else if (ApiConfig.CheckValidattion(Email, false, false)) {
@@ -293,7 +338,7 @@ public class RegisterActivity extends AppCompatActivity {
             Map<String, String> params = new HashMap<String, String>();
 
             params.put("SC", GlobalConst.SC_REGISTRATION);
-            params.put("JSON", "0");
+            params.put("JSON", jsonObject.toString());
 
             ApiConfig.RequestToVolley(new VolleyCallback() {
                 @Override
@@ -301,10 +346,37 @@ public class RegisterActivity extends AppCompatActivity {
                     if (result) {
                         try {
 
-                            if (!response.equals("1")){
-                                Toast.makeText(context, response, Toast.LENGTH_LONG).show();
+                            if (GlobalConst.Result.equals("F")){
+                                Toast.makeText(context, GlobalConst.Description, Toast.LENGTH_LONG).show();
                             } else {
-                                Toast.makeText(context, "Registered Successfully.", Toast.LENGTH_LONG).show();
+
+                                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(RegisterActivity.this);
+                                // Setting Dialog Message
+                                alertDialog.setTitle("Registered Successfully !!");
+                                alertDialog.setMessage("Please contact to admin for activation of account or visit https://daffodilspsychiatry.com/ for more details.");
+                                alertDialog.setCancelable(false);
+                                final AlertDialog alertDialog1 = alertDialog.create();
+
+                                alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                        try {
+
+                                            Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
+                                            startActivity(i);
+                                            finish();
+
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                });
+                                // Showing Alert Message
+                                alertDialog.show();
+                               /* Toast.makeText(context, "Registered Successfully. Please contact to admin for activation of account", Toast.LENGTH_LONG).show();
+                                Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
+                                startActivity(i);
+                                finish();*/
                             }
 
                         } catch (Exception e) {
@@ -371,7 +443,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             Map<String, String> params = new HashMap<String, String>();
             params.put("SC", GlobalConst.SC_GET_COURSE_MODULES);
-            params.put("CourseID", "1");
+            params.put("CourseID", itemSelect.substring(1));
 
             ApiConfig.RequestToVolley(new VolleyCallback() {
                 @Override

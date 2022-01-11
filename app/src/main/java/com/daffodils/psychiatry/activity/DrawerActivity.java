@@ -26,6 +26,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.daffodils.psychiatry.R;
+import com.daffodils.psychiatry.fragment.AboutUsFragment;
 import com.daffodils.psychiatry.fragment.ChangePassword;
 import com.daffodils.psychiatry.fragment.FeeStructureFragment;
 import com.daffodils.psychiatry.fragment.FreeSampleVideosFragment;
@@ -137,6 +138,15 @@ public class DrawerActivity extends AppCompatActivity {
                         fragment.setArguments(bundle);
                         getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
                         break;
+
+                    case R.id.menu_AboutUs:
+                        fragment = new AboutUsFragment();
+                        bundle = new Bundle();
+                        bundle.putString("type", "AboutUs");
+                        fragment.setArguments(bundle);
+                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                        break;
+
                     case R.id.menu_help:
                         fragment = new HelpSupportFragment();
                         bundle = new Bundle();

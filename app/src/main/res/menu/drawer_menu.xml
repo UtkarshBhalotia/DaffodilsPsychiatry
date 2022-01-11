@@ -24,6 +24,11 @@
         android:icon="@drawable/ic_profile"
         android:title="@string/title_profile"/>
 
+    <item
+        android:id="@+id/menu_AboutUs"
+        android:icon="@drawable/ic_about"
+        android:title="@string/title_about"/>
+
     <group
         android:id="@+id/group1"
         android:checkableBehavior="single">

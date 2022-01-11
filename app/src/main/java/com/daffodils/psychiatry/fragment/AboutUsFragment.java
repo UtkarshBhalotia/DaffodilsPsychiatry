@@ -16,17 +16,18 @@ import com.daffodils.psychiatry.R;
 import com.daffodils.psychiatry.helper.GlobalConst;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
+import static com.daffodils.psychiatry.R.layout.lyt_aboutus;
 
 public class AboutUsFragment extends Fragment {
 
     View root;
     Activity activity;
-    TextView txt1, fb, email, call, www;
+    TextView txt1, fb, email, call, www, insta, youtube;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        root = inflater.inflate(R.layout.lyt_aboutus, container, false);
+        root = inflater.inflate(lyt_aboutus, container, false);
         activity = getActivity();
         setHasOptionsMenu(true);
         txt1 = root.findViewById(R.id.txt1);
@@ -35,6 +36,8 @@ public class AboutUsFragment extends Fragment {
         email = root.findViewById(R.id.email);
         fb = root.findViewById(R.id.app);
         www = root.findViewById(R.id.visitus);
+        insta = root.findViewById(R.id.insta);
+        youtube = root.findViewById(R.id.youtube);
 
         call.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +63,7 @@ public class AboutUsFragment extends Fragment {
                 startActivity(browserIntent);
             }
         });
+
         email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,6 +77,23 @@ public class AboutUsFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        insta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/invites/contact/?i=1df9rp4qkcfxu&utm_content=m8e8yli"));
+                startActivity(browserIntent);
+            }
+        });
+
+        youtube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCZBS58h4KriTRq8WBfjUe3g"));
+                startActivity(browserIntent);
+            }
+        });
+
         txt1.setText("Daffodils Psych learning master classes is an initiative by DAFFODILS BRAIN CARE CENTER to provide world class education in field of Psychiatry & Psychology. We aim to provide extra edge to our students with great learning opportunities and knowledge about theoritical and practical aspects of the subject by providing evidence based learning platform.");
 
         return root;

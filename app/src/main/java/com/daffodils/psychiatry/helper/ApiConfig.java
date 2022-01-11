@@ -98,6 +98,9 @@ public class ApiConfig {
                         parsed = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
 
                         GlobalConst.Result = response.headers.get("Result");
+                        GlobalConst.Description = response.headers.get("Description");
+                        GlobalConst.GetPassword = response.headers.get("Password");
+                        GlobalConst.AppVersion = response.headers.get("AppVersion");
 
                     } catch (UnsupportedEncodingException e) {
                         parsed = new String(response.data);

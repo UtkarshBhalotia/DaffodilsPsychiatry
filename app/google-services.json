@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "671464631686",
+    "project_id": "learningpsychiatry-522ca",
+    "storage_bucket": "learningpsychiatry-522ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:671464631686:android:f18777d1ab8b1f29959007",
+        "android_client_info": {
+          "package_name": "com.daffodils.psychiatry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "671464631686-62ivusmjeaoruf5l8ssp2ckgdfop52u4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoFwnlzusqJM2l_HVonbRoH3SYsMG7mQs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "671464631686-62ivusmjeaoruf5l8ssp2ckgdfop52u4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

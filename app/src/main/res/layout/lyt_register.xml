@@ -34,7 +34,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logonew_1" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -118,8 +118,9 @@
                             android:id="@+id/edtmobile"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:enabled="false"
+                            android:enabled="true"
                             android:inputType="phone"
+                            android:maxLength="10"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small"
                             android:textColor="@color/black"
                             app:backgroundTint="@color/black" />
