@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_screen">
+    android:background="@drawable/splashscreen2">
 
     <TextView
         android:id="@+id/txtRelease"
@@ -15,7 +15,7 @@
         android:layout_marginBottom="50dp"
         android:layout_marginRight="26dp"
         android:textStyle="bold"
-        android:textSize="16dp"
+        android:textSize="17dp"
         android:textColor="@color/logocolor"
         android:gravity="right" />
 

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/logonew_1">
+
+            </ImageView>
+
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/card_shadow_light"
+                android:padding="@dimen/margin_10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Full Foundation Course 2021"
+                    android:textColor="@color/txt_color"
+                    android:textStyle="bold"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="All Modules "
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/darkgray"
+                    android:textStyle="normal"
+                    android:textSize="18dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtFFC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Rs 37,000 "
+                        android:textColor="@color/txt_color"
+                        android:textStyle="bold"
+                        android:layout_marginRight="@dimen/margin_15dp"
+                        android:textSize="19dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:background="@color/red"
+                        android:text="Rs 15,000 "
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="19dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/card_shadow_light"
+                android:padding="@dimen/margin_10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Combo Discount "
+                    android:textColor="@color/txt_color"
+                    android:textStyle="bold"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Mod 8 (Clinical Case Discussion) + Mod 9 (Pshychopharmacology) "
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/darkgray"
+                    android:textStyle="normal"
+                    android:textSize="18dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtCombo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Rs 10,000 "
+                        android:textColor="@color/txt_color"
+                        android:textStyle="bold"
+                        android:layout_marginRight="@dimen/margin_15dp"
+                        android:textSize="19dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:background="@color/red"
+                        android:text="Rs 7,500 "
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="19dp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/card_shadow_light"
+                android:padding="@dimen/margin_10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Crash Course 2022"
+                    android:textColor="@color/txt_color"
+                    android:textStyle="bold"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Paper 1 + Paper 2 + Paper 3 + Paper 4 "
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/darkgray"
+                    android:textStyle="normal"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:background="@color/red"
+                    android:text="Rs 9,000 per person"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="19dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/card_shadow_light"
+                android:padding="@dimen/margin_10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Subscription Duration"
+                    android:textColor="@color/txt_color"
+                    android:paddingBottom="5dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Full Foundation Course 2021 : 4 Months"
+                    android:textColor="@color/logocolor"
+                    android:textStyle="normal"
+                    android:textSize="19dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Any Modules : 2 Months each"
+                    android:textColor="@color/logocolor"
+                    android:textStyle="normal"
+                    android:textSize="19dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Crash Course 2022 : 3 Months"
+                    android:textColor="@color/logocolor"
+                    android:textStyle="normal"
+                    android:textSize="19dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

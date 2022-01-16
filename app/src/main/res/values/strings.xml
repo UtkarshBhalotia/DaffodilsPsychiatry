@@ -8,6 +8,12 @@
     <string name="title_sample_vdo">Sample Videos</string>
     <string name="title_subs_vdo">Subscribed Videos</string>
     <string name="title_pricing">Charges</string>
+    <string name ="title_courses"> Available Courses </string>
+    <string name ="title_foundation_syllabus"> Foundation Course Syllabus </string>
+    <string name ="title_crash_syllabus"> Crash Course Syllabus </string>
+    <string name="title_discount">Ongoing Discounts</string>
+    <string name="title_foundation">Foundation Course 2021</string>
+    <string name="title_crash">Crash Course 2022</string>
     <string name="title_change_pass">Change Password</string>
     <string name="title_share">Share</string>
     <string name="title_logout">Logout</string>
@@ -70,6 +76,10 @@
     <string name="mod_7">MOD:7 NEUROPSYCHIATRY &amp; NEUROANATOMY</string>
     <string name="mod_8">MOD:8 CLINICAL CASE DISCUSSION (CCD)</string>
     <string name="mod_9">MOD:9 PSYCHOPHARMACOLOGY</string>
+    <string name="paper1">PAPER 1</string>
+    <string name="paper2">PAPER 2</string>
+    <string name="paper3">PAPER 3</string>
+    <string name="paper4">PAPER 4</string>
 
     <string name="full_price">Rs 15000</string>
     <string name="mod1_price">Rs 3500</string>

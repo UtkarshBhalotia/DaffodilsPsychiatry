@@ -5,6 +5,11 @@
         android:id="@+id/menu_home"
         android:icon="@drawable/ic_home"
         android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/menu_courses"
+        android:icon="@drawable/courses"
+        android:title="@string/title_courses" />
     <item
         android:id="@+id/menu_sample_vdo"
         android:icon="@drawable/ic_video"
@@ -13,12 +18,18 @@
         android:id="@+id/menu_subs_vdo"
         android:icon="@drawable/ic_subs_vdo"
         android:title="@string/title_subs_vdo"/>
-
+    <item
+        android:id="@+id/menu_fc_syl"
+        android:icon="@drawable/syllabus"
+        android:title="@string/title_foundation_syllabus"/>
+    <item
+        android:id="@+id/menu_cc_syl"
+        android:icon="@drawable/syllabus"
+        android:title="@string/title_crash_syllabus"/>
     <item
         android:id="@+id/menu_pricing"
         android:icon="@drawable/ic_pricing"
         android:title="@string/title_pricing"/>
-
     <item
         android:id="@+id/menu_Profile"
         android:icon="@drawable/ic_profile"

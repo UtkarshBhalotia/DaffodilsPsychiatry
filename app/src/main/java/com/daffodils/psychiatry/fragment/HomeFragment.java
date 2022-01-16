@@ -1,6 +1,9 @@
 package com.daffodils.psychiatry.fragment;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -41,8 +44,6 @@ public class HomeFragment extends Fragment {
     SwipeRefreshLayout swipeLayout;
     View root;
     int timerDelay = 0, timerWaiting = 0;
-    private RecyclerView categoryRecyclerView, sectionView, offerView;
-    private ArrayList<Slider> sliderArrayList;
     public static Integer [] images = {R.drawable.banner1, R.drawable.banner2};
     private ViewPager mPager;
     private LinearLayout mMarkersLayout;
@@ -51,8 +52,8 @@ public class HomeFragment extends Fragment {
     private Handler handler;
     private Runnable Update;
     private int currentPage = 0;
-    CircleImageView imgSampleVdo, imgSubsVdo, imgProfile, imgPricing;
-    private LinearLayout llSampleVdo, llSubsVdo, llUpdateProfile, llPricing;
+    CircleImageView imgSampleVdo, imgSubsVdo, imgPricing, imgCourses, imgWeb, imgInsta, imgFb, imgWhatsapp, imgFCSyllabus, imgCCSyllabus;
+    private LinearLayout llSampleVdo, llSubsVdo, llPricing, llCourses, llWeb, llInsta, llFB, llWhatsapp, llFCSyllabus, llCCSyllabus;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -67,19 +68,37 @@ public class HomeFragment extends Fragment {
         progressBar = root.findViewById(R.id.progressBar);
         swipeLayout = root.findViewById(R.id.swipeLayout);
         llPricing = root.findViewById(R.id.llPricing);
-        llUpdateProfile = root.findViewById(R.id.llUpdateProfile);
+        llCourses = root.findViewById(R.id.llCourses);
         llSampleVdo = root.findViewById(R.id.llSampleVdo);
         llSubsVdo = root.findViewById(R.id.llSubsVdo);
+        llFCSyllabus = root.findViewById(R.id.llFCSyallabus);
+        llCCSyllabus = root.findViewById(R.id.llCCSyllabus);
+        llWeb = root.findViewById(R.id.llWeb);
+        llInsta = root.findViewById(R.id.llInsta);
+        llFB = root.findViewById(R.id.llFB);
+        llWhatsapp = root.findViewById(R.id.llWhatsapp);
 
         imgPricing = root.findViewById(R.id.imgPricing);
-        imgProfile = root.findViewById(R.id.imgUpdateProf);
+        imgCourses = root.findViewById(R.id.imgCourses);
         imgSampleVdo = root.findViewById(R.id.imgSampleVdo);
         imgSubsVdo = root.findViewById(R.id.imgSubscribeVdo);
+        imgFCSyllabus = root.findViewById(R.id.imgFoundSyllabus);
+        imgCCSyllabus = root.findViewById(R.id.imgCrashSyallabus);
+        imgWeb = root.findViewById(R.id.imgWeb);
+        imgInsta = root.findViewById(R.id.imgInsta);
+        imgFb = root.findViewById(R.id.imgFB);
+        imgWhatsapp = root.findViewById(R.id.imgWhatsapp);
 
         imgSampleVdo.setDefaultImageResId(R.drawable.sample_vdo);
         imgSubsVdo.setDefaultImageResId(R.drawable.subscribe_vdo);
-        imgProfile.setDefaultImageResId(R.drawable.profile);
+        imgCourses.setDefaultImageResId(R.drawable.courses);
         imgPricing.setDefaultImageResId(R.drawable.pricing);
+        imgFCSyllabus.setDefaultImageResId(R.drawable.syllabus);
+        imgCCSyllabus.setDefaultImageResId(R.drawable.checklist);
+        imgWeb.setDefaultImageResId(R.drawable.weblink);
+        imgInsta.setDefaultImageResId(R.drawable.instagram1);
+        imgFb.setDefaultImageResId(R.drawable.facebook);
+        imgWhatsapp.setDefaultImageResId(R.drawable.whatsapp);
 
         nestedScrollView = root.findViewById(R.id.nestedScrollView);
         mMarkersLayout = root.findViewById(R.id.layout_markers);
@@ -143,13 +162,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        llUpdateProfile.setOnClickListener(new View.OnClickListener() {
+        llCourses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Fragment fragment = new ProfileFragment();
+                Fragment fragment = new CoursesFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("from", "Profile");
+                bundle.putString("from", "Courses");
                 fragment.setArguments(bundle);
                 MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
 
@@ -166,6 +185,61 @@ public class HomeFragment extends Fragment {
                 fragment.setArguments(bundle);
                 MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
 
+            }
+        });
+
+        llFCSyllabus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://daffodilspsychiatry.com/pdf/FoundationCourseSyllabus2021.pdf"));
+                startActivity(browserIntent);
+
+            }
+        });
+
+        llCCSyllabus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://daffodilspsychiatry.com/pdf/CrashCourseSyllabus%202022.pdf"));
+                startActivity(browserIntent);
+            }
+        });
+
+        llWeb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://daffodilspsychiatry.com/"));
+                startActivity(browserIntent);
+            }
+        });
+
+        llFB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.facebook.com/PsychMasterClasses"));
+                startActivity(browserIntent);
+            }
+        });
+
+        llInsta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/invites/contact/?i=1df9rp4qkcfxu&utm_content=m8e8yli"));
+                startActivity(browserIntent);
+            }
+        });
+
+        llWhatsapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String message = "Please enter your query here : ";
+                String mobileNumber = "7528920011";
+              //  boolean installed = AppController.appInstalledOrNot("com.whatsapp");
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://api.whatsapp.com/send?phone="+"+91"+mobileNumber + "&text="+message));
+                startActivity(intent);
             }
         });
 
@@ -205,6 +279,8 @@ public class HomeFragment extends Fragment {
             }
         }, timerDelay, timerWaiting);
     }
+
+
 
     @Override
     public void onResume() {

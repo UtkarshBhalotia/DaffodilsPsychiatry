@@ -28,6 +28,7 @@ import androidx.fragment.app.Fragment;
 import com.daffodils.psychiatry.R;
 import com.daffodils.psychiatry.fragment.AboutUsFragment;
 import com.daffodils.psychiatry.fragment.ChangePassword;
+import com.daffodils.psychiatry.fragment.CoursesFragment;
 import com.daffodils.psychiatry.fragment.FeeStructureFragment;
 import com.daffodils.psychiatry.fragment.FreeSampleVideosFragment;
 import com.daffodils.psychiatry.fragment.HelpSupportFragment;
@@ -110,6 +111,15 @@ public class DrawerActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                         break;
+
+                    case R.id.menu_courses:
+                        fragment = new CoursesFragment();
+                        bundle = new Bundle();
+                        bundle.putString("type", "Courses");
+                        fragment.setArguments(bundle);
+                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                        break;
+
                     case R.id.menu_sample_vdo:
                         fragment = new FreeSampleVideosFragment();
                         bundle = new Bundle();
@@ -118,11 +128,15 @@ public class DrawerActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
                         break;
                     case R.id.menu_subs_vdo:
-                        fragment = new SubscribedVideosFragment();
-                        bundle = new Bundle();
-                        bundle.putString("type", "SubscribedVdo");
-                        fragment.setArguments(bundle);
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                        if(GlobalConst.ModuleID.equals("")){
+                            Toast.makeText(DrawerActivity.this, "Please register yourself to view subscribed videos", Toast.LENGTH_LONG).show();
+                        } else {
+                            fragment = new SubscribedVideosFragment();
+                            bundle = new Bundle();
+                            bundle.putString("type", "SubscribedVdo");
+                            fragment.setArguments(bundle);
+                            getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                        }
                         break;
                     case R.id.menu_pricing:
                         fragment = new FeeStructureFragment();
@@ -137,6 +151,14 @@ public class DrawerActivity extends AppCompatActivity {
                         bundle.putString("type", "Profile");
                         fragment.setArguments(bundle);
                         getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                        break;
+                    case R.id.menu_fc_syl:
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://daffodilspsychiatry.com/pdf/FoundationCourseSyllabus2021.pdf"));
+                        startActivity(browserIntent);
+                        break;
+                    case R.id.menu_cc_syl:
+                        Intent browserIntent1 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://daffodilspsychiatry.com/pdf/CrashCourseSyllabus%202022.pdf"));
+                        startActivity(browserIntent1);
                         break;
 
                     case R.id.menu_AboutUs:

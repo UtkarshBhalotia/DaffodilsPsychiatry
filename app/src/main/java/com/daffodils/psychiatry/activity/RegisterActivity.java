@@ -34,6 +34,7 @@ import com.daffodils.psychiatry.helper.ApiConfig;
 import com.daffodils.psychiatry.helper.AppController;
 import com.daffodils.psychiatry.helper.GlobalConst;
 import com.daffodils.psychiatry.helper.MyFirebaseMessagingService;
+import com.daffodils.psychiatry.helper.Utils;
 import com.daffodils.psychiatry.helper.VolleyCallback;
 import com.daffodils.psychiatry.model.CommonGetterSetter;
 import com.daffodils.psychiatry.model.VideosGetterSetter;
@@ -86,7 +87,6 @@ public class RegisterActivity extends AppCompatActivity {
         android_id = Settings.Secure.getString(getApplication().getContentResolver(),
                 Settings.Secure.ANDROID_ID);
 
-        token_id = myFirebaseMessagingService.getTokenId();
 
         edtName = findViewById(R.id.edtname);
         edtEmail = findViewById(R.id.edtemail);
@@ -102,6 +102,15 @@ public class RegisterActivity extends AppCompatActivity {
         RLSelectModule = findViewById(R.id.RLSelectModule);
         txtSelectModule = findViewById(R.id.txtSelectModule);
         select_module = findViewById(R.id.select_module);
+
+        edtName.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_name, 0, 0, 0);
+        edtEmail.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_email, 0, 0, 0);
+        edtMobile.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_phone, 0, 0, 0);
+        edtPass.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_password, 0, R.drawable.ic_show, 0);
+        edtConfirmPass.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_password, 0, R.drawable.ic_show, 0);
+
+        Utils.setHideShowPassword(edtPass);
+        Utils.setHideShowPassword(edtConfirmPass);
 
         fetchCoursesDetails();
 

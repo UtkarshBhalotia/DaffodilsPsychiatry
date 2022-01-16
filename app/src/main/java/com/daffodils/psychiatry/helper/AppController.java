@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.widget.Toast;
@@ -50,6 +51,18 @@ public class AppController extends Application {
         // appEnvironment = AppEnvironment.SANDBOX;
         sharedPref = this.getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
 
+    }
+
+    public boolean appInstalledOrNot(String url){
+        PackageManager packageManager = getPackageManager();
+        boolean app_installed;
+        try {
+            packageManager.getPackageInfo(url,PackageManager.GET_ACTIVITIES);
+            app_installed = true;
+        }catch (PackageManager.NameNotFoundException e){
+            app_installed = false;
+        }
+        return app_installed;
     }
 
 
