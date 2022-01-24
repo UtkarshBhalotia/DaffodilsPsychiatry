@@ -6,11 +6,11 @@
     <string name="title_about">About Us</string>
     <string name="title_help">Help &amp; Support</string>
     <string name="title_sample_vdo">Sample Videos</string>
-    <string name="title_subs_vdo">Subscribed Videos</string>
+    <string name="title_subs_vdo">My Subscription</string>
     <string name="title_pricing">Charges</string>
     <string name ="title_courses"> Available Courses </string>
-    <string name ="title_foundation_syllabus"> Foundation Course Syllabus </string>
-    <string name ="title_crash_syllabus"> Crash Course Syllabus </string>
+    <string name ="title_faculty">Know Your Faculty</string>
+    <string name ="title_books">Our Reference Books </string>
     <string name="title_discount">Ongoing Discounts</string>
     <string name="title_foundation">Foundation Course 2021</string>
     <string name="title_crash">Crash Course 2022</string>
@@ -66,7 +66,8 @@
     <string name="please_type_verification_code_sent_to">Please Enter OTP sent via SMS on</string>
 
     <!--Pricing Plans -->
-    <string name="full_found_course">AVAIL FULL FOUNDATION COURSE 2021</string>
+    <string name="full_found_course">FULL FOUNDATION COURSE 2021</string>
+    <string name="crash_course">Crash Course 2022</string>
     <string name="mod_1">MOD:1 CHILD PSYCHIATRY</string>
     <string name="mod_2">MOD:2 ADULT PSYCHIATRY (PART-1)</string>
     <string name="mod_3">MOD:3 ADULT PSYCHIATRY (PART-2)</string>

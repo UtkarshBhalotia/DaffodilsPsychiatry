@@ -52,8 +52,8 @@ public class HomeFragment extends Fragment {
     private Handler handler;
     private Runnable Update;
     private int currentPage = 0;
-    CircleImageView imgSampleVdo, imgSubsVdo, imgPricing, imgCourses, imgWeb, imgInsta, imgFb, imgWhatsapp, imgFCSyllabus, imgCCSyllabus;
-    private LinearLayout llSampleVdo, llSubsVdo, llPricing, llCourses, llWeb, llInsta, llFB, llWhatsapp, llFCSyllabus, llCCSyllabus;
+    CircleImageView imgSampleVdo, imgSubsVdo, imgPricing, imgCourses, imgWeb, imgInsta, imgFb, imgWhatsapp, imgFaculty, imgBooks;
+    private LinearLayout llSampleVdo, llSubsVdo, llPricing, llCourses, llWeb, llInsta, llFB, llWhatsapp, llFaculty, llBooks;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -71,8 +71,8 @@ public class HomeFragment extends Fragment {
         llCourses = root.findViewById(R.id.llCourses);
         llSampleVdo = root.findViewById(R.id.llSampleVdo);
         llSubsVdo = root.findViewById(R.id.llSubsVdo);
-        llFCSyllabus = root.findViewById(R.id.llFCSyallabus);
-        llCCSyllabus = root.findViewById(R.id.llCCSyllabus);
+        llFaculty = root.findViewById(R.id.llFaculty);
+        llBooks = root.findViewById(R.id.llBooks);
         llWeb = root.findViewById(R.id.llWeb);
         llInsta = root.findViewById(R.id.llInsta);
         llFB = root.findViewById(R.id.llFB);
@@ -82,8 +82,8 @@ public class HomeFragment extends Fragment {
         imgCourses = root.findViewById(R.id.imgCourses);
         imgSampleVdo = root.findViewById(R.id.imgSampleVdo);
         imgSubsVdo = root.findViewById(R.id.imgSubscribeVdo);
-        imgFCSyllabus = root.findViewById(R.id.imgFoundSyllabus);
-        imgCCSyllabus = root.findViewById(R.id.imgCrashSyallabus);
+        imgFaculty = root.findViewById(R.id.imgFaculty);
+        imgBooks = root.findViewById(R.id.imgBooks);
         imgWeb = root.findViewById(R.id.imgWeb);
         imgInsta = root.findViewById(R.id.imgInsta);
         imgFb = root.findViewById(R.id.imgFB);
@@ -93,8 +93,8 @@ public class HomeFragment extends Fragment {
         imgSubsVdo.setDefaultImageResId(R.drawable.subscribe_vdo);
         imgCourses.setDefaultImageResId(R.drawable.courses);
         imgPricing.setDefaultImageResId(R.drawable.pricing);
-        imgFCSyllabus.setDefaultImageResId(R.drawable.syllabus);
-        imgCCSyllabus.setDefaultImageResId(R.drawable.checklist);
+        imgFaculty.setDefaultImageResId(R.drawable.syllabus);
+        imgBooks.setDefaultImageResId(R.drawable.checklist);
         imgWeb.setDefaultImageResId(R.drawable.weblink);
         imgInsta.setDefaultImageResId(R.drawable.instagram1);
         imgFb.setDefaultImageResId(R.drawable.facebook);
@@ -188,7 +188,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        llFCSyllabus.setOnClickListener(new View.OnClickListener() {
+        llFaculty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -198,7 +198,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        llCCSyllabus.setOnClickListener(new View.OnClickListener() {
+        llBooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

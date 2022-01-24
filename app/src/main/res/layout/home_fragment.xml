@@ -305,7 +305,7 @@
                         android:layout_weight="1">
 
                         <LinearLayout
-                            android:id="@+id/llFCSyallabus"
+                            android:id="@+id/llFaculty"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_margin="2dp"
@@ -321,7 +321,7 @@
                                 android:gravity="center">
 
                                 <com.daffodils.psychiatry.ui.CircleImageView
-                                    android:id="@+id/imgFoundSyllabus"
+                                    android:id="@+id/imgFaculty"
                                     android:layout_width="70dp"
                                     android:layout_height="70dp"
                                     android:layout_centerHorizontal="true"
@@ -340,12 +340,12 @@
                                 android:maxLines="2"
                                 android:minLines="2"
                                 android:textColor="@color/black"
-                                android:text="@string/title_foundation_syllabus"
+                                android:text="@string/title_faculty"
                                 android:textSize="@dimen/small_size" />
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/llCCSyllabus"
+                            android:id="@+id/llBooks"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_margin="2dp"
@@ -361,7 +361,7 @@
                                 android:gravity="center">
 
                                 <com.daffodils.psychiatry.ui.CircleImageView
-                                    android:id="@+id/imgCrashSyallabus"
+                                    android:id="@+id/imgBooks"
                                     android:layout_width="70dp"
                                     android:layout_height="70dp"
                                     android:layout_centerHorizontal="true"
@@ -380,7 +380,7 @@
                                 android:maxLines="2"
                                 android:minLines="2"
                                 android:textColor="@color/black"
-                                android:text = "@string/title_crash_syllabus"
+                                android:text = "@string/title_books"
                                 android:textSize="@dimen/small_size" />
                         </LinearLayout>
 
