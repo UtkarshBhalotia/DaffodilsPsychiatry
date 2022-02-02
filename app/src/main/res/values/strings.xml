@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Learning Psychiatry</string>
+    <string name="app_name">Advanced Psychiatry Learning</string>
     <string name="change_pass">Change Password</string>
     <string name="title_home">Home</string>
     <string name="title_profile">Profile</string>
@@ -30,7 +30,8 @@
     <string name="enter_confirm_pass">Enter Confirm password</string>
     <string name="no_match_old_pass">Old password not matched</string>
     <string name="pass_not_match">Password not matched</string>
-
+    <string name="title_shivali">Dr Shivali Aggarwal</string>
+    <string name="title_mohit">Dr Mohit Sharma</string>
     <string name="is_login">Welcome Guest !</string>
     <string name="share_via">Share via</string>
     <string name="take_a_look">Take a Look at&#160;</string>
@@ -67,16 +68,27 @@
 
     <!--Pricing Plans -->
     <string name="full_found_course">FULL FOUNDATION COURSE 2021</string>
-    <string name="crash_course">Crash Course 2022</string>
-    <string name="mod_1">MOD:1 CHILD PSYCHIATRY</string>
-    <string name="mod_2">MOD:2 ADULT PSYCHIATRY (PART-1)</string>
-    <string name="mod_3">MOD:3 ADULT PSYCHIATRY (PART-2)</string>
-    <string name="mod_4">MOD:4 FORENSIC &amp; COMMUNITY PSYCHIATRY</string>
-    <string name="mod_5">MOD:5 SUBSTANCE USE DISORDER</string>
-    <string name="mod_6">MOD:6 PSYCHOLOGY</string>
-    <string name="mod_7">MOD:7 NEUROPSYCHIATRY &amp; NEUROANATOMY</string>
-    <string name="mod_8">MOD:8 CLINICAL CASE DISCUSSION (CCD)</string>
-    <string name="mod_9">MOD:9 PSYCHOPHARMACOLOGY</string>
+    <string name="crash_course">CRASH COURSE 2022</string>
+
+    <string name="mod1"> <u>MODULE 1</u></string>
+    <string name="mod2"> <u>MODULE 2</u></string>
+    <string name="mod3"> <u>MODULE 3</u></string>
+    <string name="mod4"> <u>MODULE 4</u></string>
+    <string name="mod5"> <u>MODULE 5</u></string>
+    <string name="mod6"> <u>MODULE 6</u></string>
+    <string name="mod7"> <u>MODULE 7</u></string>
+    <string name="mod8"> <u>MODULE 8</u></string>
+    <string name="mod9"> <u>MODULE 9</u></string>
+
+    <string name="mod_1">CHILD PSYCHIATRY</string>
+    <string name="mod_2">ADULT PSYCHIATRY (PART-1)</string>
+    <string name="mod_3">ADULT PSYCHIATRY (PART-2)</string>
+    <string name="mod_4">FORENSIC &amp; COMMUNITY PSYCHIATRY</string>
+    <string name="mod_5">SUBSTANCE USE DISORDER</string>
+    <string name="mod_6">PSYCHOLOGY</string>
+    <string name="mod_7">NEUROPSYCHIATRY &amp; NEUROANATOMY</string>
+    <string name="mod_8">CLINICAL CASE DISCUSSION (CCD)</string>
+    <string name="mod_9">PSYCHOPHARMACOLOGY</string>
     <string name="paper1">PAPER 1</string>
     <string name="paper2">PAPER 2</string>
     <string name="paper3">PAPER 3</string>
@@ -92,4 +104,17 @@
     <string name="mod7_price">Rs 2500</string>
     <string name="mod8_price">Rs 5000</string>
     <string name="mod9_price">Rs 5000</string>
+
+    <string name="book1">Comprehensive Textbook of Psychiatry (CTP)</string>
+    <string name="book2">Synopsis - Kaplan &amp; Saddock</string>
+    <string name="book3">Maudsley - Prescribing guidelines in Psychiatry</string>
+    <string name="book4">Stahls Essential PSYCHOPHARMACOLOGY</string>
+    <string name="book5">Oxford Textbook of Psychiatry</string>
+    <string name="book6">Lishmans Organic Psychiatry</string>
+    <string name="book7">Barom Psychology</string>
+    <string name="book8">King and Morgan Psychology</string>
+    <string name="book9">Nambi &amp; Jileha - Forensic Psychiatry</string>
+    <string name= "book10">Guidelines - APA, NICE </string>
+    <string name="book11">Latest articles and many others</string>
+    <string name="book12">DSM-5, JCD- 10, 11</string>
 </resources>

@@ -1,6 +1,9 @@
 package com.daffodils.psychiatry.fragment;
 
 import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,24 +11,37 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.daffodils.psychiatry.R;
+import com.daffodils.psychiatry.activity.DrawerActivity;
+import com.daffodils.psychiatry.activity.LoginActivity;
+import com.daffodils.psychiatry.activity.MainActivity;
+import com.daffodils.psychiatry.helper.ApiConfig;
+import com.daffodils.psychiatry.helper.AppController;
 import com.daffodils.psychiatry.helper.GlobalConst;
+import com.daffodils.psychiatry.helper.VolleyCallback;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
 public class FoundationCourseFragment extends Fragment {
+
     View root;
     Activity activity;
     TextView txtmod1_topic, txtmod2_topic, txtmod3_topic, txtmod4_topic, txtmod5_topic, txtmod6_topic, txtmod7_topic, txtmod8_topic, txtmod9_topic;
-
+    TextView txtSubsFullCourse, txtSubsMod1, txtSubsMod2, txtSubsMod3, txtSubsMod4, txtSubsMod5, txtSubsMod6, txtSubsMod7, txtSubsMod8, txtSubsMod9;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         root = inflater.inflate(R.layout.lyt_foundation_course, container, false);
         activity = getActivity();
         setHasOptionsMenu(true);
+
         txtmod1_topic = root.findViewById(R.id.mod1_topic);
         txtmod2_topic = root.findViewById(R.id.mod2_topic);
         txtmod3_topic = root.findViewById(R.id.mod3_topic);
@@ -35,6 +51,17 @@ public class FoundationCourseFragment extends Fragment {
         txtmod7_topic = root.findViewById(R.id.mod7_topic);
         txtmod8_topic = root.findViewById(R.id.mod8_topic);
         txtmod9_topic = root.findViewById(R.id.mod9_topic);
+
+        txtSubsFullCourse = root.findViewById(R.id.txtSubsFullCourse);
+        txtSubsMod1 = root.findViewById(R.id.txtSubsMod1);
+        txtSubsMod2 = root.findViewById(R.id.txtSubsMod2);
+        txtSubsMod3 = root.findViewById(R.id.txtSubsMod3);
+        txtSubsMod4 = root.findViewById(R.id.txtSubsMod4);
+        txtSubsMod5 = root.findViewById(R.id.txtSubsMod5);
+        txtSubsMod6 = root.findViewById(R.id.txtSubsMod6);
+        txtSubsMod7 = root.findViewById(R.id.txtSubsMod7);
+        txtSubsMod8 = root.findViewById(R.id.txtSubsMod8);
+        txtSubsMod9 = root.findViewById(R.id.txtSubsMod9);
 
         txtmod1_topic.setText("Specific learning disorder, Temperament, Elimination disorders, Child Forensic Psychiatry(POCSO Act), Mood disorders in children , Schizophrenia in children, Intellectual disability, Autism, ADHD, Conduct disorder, ODD, Tourette's syndrome.");
         txtmod2_topic.setText("Schizophrenia, Mood disorders, Anxiety and Grief Disorders, Suicide, Mood Stabilizers, OCD, Body Dysmorphic disorder.");
@@ -46,9 +73,350 @@ public class FoundationCourseFragment extends Fragment {
         txtmod8_topic.setText("Detailed mental status examination, Psychopathology discussion, Cases on Schizophrenia, Bipolace disorder, Elderly Depression, Substance use disorder, Explanation of Token Economy, Lithium toxicity, Cognitive Behaviour therapy, Kirby's method, Treatment Substance Schizophrenia.");
         txtmod9_topic.setText("Pathways and receptors of Dopamine, Glutamate, GABA; NMDA Hypo functioning hypothesis of Schizophrenia, Serotonergic pathways and receptors, Hypnosis, anti-manic, antidepressants, antipsychotics, Clozapine, Individual antipsychotic drugs including Newer 3rd Gen antipsychotics, Depression and mania, SSRIs in detail, SPARI, SNRIs, Agomelatine, alpha blockers, SARIs,TCAs, Vortioxetin, Mood stabilizers, Lithium, Valproate and other mood stabilizers including special considerations, ADHD including individual drugs, Addiction, impulsivity, compulsivity including individual drugs, anxiety.");
 
+        txtSubsFullCourse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
+                alertDialog.setTitle("Subscribe Full Course ?");
+                alertDialog.setMessage("Do you want to subscribe Full Course ?");
+                alertDialog.setCancelable(false);
+                final AlertDialog alertDialog1 = alertDialog.create();
+
+                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        try {
+
+                            subscribeModuleService("0", GlobalConst.FullCourse);
+                            //call web service
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        alertDialog1.dismiss();
+                    }
+                });
+                alertDialog.show();
+            }
+        });
+
+        txtSubsMod1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
+                alertDialog.setTitle("Subscribe Module 1 ?");
+                alertDialog.setMessage("Do you want to subscribe Module 1 ?");
+                alertDialog.setCancelable(false);
+                final AlertDialog alertDialog1 = alertDialog.create();
+
+                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        try {
+                            //call web service
+                            subscribeModuleService("0", GlobalConst.AnyModule);
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        alertDialog1.dismiss();
+                    }
+                });
+                alertDialog.show();
+            }
+        });
+        txtSubsMod2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
+                alertDialog.setTitle("Subscribe Module 2 ?");
+                alertDialog.setMessage("Do you want to subscribe Module 2 ?");
+                alertDialog.setCancelable(false);
+                final AlertDialog alertDialog1 = alertDialog.create();
+
+                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        try {
+                            //call web service
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        alertDialog1.dismiss();
+                    }
+                });
+                alertDialog.show();
+            }
+        });
+        txtSubsMod3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
+                alertDialog.setTitle("Subscribe Module 3 ?");
+                alertDialog.setMessage("Do you want to subscribe Module 3 ?");
+                alertDialog.setCancelable(false);
+                final AlertDialog alertDialog1 = alertDialog.create();
+
+                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        try {
+                            //call web service
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        alertDialog1.dismiss();
+                    }
+                });
+                alertDialog.show();
+            }
+        });
+        txtSubsMod4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
+                alertDialog.setTitle("Subscribe Module 4 ?");
+                alertDialog.setMessage("Do you want to subscribe Module 4 ?");
+                alertDialog.setCancelable(false);
+                final AlertDialog alertDialog1 = alertDialog.create();
+
+                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        try {
+                            //call web service
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        alertDialog1.dismiss();
+                    }
+                });
+                alertDialog.show();
+            }
+        });
+        txtSubsMod5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
+                alertDialog.setTitle("Subscribe Module 5 ?");
+                alertDialog.setMessage("Do you want to subscribe Module 5 ?");
+                alertDialog.setCancelable(false);
+                final AlertDialog alertDialog1 = alertDialog.create();
+
+                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        try {
+                            //call web service
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        alertDialog1.dismiss();
+                    }
+                });
+                alertDialog.show();
+            }
+        });
+        txtSubsMod6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
+                alertDialog.setTitle("Subscribe Module 6 ?");
+                alertDialog.setMessage("Do you want to subscribe Module 6 ?");
+                alertDialog.setCancelable(false);
+                final AlertDialog alertDialog1 = alertDialog.create();
+
+                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        try {
+                            //call web service
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        alertDialog1.dismiss();
+                    }
+                });
+                alertDialog.show();
+            }
+        });
+        txtSubsMod7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
+                alertDialog.setTitle("Subscribe Module 7 ?");
+                alertDialog.setMessage("Do you want to subscribe Module 7 ?");
+                alertDialog.setCancelable(false);
+                final AlertDialog alertDialog1 = alertDialog.create();
+
+                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        try {
+                            //call web service
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        alertDialog1.dismiss();
+                    }
+                });
+                alertDialog.show();
+            }
+        });
+        txtSubsMod8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
+                alertDialog.setTitle("Subscribe Module 8 ?");
+                alertDialog.setMessage("Do you want to subscribe Module 8 ?");
+                alertDialog.setCancelable(false);
+                final AlertDialog alertDialog1 = alertDialog.create();
+
+                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        try {
+                            //call web service
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        alertDialog1.dismiss();
+                    }
+                });
+                alertDialog.show();
+            }
+        });
+        txtSubsMod9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
+                alertDialog.setTitle("Subscribe Module 9 ?");
+                alertDialog.setMessage("Do you want to subscribe Module 9 ?");
+                alertDialog.setCancelable(false);
+                final AlertDialog alertDialog1 = alertDialog.create();
+
+                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        try {
+                            //call web service
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        alertDialog1.dismiss();
+                    }
+                });
+                alertDialog.show();
+            }
+        });
+
         return root;
 
     }
+
+    public void subscribeModuleService(String ModuleNumber, String SubscriptionType){
+
+        if (AppController.isConnected(activity)) {
+
+            Map<String, String> params = new HashMap<String, String>();
+
+            params.put("SC", GlobalConst.SC_SUBSCRIBE_MODULES);
+            params.put("CourseID", GlobalConst.FoundationCourseID);
+            params.put("ModuleID", ModuleNumber);
+            params.put("SubscriptionType", SubscriptionType);
+            params.put("UserID", GlobalConst.User_id);
+
+            ApiConfig.RequestToVolley(new VolleyCallback() {
+                @Override
+                public void onSuccess(boolean result, String response) {
+                    if (result) {
+                        try {
+
+                            if (GlobalConst.Result.equals("T")){
+                                setSnackBar("You have successfully been subscribed.", "OK");
+                            } else {
+                                setSnackBar("Error in processing request.", "OK");
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+            }, activity, GlobalConst.URL.trim() , params, true);
+
+        }
+    }
+
+    public void setSnackBar(String message, String action) {
+        final Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content), message, Snackbar.LENGTH_INDEFINITE);
+        snackbar.setAction(action, new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                snackbar.dismiss();
+            }
+        });
+        snackbar.setActionTextColor(Color.RED);
+        View snackbarView = snackbar.getView();
+        TextView textView = snackbarView.findViewById(com.google.android.material.R.id.snackbar_text);
+        textView.setMaxLines(5);
+        snackbar.show();
+    }
+
+
 
     @Override
     public void onResume() {

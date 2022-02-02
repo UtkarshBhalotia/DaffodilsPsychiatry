@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/lightes"
     android:orientation="vertical">
 
 <TableLayout
@@ -12,8 +12,7 @@
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/card_shadow_light"
-        android:padding="@dimen/margin_5dp"
+        android:layout_marginTop="@dimen/margin_5dp"
         android:weightSum="3">
 
         <TextView
@@ -41,428 +40,1083 @@
 
     </TableRow>
 
-    <androidx.cardview.widget.CardView
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_marginBottom="@dimen/margin_5dp"
+        android:weightSum="3">
+
+        <TextView
+            android:background="@color/logocolor"
+            android:text="@string/crash_course"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:padding="@dimen/margin_5dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:text="Rs 7500"
+            android:background="@color/red"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/margin_5dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+    </TableRow>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/lightgray"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/datetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MODULES"
+                android:padding="@dimen/margin_5dp"
+                android:layout_gravity="left"
+                android:textColor="@color/txt_color"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lineayout"
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/subheader"
+            android:background="@color/red"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/vchno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MODULE NAME"
+                android:padding="@dimen/margin_5dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/txt_color"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/subheader"
+            android:background="@color/red"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/debit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHARGES (Rs)"
+                android:textColor="@color/txt_color"
+                android:padding="@dimen/margin_5dp"
+                android:layout_gravity="right"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/subheader"
+            android:background="@color/red"
+            android:orientation="vertical"></LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/red"></LinearLayout>
+
+   <!-- section part-->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:background="@color/white"
+        android:weightSum="4"
+        android:elevation="7dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/margin_10dp"
-            android:gravity="center">
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_below="@+id/lytSearchview"
+            android:weightSum="4">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="@string/mod_1"
-                android:textColor="@color/txt_color"
-                android:textStyle="bold"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="Topics"
-                android:id="@+id/mod1_topic"
-                android:paddingBottom="5dp"
-                android:textColor="@color/darkgray"
-                android:textStyle="normal"
-                android:textSize="18dp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="MODULE 1"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
                     android:layout_gravity="left"
-                    android:background="@color/green"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod_1"
+                    android:padding="@dimen/margin_5dp"
+                    android:layout_gravity="left"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@string/mod1_price"
                     android:padding="@dimen/margin_5dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="19dp" />
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:layout_gravity="right"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
 
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/red"></LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:background="@color/white"
+        android:weightSum="4"
+        android:elevation="7dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/margin_10dp"
-            android:gravity="center">
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_below="@+id/lytSearchview"
+            android:weightSum="4">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="@string/mod_2"
-                android:textColor="@color/txt_color"
-                android:textStyle="bold"
-                android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="Topics"
-                android:id="@+id/mod2_topic"
-                android:paddingBottom="5dp"
-                android:textColor="@color/darkgray"
-                android:textStyle="normal"
-                android:textSize="18dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MODULE 2"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:layout_gravity="left"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:background="@color/green"
-                android:text="@string/mod2_price"
-                android:padding="@dimen/margin_5dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="19dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod_2"
+                    android:padding="@dimen/margin_5dp"
+                    android:layout_gravity="left"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod2_price"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:layout_gravity="right"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
 
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/red"></LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:background="@color/white"
+        android:weightSum="4"
+        android:elevation="7dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/margin_10dp"
-            android:gravity="center">
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_below="@+id/lytSearchview"
+            android:weightSum="4">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="@string/mod_3"
-                android:textColor="@color/txt_color"
-                android:textStyle="bold"
-                android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="Topics"
-                android:id="@+id/mod3_topic"
-                android:paddingBottom="5dp"
-                android:textColor="@color/darkgray"
-                android:textStyle="normal"
-                android:textSize="18dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MODULE 3"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:layout_gravity="left"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:background="@color/green"
-                android:text="@string/mod3_price"
-                android:padding="@dimen/margin_5dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="19dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod_3"
+                    android:padding="@dimen/margin_5dp"
+                    android:layout_gravity="left"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod3_price"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:layout_gravity="right"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
 
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/red"></LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:background="@color/white"
+        android:weightSum="4"
+        android:elevation="7dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/margin_10dp"
-            android:gravity="center">
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_below="@+id/lytSearchview"
+            android:weightSum="4">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="@string/mod_4"
-                android:textColor="@color/txt_color"
-                android:textStyle="bold"
-                android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="Topics"
-                android:id="@+id/mod4_topic"
-                android:paddingBottom="5dp"
-                android:textColor="@color/darkgray"
-                android:textStyle="normal"
-                android:textSize="18dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MODULE 4"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:layout_gravity="left"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:background="@color/green"
-                android:text="@string/mod4_price"
-                android:padding="@dimen/margin_5dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="19dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:layout_gravity="left"
+                    android:padding="@dimen/margin_5dp"
+                    android:text="@string/mod_4"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod4_price"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:layout_gravity="right"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
 
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/red"></LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:background="@color/white"
+        android:weightSum="4"
+        android:elevation="7dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/margin_10dp"
-            android:gravity="center">
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_below="@+id/lytSearchview"
+            android:weightSum="4">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="@string/mod_5"
-                android:textColor="@color/txt_color"
-                android:textStyle="bold"
-                android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="Topics"
-                android:id="@+id/mod5_topic"
-                android:paddingBottom="5dp"
-                android:textColor="@color/darkgray"
-                android:textStyle="normal"
-                android:textSize="18dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MODULE 5"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:layout_gravity="left"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:background="@color/green"
-                android:text="@string/mod5_price"
-                android:padding="@dimen/margin_5dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="19dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod_5"
+                    android:padding="@dimen/margin_5dp"
+                    android:layout_gravity="left"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod5_price"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:layout_gravity="right"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
 
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/red"></LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:background="@color/white"
+        android:weightSum="4"
+        android:elevation="7dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/margin_10dp"
-            android:gravity="center">
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_below="@+id/lytSearchview"
+            android:weightSum="4">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="@string/mod_6"
-                android:textColor="@color/txt_color"
-                android:textStyle="bold"
-                android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="Topics"
-                android:id="@+id/mod6_topic"
-                android:paddingBottom="5dp"
-                android:textColor="@color/darkgray"
-                android:textStyle="normal"
-                android:textSize="18dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MODULE 6"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:layout_gravity="left"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:background="@color/green"
-                android:text="@string/mod6_price"
-                android:padding="@dimen/margin_5dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="19dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod_6"
+                    android:padding="@dimen/margin_5dp"
+                    android:layout_gravity="left"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod6_price"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:layout_gravity="right"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
 
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/red"></LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:background="@color/white"
+        android:weightSum="4"
+        android:elevation="7dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/margin_10dp"
-            android:gravity="center">
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_below="@+id/lytSearchview"
+            android:weightSum="4">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="@string/mod_7"
-                android:textColor="@color/txt_color"
-                android:textStyle="bold"
-                android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="Topics"
-                android:id="@+id/mod7_topic"
-                android:paddingBottom="5dp"
-                android:textColor="@color/darkgray"
-                android:textStyle="normal"
-                android:textSize="18dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MODULE 7"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:layout_gravity="left"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:background="@color/green"
-                android:text="@string/mod7_price"
-                android:padding="@dimen/margin_5dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="19dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod_7"
+                    android:padding="@dimen/margin_5dp"
+                    android:layout_gravity="left"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod7_price"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:layout_gravity="right"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
 
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/red"></LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:background="@color/white"
+        android:weightSum="4"
+        android:elevation="7dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/margin_10dp"
-            android:gravity="center">
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_below="@+id/lytSearchview"
+            android:weightSum="4">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="@string/mod_8"
-                android:textColor="@color/txt_color"
-                android:textStyle="bold"
-                android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="Topics"
-                android:id="@+id/mod8_topic"
-                android:paddingBottom="5dp"
-                android:textColor="@color/darkgray"
-                android:textStyle="normal"
-                android:textSize="18dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MODULE 8"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:layout_gravity="left"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:background="@color/green"
-                android:text="@string/mod8_price"
-                android:padding="@dimen/margin_5dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="19dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod_8"
+                    android:padding="@dimen/margin_5dp"
+                    android:layout_gravity="left"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod8_price"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:layout_gravity="right"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
 
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/red"></LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:background="@color/white"
+        android:weightSum="4"
+        android:elevation="7dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/margin_10dp"
-            android:gravity="center">
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_below="@+id/lytSearchview"
+            android:weightSum="4">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="@string/mod_9"
-                android:textColor="@color/txt_color"
-                android:textStyle="bold"
-                android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="Topics"
-                android:id="@+id/mod9_topic"
-                android:paddingBottom="5dp"
-                android:textColor="@color/darkgray"
-                android:textStyle="normal"
-                android:textSize="18dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MODULE 9"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:layout_gravity="left"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:background="@color/green"
-                android:text="@string/mod9_price"
-                android:padding="@dimen/margin_5dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="19dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod_9"
+                    android:padding="@dimen/margin_5dp"
+                    android:layout_gravity="left"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mod9_price"
+                    android:padding="@dimen/margin_5dp"
+                    android:textColor="@color/logocolor"
+                    android:textSize="14dp"
+                    android:layout_gravity="right"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subheader"
+                android:background="@color/red"
+                android:orientation="vertical"></LinearLayout>
 
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/red"></LinearLayout>
+
+
 
 </TableLayout>
 

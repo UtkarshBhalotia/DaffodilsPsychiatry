@@ -12,6 +12,82 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_5dp">
+
+            <LinearLayout
+                android:id="@+id/llFullFoundCourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/lightes"
+                android:padding="@dimen/margin_10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Full Foundation Course 2021"
+                    android:textColor="@color/txt_color"
+                    android:textStyle="bold"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="All Modules "
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/logocolor"
+                    android:textStyle="normal"
+                    android:textSize="18dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtFFC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Rs 37,000 "
+                        android:textColor="@color/txt_color"
+                        android:textStyle="bold"
+                        android:layout_marginRight="@dimen/margin_15dp"
+                        android:textSize="19dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:background="@color/red"
+                        android:text="Rs 15,000 "
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="19dp" />
+
+                    <TextView
+                        android:id="@+id/txtSubsFullCourse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/green"
+                        android:text="Subscribe"
+                        android:layout_marginLeft="25dp"
+                        android:padding="@dimen/margin_5dp"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="5dp">
 
             <LinearLayout
@@ -25,7 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="@string/mod_1"
+                    android:text="@string/mod1"
                     android:textColor="@color/txt_color"
                     android:textStyle="bold"
                     android:textSize="18dp" />
@@ -34,10 +110,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
+                    android:text="@string/mod_1"
+                    android:textColor="@color/txt_color"
+                    android:textStyle="normal"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:text="Topics"
                     android:id="@+id/mod1_topic"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@color/logocolor"
                     android:textStyle="normal"
                     android:textSize="16dp" />
 
@@ -59,6 +144,7 @@
 
 
                     <TextView
+                        android:id="@+id/txtSubsMod1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
@@ -89,7 +175,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="@string/mod_2"
+                    android:text="@string/mod2"
                     android:textColor="@color/txt_color"
                     android:textStyle="bold"
                     android:textSize="18dp" />
@@ -98,10 +184,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
+                    android:text="@string/mod_2"
+                    android:textColor="@color/txt_color"
+                    android:textStyle="normal"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:text="Topics"
                     android:id="@+id/mod2_topic"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@color/logocolor"
                     android:textStyle="normal"
                     android:textSize="16dp" />
 
@@ -123,6 +218,7 @@
 
 
                     <TextView
+                        android:id="@+id/txtSubsMod2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
@@ -153,7 +249,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="@string/mod_3"
+                    android:text="@string/mod3"
                     android:textColor="@color/txt_color"
                     android:textStyle="bold"
                     android:textSize="18dp" />
@@ -162,10 +258,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
+                    android:text="@string/mod_3"
+                    android:textColor="@color/txt_color"
+                    android:textStyle="normal"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:text="Topics"
                     android:id="@+id/mod3_topic"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@color/logocolor"
                     android:textStyle="normal"
                     android:textSize="16dp" />
 
@@ -187,6 +292,7 @@
 
 
                     <TextView
+                        android:id="@+id/txtSubsMod3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
@@ -217,7 +323,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="@string/mod_4"
+                    android:text="@string/mod4"
                     android:textColor="@color/txt_color"
                     android:textStyle="bold"
                     android:textSize="18dp" />
@@ -226,10 +332,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
+                    android:text="@string/mod_4"
+                    android:textColor="@color/txt_color"
+                    android:textStyle="normal"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:text="Topics"
                     android:id="@+id/mod4_topic"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@color/logocolor"
                     android:textStyle="normal"
                     android:textSize="16dp" />
 
@@ -251,6 +366,7 @@
 
 
                     <TextView
+                        android:id="@+id/txtSubsMod4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
@@ -281,7 +397,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="@string/mod_5"
+                    android:text="@string/mod5"
                     android:textColor="@color/txt_color"
                     android:textStyle="bold"
                     android:textSize="18dp" />
@@ -290,10 +406,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
+                    android:text="@string/mod_5"
+                    android:textColor="@color/txt_color"
+                    android:textStyle="normal"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:text="Topics"
                     android:id="@+id/mod5_topic"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@color/logocolor"
                     android:textStyle="normal"
                     android:textSize="16dp" />
 
@@ -315,6 +440,7 @@
 
 
                     <TextView
+                        android:id="@+id/txtSubsMod5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
@@ -345,7 +471,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="@string/mod_6"
+                    android:text="@string/mod6"
                     android:textColor="@color/txt_color"
                     android:textStyle="bold"
                     android:textSize="18dp" />
@@ -354,10 +480,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
+                    android:text="@string/mod_6"
+                    android:textColor="@color/txt_color"
+                    android:textStyle="normal"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:text="Topics"
                     android:id="@+id/mod6_topic"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@color/logocolor"
                     android:textStyle="normal"
                     android:textSize="16dp" />
 
@@ -379,6 +514,7 @@
 
 
                     <TextView
+                        android:id="@+id/txtSubsMod6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
@@ -409,7 +545,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="@string/mod_7"
+                    android:text="@string/mod7"
                     android:textColor="@color/txt_color"
                     android:textStyle="bold"
                     android:textSize="18dp" />
@@ -418,10 +554,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
+                    android:text="@string/mod_7"
+                    android:textColor="@color/txt_color"
+                    android:textStyle="normal"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:text="Topics"
                     android:id="@+id/mod7_topic"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@color/logocolor"
                     android:textStyle="normal"
                     android:textSize="16dp" />
 
@@ -443,6 +588,7 @@
 
 
                     <TextView
+                        android:id="@+id/txtSubsMod7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
@@ -468,15 +614,22 @@
                 android:orientation="vertical"
                 android:padding="@dimen/margin_5dp"
                 android:gravity="center">
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="@string/mod8"
+                    android:textColor="@color/txt_color"
+                    android:textStyle="bold"
+                    android:textSize="18dp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:text="@string/mod_8"
                     android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
+                    android:textStyle="normal"
+                    android:textSize="17dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -485,7 +638,7 @@
                     android:text="Topics"
                     android:id="@+id/mod8_topic"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@color/logocolor"
                     android:textStyle="normal"
                     android:textSize="16dp" />
 
@@ -507,6 +660,7 @@
 
 
                     <TextView
+                        android:id="@+id/txtSubsMod8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
@@ -537,7 +691,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="@string/mod_9"
+                    android:text="@string/mod9"
                     android:textColor="@color/txt_color"
                     android:textStyle="bold"
                     android:textSize="18dp" />
@@ -546,10 +700,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
+                    android:text="@string/mod_9"
+                    android:textColor="@color/txt_color"
+                    android:textStyle="normal"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:text="Topics"
                     android:id="@+id/mod9_topic"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@color/logocolor"
                     android:textStyle="normal"
                     android:textSize="16dp" />
 
@@ -571,6 +734,7 @@
 
 
                     <TextView
+                        android:id="@+id/txtSubsMod9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
@@ -581,6 +745,61 @@
 
                 </LinearLayout>
 
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:background="@color/lightes"
+                android:padding="@dimen/margin_10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Subscription Duration"
+                    android:textColor="@color/txt_color"
+                    android:paddingBottom="5dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Full Foundation Course 2021 : 4 Months"
+                    android:textColor="@color/logocolor"
+                    android:textStyle="bold"
+                    android:textSize="19dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Any Modules : 2 Months each"
+                    android:textColor="@color/logocolor"
+                    android:textStyle="bold"
+                    android:textSize="19dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Crash Course 2022 : 3 Months"
+                    android:textColor="@color/logocolor"
+                    android:textStyle="normal"
+                    android:visibility="gone"
+                    android:textSize="19dp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

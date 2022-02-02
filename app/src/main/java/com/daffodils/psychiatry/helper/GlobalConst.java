@@ -26,9 +26,26 @@ public class GlobalConst extends Application {
     public static String SC_UPDATE_USER_PROFILE = "10";
     public static String SC_HELP_AND_SUPPORT = "11";
     public static String SC_SUBSCRIBE_MODULES = "12";
+    public static String SC_APP_IMAGES = "13";
 
     public static String Username = "", Name = "", Mobile = "", Address = "", ModuleID = "", User_id = "", Password = "";
     public static String Result = "", Description="", GetPassword ="", AppVersion = "";
 
+    public static String FullCourse = "1";
+    public static String CrashCourse = "2";
+    public static String AnyModule = "3";
+
+    public static String FoundationCourseID = "1";
+    public static String CrashCourseID = "2";
+
+    public static String Module1ID = "1";
+    public static String Module2ID = "1";
+    public static String Module3ID = "1";
+    public static String Module4ID = "1";
+    public static String Module5ID = "1";
+    public static String Module6ID = "1";
+    public static String Module7ID = "1";
+    public static String Module8ID = "1";
+    public static String Module9ID = "1";
 
 }

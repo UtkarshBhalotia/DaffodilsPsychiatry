@@ -29,10 +29,12 @@ import com.daffodils.psychiatry.R;
 import com.daffodils.psychiatry.fragment.AboutUsFragment;
 import com.daffodils.psychiatry.fragment.ChangePassword;
 import com.daffodils.psychiatry.fragment.CoursesFragment;
+import com.daffodils.psychiatry.fragment.FacultyFragment;
 import com.daffodils.psychiatry.fragment.FeeStructureFragment;
 import com.daffodils.psychiatry.fragment.FreeSampleVideosFragment;
 import com.daffodils.psychiatry.fragment.HelpSupportFragment;
 import com.daffodils.psychiatry.fragment.ProfileFragment;
+import com.daffodils.psychiatry.fragment.ReferenceBooksFragment;
 import com.daffodils.psychiatry.fragment.SubscribedVideosFragment;
 import com.daffodils.psychiatry.helper.DbHelper;
 import com.daffodils.psychiatry.helper.GlobalConst;
@@ -152,13 +154,19 @@ public class DrawerActivity extends AppCompatActivity {
                         fragment.setArguments(bundle);
                         getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
                         break;
-                    case R.id.menu_fc_syl:
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://daffodilspsychiatry.com/pdf/FoundationCourseSyllabus2021.pdf"));
-                        startActivity(browserIntent);
+                    case R.id.menu_faculty:
+                        fragment = new FacultyFragment();
+                        bundle = new Bundle();
+                        bundle.putString("type", "Faculty");
+                        fragment.setArguments(bundle);
+                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
                         break;
-                    case R.id.menu_cc_syl:
-                        Intent browserIntent1 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://daffodilspsychiatry.com/pdf/CrashCourseSyllabus%202022.pdf"));
-                        startActivity(browserIntent1);
+                    case R.id.menu_books:
+                        fragment = new ReferenceBooksFragment();
+                        bundle = new Bundle();
+                        bundle.putString("type", "Books");
+                        fragment.setArguments(bundle);
+                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
                         break;
 
                     case R.id.menu_AboutUs:

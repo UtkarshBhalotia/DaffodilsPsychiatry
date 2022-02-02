@@ -7,9 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import com.daffodils.psychiatry.R;
+import com.daffodils.psychiatry.activity.MainActivity;
 import com.daffodils.psychiatry.helper.GlobalConst;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
@@ -20,6 +22,7 @@ public class OngoingDiscountFragment extends Fragment {
     TextView txtFFC, txtCombo;
     View root;
     Activity activity;
+    LinearLayout llFullFound, llCrashCourse, llComboDisc;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -30,9 +33,46 @@ public class OngoingDiscountFragment extends Fragment {
 
         txtFFC = root.findViewById(R.id.txtFFC);
         txtCombo = root.findViewById(R.id.txtCombo);
+
+        llFullFound = root.findViewById(R.id.llFullFoundCourse);
+        llComboDisc = root.findViewById(R.id.llComboDisc);
+        llCrashCourse = root.findViewById(R.id.llCrashCourse);
+
         txtFFC.setPaintFlags(txtFFC.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         txtCombo.setPaintFlags(txtCombo.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
+        llFullFound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new FoundationCourseFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("from", "FoundationCourse");
+                fragment.setArguments(bundle);
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+            }
+        });
+
+        llComboDisc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new FoundationCourseFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("from", "FoundationCourse");
+                fragment.setArguments(bundle);
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+            }
+        });
+
+        llCrashCourse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new CrashCourseFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("from", "CrashCourse");
+                fragment.setArguments(bundle);
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+            }
+        });
         return root;
     }
 

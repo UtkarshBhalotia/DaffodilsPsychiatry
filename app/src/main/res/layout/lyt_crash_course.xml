@@ -12,6 +12,53 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_5dp">
+
+            <LinearLayout
+                android:id="@+id/llCrashCourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/lightes"
+                android:padding="@dimen/margin_10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Crash Course 2022"
+                    android:textColor="@color/txt_color"
+                    android:textStyle="bold"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Paper 1 + Paper 2 + Paper 3 + Paper 4 "
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/logocolor"
+                    android:textStyle="bold"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:background="@color/red"
+                    android:text="Rs 9,000 per person"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="19dp" />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="5dp">
 
             <LinearLayout
@@ -37,7 +84,7 @@
                     android:text="Topics"
                     android:id="@+id/pap1_topic"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@color/logocolor"
                     android:textStyle="normal"
                     android:textSize="16dp" />
 
@@ -53,6 +100,7 @@
                         android:background="@color/green"
                         android:text="Subscribe"
                         android:padding="@dimen/margin_5dp"
+                        android:visibility="gone"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
 
@@ -90,7 +138,7 @@
                     android:text="Topics"
                     android:id="@+id/pap2_topic"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@color/logocolor"
                     android:textStyle="normal"
                     android:textSize="16dp" />
 
@@ -105,6 +153,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/green"
                         android:text="Subscribe"
+                        android:visibility="gone"
                         android:padding="@dimen/margin_5dp"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
@@ -143,7 +192,7 @@
                     android:text="Topics"
                     android:id="@+id/pap3_topic"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@color/logocolor"
                     android:textStyle="normal"
                     android:textSize="16dp" />
 
@@ -158,6 +207,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/green"
                         android:text="Subscribe"
+                        android:visibility="gone"
                         android:padding="@dimen/margin_5dp"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
@@ -196,7 +246,7 @@
                     android:text="Topics"
                     android:id="@+id/pap4_topic"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@color/logocolor"
                     android:textStyle="normal"
                     android:textSize="16dp" />
 
@@ -211,6 +261,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/green"
                         android:text="Subscribe"
+                        android:visibility="gone"
                         android:padding="@dimen/margin_5dp"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
@@ -221,6 +272,77 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:background="@color/lightes"
+                android:padding="@dimen/margin_10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Subscription Duration"
+                    android:textColor="@color/txt_color"
+                    android:paddingBottom="5dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Full Foundation Course 2021 : 4 Months"
+                    android:textColor="@color/logocolor"
+                    android:textStyle="normal"
+                    android:visibility="gone"
+                    android:textSize="19dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Any Modules : 2 Months each"
+                    android:textColor="@color/logocolor"
+                    android:textStyle="normal"
+                    android:visibility="gone"
+                    android:textSize="19dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Crash Course 2022 : 3 Months"
+                    android:textColor="@color/logocolor"
+                    android:textStyle="bold"
+                    android:textSize="19dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnSubscribe"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/green"
+            android:layout_margin="@dimen/margin_10dp"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Subscribe">
+
+        </Button>
+
     </TableLayout>
+
+
 
 </ScrollView>

@@ -44,7 +44,7 @@ public class HomeFragment extends Fragment {
     SwipeRefreshLayout swipeLayout;
     View root;
     int timerDelay = 0, timerWaiting = 0;
-    public static Integer [] images = {R.drawable.banner1, R.drawable.banner2};
+    public static Integer [] images = {R.drawable.daff_banner1, R.drawable.daff_banner2, R.drawable.daff_banner3};
     private ViewPager mPager;
     private LinearLayout mMarkersLayout;
     private int size = 5;
@@ -93,8 +93,8 @@ public class HomeFragment extends Fragment {
         imgSubsVdo.setDefaultImageResId(R.drawable.subscribe_vdo);
         imgCourses.setDefaultImageResId(R.drawable.courses);
         imgPricing.setDefaultImageResId(R.drawable.pricing);
-        imgFaculty.setDefaultImageResId(R.drawable.syllabus);
-        imgBooks.setDefaultImageResId(R.drawable.checklist);
+        imgFaculty.setDefaultImageResId(R.drawable.faculty);
+        imgBooks.setDefaultImageResId(R.drawable.book);
         imgWeb.setDefaultImageResId(R.drawable.weblink);
         imgInsta.setDefaultImageResId(R.drawable.instagram1);
         imgFb.setDefaultImageResId(R.drawable.facebook);
@@ -192,8 +192,12 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://daffodilspsychiatry.com/pdf/FoundationCourseSyllabus2021.pdf"));
-                startActivity(browserIntent);
+                Fragment fragment = new FacultyFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("from", "Faculty");
+                fragment.setArguments(bundle);
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
 
             }
         });
@@ -202,8 +206,12 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://daffodilspsychiatry.com/pdf/CrashCourseSyllabus%202022.pdf"));
-                startActivity(browserIntent);
+                Fragment fragment = new ReferenceBooksFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("from", "Books");
+                fragment.setArguments(bundle);
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
             }
         });
 

@@ -19,13 +19,13 @@
         android:icon="@drawable/ic_subs_vdo"
         android:title="@string/title_subs_vdo"/>
     <item
-        android:id="@+id/menu_fc_syl"
-        android:icon="@drawable/syllabus"
-        android:title="@string/title_foundation_syllabus"/>
+        android:id="@+id/menu_faculty"
+        android:icon="@drawable/ic_faculty"
+        android:title="@string/title_faculty"/>
     <item
-        android:id="@+id/menu_cc_syl"
-        android:icon="@drawable/syllabus"
-        android:title="@string/title_crash_syllabus"/>
+        android:id="@+id/menu_books"
+        android:icon="@drawable/ic_book"
+        android:title="@string/title_books"/>
     <item
         android:id="@+id/menu_pricing"
         android:icon="@drawable/ic_pricing"
