@@ -51,7 +51,7 @@ import java.util.jar.Attributes;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText edtName, edtEmail, edtMobile, edtPass, edtConfirmPass;
+    EditText edtName, edtEmail, edtMobile, edtPass, edtConfirmPass, edtPG, edtCollege, edtPursuing;
     Button btnRegister;
     TextView tvLogin, txtSelectCourse, txtSelectModule;
     Spinner select_course, select_module;
@@ -93,6 +93,10 @@ public class RegisterActivity extends AppCompatActivity {
         edtMobile = findViewById(R.id.edtmobile);
         edtPass = findViewById(R.id.edtpsw);
         edtConfirmPass = findViewById(R.id.edtcpsw);
+        edtPG = findViewById(R.id.edtPG);
+        edtCollege = findViewById(R.id.edtCollege);
+        edtPursuing = findViewById(R.id.edtPursuing);
+
         btnRegister = findViewById(R.id.btnRegister);
         tvLogin = findViewById(R.id.tvSignUp);
         RLSelectCourse = findViewById(R.id.RLSelectCourse);
@@ -106,6 +110,9 @@ public class RegisterActivity extends AppCompatActivity {
         edtName.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_name, 0, 0, 0);
         edtEmail.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_email, 0, 0, 0);
         edtMobile.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_phone, 0, 0, 0);
+        edtPG.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_pg, 0, 0 ,0);
+        edtCollege.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_college, 0, 0 ,0);
+        edtPursuing.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_pg, 0, 0 ,0);
         edtPass.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_password, 0, R.drawable.ic_show, 0);
         edtConfirmPass.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_password, 0, R.drawable.ic_show, 0);
 
@@ -291,6 +298,9 @@ public class RegisterActivity extends AppCompatActivity {
         String Name = edtName.getText().toString();
         String Email = edtEmail.getText().toString();
         String Mobile = edtMobile.getText().toString();
+        String PG = edtPG.getText().toString();
+        String Pursuing = edtPursuing.getText().toString();
+        String College = edtCollege.getText().toString();
         String Password = edtPass.getText().toString();
         String ConfirmPassword = edtConfirmPass.getText().toString();
 
@@ -316,6 +326,7 @@ public class RegisterActivity extends AppCompatActivity {
             jsonObject.put("EmailID", Email);
             jsonObject.put("Password", Password);
             jsonObject.put("MobileNo", Mobile);
+            jsonObject.put("CourseID", jsonArray);
             jsonObject.put("ModuleID", jsonArray1);
             jsonObject.put("DeviceID", android_id);
             jsonObject.put("TokenID", token_id);
@@ -335,6 +346,12 @@ public class RegisterActivity extends AppCompatActivity {
             edtMobile.setError(getString(R.string.enter_mobile_no));
         } else if (ApiConfig.CheckValidattion(Mobile, false, true)) {
             edtMobile.setError(getString(R.string.enter_valid_mobile_no));
+        } else if (ApiConfig.CheckValidattion(PG, false, false)) {
+            edtPG.setError(getString(R.string.enter_pg_det));
+        } else if (ApiConfig.CheckValidattion(College, false, false)) {
+            edtCollege.setError(getString(R.string.enter_college));
+        } else if (ApiConfig.CheckValidattion(Pursuing, false, false)) {
+            edtPursuing.setError(getString(R.string.enter_pursuing));
         } else if (ApiConfig.CheckValidattion(Password, false, false)) {
             edtPass.setError(getString(R.string.enter_pass));
         } else if (ApiConfig.CheckValidattion(ConfirmPassword, false , false)) {

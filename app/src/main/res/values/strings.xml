@@ -23,6 +23,9 @@
     <string name="enter_valid_email">Enter valid email address</string>
     <string name="enter_country_code">Enter country code</string>
     <string name="enter_mobile_no">Enter mobile number</string>
+    <string name="enter_pg_det">Enter year of PG</string>
+    <string name="enter_college">Enter college name</string>
+    <string name="enter_pursuing">Enter Pursuing DPM/MD/DNB ?</string>
     <string name="enter_valid_mobile_no">Enter valid mobile number</string>
     <string name="enter_pass">Enter password</string>
     <string name="enter_old_pass">Enter old password</string>
@@ -111,10 +114,10 @@
     <string name="book4">Stahls Essential PSYCHOPHARMACOLOGY</string>
     <string name="book5">Oxford Textbook of Psychiatry</string>
     <string name="book6">Lishmans Organic Psychiatry</string>
-    <string name="book7">Barom Psychology</string>
+    <string name="book7">Baron Psychology</string>
     <string name="book8">King and Morgan Psychology</string>
     <string name="book9">Nambi &amp; Jileha - Forensic Psychiatry</string>
     <string name= "book10">Guidelines - APA, NICE </string>
-    <string name="book11">Latest articles and many others</string>
-    <string name="book12">DSM-5, JCD- 10, 11</string>
+    <string name="book12">Latest articles and many others</string>
+    <string name="book11">DSM-5, ICD- 10, 11</string>
 </resources>

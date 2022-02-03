@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +34,7 @@ public class FoundationCourseFragment extends Fragment {
 
     View root;
     Activity activity;
+    TextView txtFFC;
     TextView txtmod1_topic, txtmod2_topic, txtmod3_topic, txtmod4_topic, txtmod5_topic, txtmod6_topic, txtmod7_topic, txtmod8_topic, txtmod9_topic;
     TextView txtSubsFullCourse, txtSubsMod1, txtSubsMod2, txtSubsMod3, txtSubsMod4, txtSubsMod5, txtSubsMod6, txtSubsMod7, txtSubsMod8, txtSubsMod9;
     @Override
@@ -51,6 +53,9 @@ public class FoundationCourseFragment extends Fragment {
         txtmod7_topic = root.findViewById(R.id.mod7_topic);
         txtmod8_topic = root.findViewById(R.id.mod8_topic);
         txtmod9_topic = root.findViewById(R.id.mod9_topic);
+        txtFFC = root.findViewById(R.id.txtFFC);
+
+        txtFFC.setPaintFlags(txtFFC.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
         txtSubsFullCourse = root.findViewById(R.id.txtSubsFullCourse);
         txtSubsMod1 = root.findViewById(R.id.txtSubsMod1);
@@ -87,7 +92,7 @@ public class FoundationCourseFragment extends Fragment {
 
                         try {
 
-                            subscribeModuleService("0", GlobalConst.FullCourse);
+                            subscribeModuleService("1,2,3,4,5,6,7,8,9", GlobalConst.FullCourse);
                             //call web service
 
                         } catch (Exception e) {
@@ -118,7 +123,7 @@ public class FoundationCourseFragment extends Fragment {
 
                         try {
                             //call web service
-                            subscribeModuleService("0", GlobalConst.AnyModule);
+                            subscribeModuleService(GlobalConst.Module1ID, GlobalConst.AnyModule);
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -146,6 +151,7 @@ public class FoundationCourseFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         try {
+                            subscribeModuleService(GlobalConst.Module2ID, GlobalConst.AnyModule);
                             //call web service
 
                         } catch (Exception e) {
@@ -174,6 +180,8 @@ public class FoundationCourseFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         try {
+
+                            subscribeModuleService(GlobalConst.Module3ID, GlobalConst.AnyModule);
                             //call web service
 
                         } catch (Exception e) {
@@ -202,6 +210,8 @@ public class FoundationCourseFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         try {
+
+                            subscribeModuleService(GlobalConst.Module4ID, GlobalConst.AnyModule);
                             //call web service
 
                         } catch (Exception e) {
@@ -230,6 +240,7 @@ public class FoundationCourseFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         try {
+                            subscribeModuleService(GlobalConst.Module5ID, GlobalConst.AnyModule);
                             //call web service
 
                         } catch (Exception e) {
@@ -259,6 +270,7 @@ public class FoundationCourseFragment extends Fragment {
 
                         try {
                             //call web service
+                            subscribeModuleService(GlobalConst.Module6ID, GlobalConst.AnyModule);
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -287,6 +299,7 @@ public class FoundationCourseFragment extends Fragment {
 
                         try {
                             //call web service
+                            subscribeModuleService(GlobalConst.Module7ID, GlobalConst.AnyModule);
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -315,6 +328,7 @@ public class FoundationCourseFragment extends Fragment {
 
                         try {
                             //call web service
+                            subscribeModuleService(GlobalConst.Module8ID, GlobalConst.AnyModule);
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -343,6 +357,7 @@ public class FoundationCourseFragment extends Fragment {
 
                         try {
                             //call web service
+                            subscribeModuleService(GlobalConst.Module9ID, GlobalConst.AnyModule);
 
                         } catch (Exception e) {
                             e.printStackTrace();

@@ -6,10 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import com.daffodils.psychiatry.R;
+import com.daffodils.psychiatry.activity.MainActivity;
 import com.daffodils.psychiatry.helper.GlobalConst;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
@@ -18,6 +21,8 @@ public class FeeStructureFragment extends Fragment {
 
     View root;
     Activity activity;
+    TableLayout tblAll;
+    TableRow trCrash;
     TextView txtmod1_topic, txtmod2_topic, txtmod3_topic, txtmod4_topic, txtmod5_topic, txtmod6_topic, txtmod7_topic, txtmod8_topic, txtmod9_topic;
 
     @Override
@@ -26,6 +31,10 @@ public class FeeStructureFragment extends Fragment {
         root = inflater.inflate(R.layout.lyt_pricing, container, false);
         activity = getActivity();
         setHasOptionsMenu(true);
+
+        tblAll= root.findViewById(R.id.tblAll);
+        trCrash = root.findViewById(R.id.trCrash);
+
        /* txtmod1_topic = root.findViewById(R.id.mod1_topic);
         txtmod2_topic = root.findViewById(R.id.mod2_topic);
         txtmod3_topic = root.findViewById(R.id.mod3_topic);
@@ -46,6 +55,28 @@ public class FeeStructureFragment extends Fragment {
         txtmod8_topic.setText("Detailed mental status examination, Psychopathology discussion, Cases on Schizophrenia, Bipolace disorder, Elderly Depression, Substance use disorder, Explanation of Token Economy, Lithium toxicity, Cognitive Behaviour therapy, Kirby's method, Treatment Substance Schizophrenia.");
         txtmod9_topic.setText("Pathways and receptors of Dopamine, Glutamate, GABA; NMDA Hypo functioning hypothesis of Schizophrenia, Serotonergic pathways and receptors, Hypnosis, anti-manic, antidepressants, antipsychotics, Clozapine, Individual antipsychotic drugs including Newer 3rd Gen antipsychotics, Depression and mania, SSRIs in detail, SPARI, SNRIs, Agomelatine, alpha blockers, SARIs,TCAs, Vortioxetin, Mood stabilizers, Lithium, Valproate and other mood stabilizers including special considerations, ADHD including individual drugs, Addiction, impulsivity, compulsivity including individual drugs, anxiety.");
 */
+
+        tblAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new FoundationCourseFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("from", "FoundationCourse");
+                fragment.setArguments(bundle);
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+            }
+        });
+
+        trCrash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new CrashCourseFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("from", "CrashCourse");
+                fragment.setArguments(bundle);
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+            }
+        });
         return root;
 
     }

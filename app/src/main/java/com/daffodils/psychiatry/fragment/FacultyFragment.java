@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
@@ -23,6 +24,7 @@ public class FacultyFragment extends Fragment {
     View root;
     Activity activity;
     LinearLayout llDrShivali, llDrMohit;
+    Button btnShivali, btnMohit;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -30,11 +32,13 @@ public class FacultyFragment extends Fragment {
         root = inflater.inflate(lyt_faculty, container, false);
         llDrShivali = root.findViewById(R.id.llDrShivali);
         llDrMohit = root.findViewById(R.id.llDrMohit);
+        btnShivali = root.findViewById(R.id.btnShivali);
+        btnMohit = root.findViewById(R.id.btnMohit);
 
         activity = getActivity();
         setHasOptionsMenu(true);
 
-        llDrShivali.setOnClickListener(new View.OnClickListener() {
+        btnShivali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://scholar.google.com/citations?user=os6JXB8AAAAJ&hl=en"));
@@ -42,7 +46,7 @@ public class FacultyFragment extends Fragment {
             }
         });
 
-        llDrMohit.setOnClickListener(new View.OnClickListener() {
+        btnMohit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://scholar.google.co.in/citations?user=I9lyD3wAAAAJ&hl=en"));
