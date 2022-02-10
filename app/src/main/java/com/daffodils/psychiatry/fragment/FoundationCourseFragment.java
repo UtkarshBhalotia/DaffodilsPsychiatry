@@ -92,7 +92,7 @@ public class FoundationCourseFragment extends Fragment {
 
                         try {
 
-                            subscribeModuleService("[1,2,3,4,5,6,7,8,9]", GlobalConst.FullCourse);
+                            subscribeModuleService("1,2,3,4,5,6,7,8,9", GlobalConst.FullCourse);
                             //call web service
 
                         } catch (Exception e) {

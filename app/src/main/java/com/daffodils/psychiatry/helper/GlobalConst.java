@@ -40,13 +40,13 @@ public class GlobalConst extends Application {
     public static String CrashCourseID = "2";
 
     public static String Module1ID = "1";
-    public static String Module2ID = "1";
-    public static String Module3ID = "1";
-    public static String Module4ID = "1";
-    public static String Module5ID = "1";
-    public static String Module6ID = "1";
-    public static String Module7ID = "1";
-    public static String Module8ID = "1";
-    public static String Module9ID = "1";
+    public static String Module2ID = "2";
+    public static String Module3ID = "3";
+    public static String Module4ID = "4";
+    public static String Module5ID = "5";
+    public static String Module6ID = "6";
+    public static String Module7ID = "7";
+    public static String Module8ID = "8";
+    public static String Module9ID = "9";
 
 }
