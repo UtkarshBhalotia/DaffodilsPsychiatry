@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -51,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
     Dialog dialogForgotPass;
     DbHelper dbHelper;
     TextView tvSignUp, tvForgotPass, txtOk, txtCancel;
+    String m_DeviceID;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +77,10 @@ public class LoginActivity extends AppCompatActivity {
 
         Utils.setHideShowPassword(edtPwd);
         edtEmail.requestFocus();
+
+        m_DeviceID = Settings.Secure.getString(getApplication().getContentResolver(),
+                Settings.Secure.ANDROID_ID);
+
 
         tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -177,36 +183,29 @@ public class LoginActivity extends AppCompatActivity {
                                     GlobalConst.Password = jsonObject.getString("Password");
                                     GlobalConst.Username = jsonObject.getString("EmailID");
                                     GlobalConst.ModuleID = jsonObject.getString("ModuleID");
+                                    GlobalConst.DeviceID = jsonObject.getString("DeviceID");
+                                    GlobalConst.isDeviceChanged = jsonObject.getString("IsDeviceChanged");
 
-                                    dbHelper.openToWrite();
+                                    if (GlobalConst.isDeviceChanged.equals("1")){
+                                        updateDeviceIdService();
+                                    } else {
 
-                                    Cursor cursor = dbHelper.fetch_Login_Data_From_TABLE(GlobalConst.Username, GlobalConst.Password);
-                                    if (cursor.getCount() > 0) {
-                                        if (cursor.moveToLast()) {
+                                        if (m_DeviceID.equals(GlobalConst.DeviceID)){
+                                            dbHelper.openToWrite();
+                                            dbHelper.insert_LoginTime_into_database(GlobalConst.Username, GlobalConst.Password, GlobalConst.Name, GlobalConst.Mobile, GlobalConst.User_id, GlobalConst.ModuleID);
+                                            dbHelper.close();
 
-                                            GlobalConst.Username = cursor.getString(cursor.getColumnIndex(dbHelper.USERNAME));
-                                            GlobalConst.Password = cursor.getString(cursor.getColumnIndex(dbHelper.PASSWORD));
-                                            GlobalConst.Name = cursor.getString(cursor.getColumnIndex(dbHelper.NAME));
-                                            GlobalConst.Mobile = cursor.getString(cursor.getColumnIndex(dbHelper.MOBILE));
-                                            GlobalConst.User_id = cursor.getString(cursor.getColumnIndex(dbHelper.USER_ID));
-                                            GlobalConst.ModuleID = cursor.getString(cursor.getColumnIndex(dbHelper.MODULE_ID));
-
+                                            Toast.makeText(context, "Login Success", Toast.LENGTH_LONG).show();
+                                            Intent ii = new Intent(LoginActivity.this, MainActivity.class);
+                                            startActivity(ii);
+                                            finish();
                                         } else {
+                                            Toast.makeText(context, "You are allowed to login for only one device. Kindly contact admin.", Toast.LENGTH_LONG).show();
 
                                         }
 
-                                    } else {
 
-                                        dbHelper.insert_LoginTime_into_database(GlobalConst.Username, GlobalConst.Password, GlobalConst.Name, GlobalConst.Mobile, GlobalConst.User_id, GlobalConst.ModuleID);
-                                        dbHelper.close();
-
-                                        Toast.makeText(context, "Login Success", Toast.LENGTH_LONG).show();
-                                        Intent ii = new Intent(LoginActivity.this, MainActivity.class);
-                                        startActivity(ii);
-                                        finish();
                                     }
-
-                                    //  }
 
                                 }
                             } else {
@@ -301,5 +300,51 @@ public class LoginActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    public void updateDeviceIdService() {
+
+        if (AppController.isConnected(activity)) {
+
+            Map<String, String> params = new HashMap<String, String>();
+
+            params.put("SC", GlobalConst.SC_UPDATE_DEVICEID);
+            params.put("UserID", GlobalConst.User_id);
+            params.put("DeviceID", m_DeviceID);
+
+            ApiConfig.RequestToVolley(new VolleyCallback() {
+                @Override
+                public void onSuccess(boolean result, String response) {
+                    if (result) {
+                        try {
+
+                            if (GlobalConst.Result.equals("T")) {
+
+                                try {
+                                    dbHelper.openToWrite();
+                                    dbHelper.insert_LoginTime_into_database(GlobalConst.Username, GlobalConst.Password, GlobalConst.Name, GlobalConst.Mobile, GlobalConst.User_id, GlobalConst.ModuleID);
+                                    dbHelper.close();
+
+                                    Toast.makeText(context, "Login Success", Toast.LENGTH_LONG).show();
+                                    Intent ii = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(ii);
+                                    finish();
+
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            } else {
+                                Toast.makeText(context, "Error : " + GlobalConst.Description.toString() , Toast.LENGTH_LONG).show();
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+            }, activity, GlobalConst.URL.trim(), params, true);
+
+        }
     }
 }

@@ -92,7 +92,7 @@ public class FoundationCourseFragment extends Fragment {
 
                         try {
 
-                            subscribeModuleService("1,2,3,4,5,6,7,8,9", GlobalConst.FullCourse);
+                            subscribeModuleService("[1,2,3,4,5,6,7,8,9]", GlobalConst.FullCourse);
                             //call web service
 
                         } catch (Exception e) {
@@ -398,7 +398,7 @@ public class FoundationCourseFragment extends Fragment {
                             if (GlobalConst.Result.equals("T")){
                                 setSnackBar("You have successfully been subscribed.", "OK");
                             } else {
-                                setSnackBar("Error in processing request.", "OK");
+                                setSnackBar("Description : " + GlobalConst.Description, "OK");
                             }
 
                         } catch (Exception e) {

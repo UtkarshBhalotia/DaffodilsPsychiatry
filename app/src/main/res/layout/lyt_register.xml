@@ -136,7 +136,7 @@
                             android:id="@+id/edtPG"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
+                            android:inputType="number"
                             android:lines="1"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 

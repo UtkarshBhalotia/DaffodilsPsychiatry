@@ -328,6 +328,9 @@ public class RegisterActivity extends AppCompatActivity {
             jsonObject.put("MobileNo", Mobile);
             jsonObject.put("CourseID", jsonArray);
             jsonObject.put("ModuleID", jsonArray1);
+            jsonObject.put("YearOfPG", PG);
+            jsonObject.put("Pursuing", Pursuing);
+            jsonObject.put("College", College);
             jsonObject.put("DeviceID", android_id);
             jsonObject.put("TokenID", token_id);
         } catch (JSONException e) {
