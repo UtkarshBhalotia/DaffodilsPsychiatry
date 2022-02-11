@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
@@ -68,8 +69,14 @@ public class CrashCourseFragment extends Fragment {
 
                         try {
 
-                            subscribeModuleService("0");
-                            //call web service
+                            if (!GlobalConst.User_id.isEmpty()){
+                                subscribeModuleService("0");
+                                //call web service
+
+                            } else {
+                                Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
+                            }
+
 
                         } catch (Exception e) {
                             e.printStackTrace();

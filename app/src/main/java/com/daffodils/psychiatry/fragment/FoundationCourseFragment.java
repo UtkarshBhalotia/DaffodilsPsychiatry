@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
@@ -91,9 +92,13 @@ public class FoundationCourseFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         try {
+                                if (!GlobalConst.User_id.isEmpty()){
+                                    subscribeModuleService("1,2,3,4,5,6,7,8,9", GlobalConst.FullCourse);
+                                    //call web service
+                                } else {
+                                    Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
+                                }
 
-                            subscribeModuleService("1,2,3,4,5,6,7,8,9", GlobalConst.FullCourse);
-                            //call web service
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -122,8 +127,14 @@ public class FoundationCourseFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         try {
-                            //call web service
-                            subscribeModuleService(GlobalConst.Module1ID, GlobalConst.AnyModule);
+
+                            if (!GlobalConst.User_id.isEmpty()){
+                                //call web service
+                                subscribeModuleService(GlobalConst.Module1ID, GlobalConst.AnyModule);
+                            } else {
+                                Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
+                            }
+
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -151,8 +162,14 @@ public class FoundationCourseFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         try {
-                            subscribeModuleService(GlobalConst.Module2ID, GlobalConst.AnyModule);
-                            //call web service
+
+                            if (!GlobalConst.User_id.isEmpty()){
+                                //call web service
+                                subscribeModuleService(GlobalConst.Module2ID, GlobalConst.AnyModule);
+                            } else {
+                                Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
+                            }
+
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -181,8 +198,12 @@ public class FoundationCourseFragment extends Fragment {
 
                         try {
 
-                            subscribeModuleService(GlobalConst.Module3ID, GlobalConst.AnyModule);
-                            //call web service
+                            if (!GlobalConst.User_id.isEmpty()){
+                                //call web service
+                                subscribeModuleService(GlobalConst.Module3ID, GlobalConst.AnyModule);
+                            } else {
+                                Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
+                            }
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -211,8 +232,12 @@ public class FoundationCourseFragment extends Fragment {
 
                         try {
 
-                            subscribeModuleService(GlobalConst.Module4ID, GlobalConst.AnyModule);
-                            //call web service
+                            if (!GlobalConst.User_id.isEmpty()){
+                                //call web service
+                                subscribeModuleService(GlobalConst.Module4ID, GlobalConst.AnyModule);
+                            } else {
+                                Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
+                            }
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -240,8 +265,12 @@ public class FoundationCourseFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         try {
-                            subscribeModuleService(GlobalConst.Module5ID, GlobalConst.AnyModule);
-                            //call web service
+                            if (!GlobalConst.User_id.isEmpty()){
+                                //call web service
+                                subscribeModuleService(GlobalConst.Module5ID, GlobalConst.AnyModule);
+                            } else {
+                                Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
+                            }
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -269,8 +298,12 @@ public class FoundationCourseFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         try {
-                            //call web service
-                            subscribeModuleService(GlobalConst.Module6ID, GlobalConst.AnyModule);
+                            if (!GlobalConst.User_id.isEmpty()){
+                                //call web service
+                                subscribeModuleService(GlobalConst.Module6ID, GlobalConst.AnyModule);
+                            } else {
+                                Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
+                            }
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -298,8 +331,12 @@ public class FoundationCourseFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         try {
-                            //call web service
-                            subscribeModuleService(GlobalConst.Module7ID, GlobalConst.AnyModule);
+                            if (!GlobalConst.User_id.isEmpty()){
+                                //call web service
+                                subscribeModuleService(GlobalConst.Module7ID, GlobalConst.AnyModule);
+                            } else {
+                                Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
+                            }
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -327,9 +364,12 @@ public class FoundationCourseFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         try {
-                            //call web service
-                            subscribeModuleService(GlobalConst.Module8ID, GlobalConst.AnyModule);
-
+                            if (!GlobalConst.User_id.isEmpty()){
+                                //call web service
+                                subscribeModuleService(GlobalConst.Module8ID, GlobalConst.AnyModule);
+                            } else {
+                                Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
+                            }
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -356,8 +396,12 @@ public class FoundationCourseFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         try {
-                            //call web service
-                            subscribeModuleService(GlobalConst.Module9ID, GlobalConst.AnyModule);
+                            if (!GlobalConst.User_id.isEmpty()){
+                                //call web service
+                                subscribeModuleService(GlobalConst.Module9ID, GlobalConst.AnyModule);
+                            } else {
+                                Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
+                            }
 
                         } catch (Exception e) {
                             e.printStackTrace();
