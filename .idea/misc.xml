@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24583333333333332" />
+        <entry key="app/src/main/res/layout/lyt_courses.xml" value="0.24583333333333332" />
+        <entry key="app/src/main/res/layout/lyt_login.xml" value="0.24583333333333332" />
+        <entry key="app/src/main/res/layout/lyt_payment_details.xml" value="0.24583333333333332" />
         <entry key="app/src/main/res/layout/lyt_register.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/lyt_sample_vdo_data.xml" value="0.24583333333333332" />
+        <entry key="app/src/main/res/layout/lyt_sample_videos.xml" value="0.24583333333333332" />
         <entry key="app/src/main/res/layout/lyt_splashscreen.xml" value="0.3098958333333333" />
       </map>
     </option>

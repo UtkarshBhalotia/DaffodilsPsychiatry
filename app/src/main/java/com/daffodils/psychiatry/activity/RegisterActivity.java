@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
         edtPursuing = findViewById(R.id.edtPursuing);
 
         btnRegister = findViewById(R.id.btnRegister);
-        tvLogin = findViewById(R.id.tvSignUp);
+        tvLogin = findViewById(R.id.tvSignIn);
         RLSelectCourse = findViewById(R.id.RLSelectCourse);
         txtSelectCourse = findViewById(R.id.txtSelectCourse);
         select_course = findViewById(R.id.select_course);
@@ -291,6 +291,15 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(activity, LoginActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
     }
 
     public void registerService() {
@@ -326,8 +335,8 @@ public class RegisterActivity extends AppCompatActivity {
             jsonObject.put("EmailID", Email);
             jsonObject.put("Password", Password);
             jsonObject.put("MobileNo", Mobile);
-            jsonObject.put("CourseID", jsonArray);
-            jsonObject.put("ModuleID", jsonArray1);
+         //   jsonObject.put("CourseID", jsonArray);
+         //   jsonObject.put("ModuleID", jsonArray1);
             jsonObject.put("YearOfPG", PG);
             jsonObject.put("Pursuing", Pursuing);
             jsonObject.put("College", College);

@@ -202,6 +202,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+                        android:visibility="gone"
                         android:weightSum="1">
 
                         <TextView
@@ -262,6 +263,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+                        android:visibility="gone"
                         android:weightSum="1">
 
                         <TextView
@@ -317,6 +319,7 @@
 
                         </RelativeLayout>
                     </LinearLayout>
+
                     <Button
                         android:id="@+id/btnRegister"
                         style="@style/Widget.AppCompat.Button.Colored"

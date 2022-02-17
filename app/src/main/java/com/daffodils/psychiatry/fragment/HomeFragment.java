@@ -26,10 +26,13 @@ import com.daffodils.psychiatry.adapter.SliderAdapter;
 import com.daffodils.psychiatry.helper.ApiConfig;
 import com.daffodils.psychiatry.helper.AppController;
 import com.daffodils.psychiatry.helper.GlobalConst;
+import com.daffodils.psychiatry.helper.VolleyCallback;
 import com.daffodils.psychiatry.ui.CircleImageView;
 import com.google.android.material.slider.Slider;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -150,7 +153,9 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(GlobalConst.ModuleID.equals("")){
+               // getSubscribedModuleID();
+
+                if(GlobalConst.User_id.equals("")){
                     Toast.makeText(activity, "Please register yourself to view subscribed videos", Toast.LENGTH_LONG).show();
                 } else {
                     Fragment fragment = new SubscribedVideosFragment();
@@ -307,6 +312,8 @@ public class HomeFragment extends Fragment {
             e.printStackTrace();
         }
     }
+
+
 }
 
 

@@ -39,7 +39,7 @@
                 android:gravity="left"
                 android:padding="@dimen/margin_5dp"
                 android:textStyle="bold"
-                android:text="For PAYTM / PHONEPAY / UPI"
+                android:text="For Paytm / PhonePe / GPay / UPI"
                 android:textColor="@color/txt_color"
                 android:textSize="@dimen/mid_text1" />
 
@@ -59,10 +59,33 @@
                 android:gravity="center">
 
                 <TextView
+                    android:id="@+id/txtPaytm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Paytm / Phonepe: 9872551972"
+                    android:text="Paytm : 9872551972"
+                    android:textColor="@color/logocolor"
+                    android:paddingBottom="10dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/txtPhonePe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="PhonePe: 9872551972"
+                    android:textColor="@color/logocolor"
+                    android:paddingBottom="10dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/txtGpay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Google Pay : 9872551972"
                     android:textColor="@color/logocolor"
                     android:paddingBottom="10dp"
                     android:textStyle="bold"

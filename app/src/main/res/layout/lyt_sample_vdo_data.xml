@@ -53,12 +53,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvCourseName"
-                android:paddingTop="5dp"
                 android:paddingStart="20dp"
-                android:textSize="14dp"
+                android:paddingTop="5dp"
                 android:text="Module Name"
-                android:visibility="visible"
-                android:textColor="@color/txt_color" />
+                android:textColor="@color/txt_color"
+                android:textSize="14dp"
+                android:visibility="visible" />
 
             <TextView
                 android:id="@+id/tvVideoName"

@@ -124,6 +124,7 @@ public class FreeSampleVideosFragment extends Fragment {
                                     VideosGetterSetter videosGetterSetter = new VideosGetterSetter(CourseName, ModuleName, VideoName, VideoPath);
                                     videos_list.add(videosGetterSetter);
                                     m_videoPath.add(VideoPath);
+                                    GlobalConst.VIDEO_TYPE = "Sample Video";
                                     videosAdapter = new VideosAdapter(context, videos_list);
                                     recyclerView.setAdapter(videosAdapter);
                                 }

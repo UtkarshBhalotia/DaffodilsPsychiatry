@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daffodils.psychiatry.R;
+import com.daffodils.psychiatry.helper.GlobalConst;
 import com.daffodils.psychiatry.model.VideosGetterSetter;
 
 import java.util.List;
@@ -35,6 +36,11 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
 
+        if (GlobalConst.VIDEO_TYPE.equals("Sample Video")){
+            myViewHolder.module.setVisibility(View.GONE);
+        } else {
+            myViewHolder.module.setVisibility(View.VISIBLE);
+        }
 
         if (videos_list.get(i).getCourseName().equals("")) {
             myViewHolder.course.setText("");

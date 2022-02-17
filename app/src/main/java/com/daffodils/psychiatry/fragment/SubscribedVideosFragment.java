@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -86,12 +87,41 @@ public class SubscribedVideosFragment extends Fragment{
             }
         }));
 
-        getAllFreeVideosList();
+        getAllSubscribedVideosList();
 
         return root;
     }
 
-    public void getAllFreeVideosList(){
+    public void getSubscribedModuleID(){
+        if (AppController.isConnected(activity)) {
+            Map<String, String> params = new HashMap<String, String>();
+            params.put("SC", GlobalConst.SC_GET_SUBSCRIBED_MODULES);
+            params.put("UserID", GlobalConst.User_id);
+
+            ApiConfig.RequestToVolley(new VolleyCallback() {
+                @Override
+                public void onSuccess(boolean result, String response) {
+                    if (result) {
+                        try {
+                            if (GlobalConst.Result.equals("T")){
+                                getAllSubscribedVideosList();
+                            } else {
+                                Toast.makeText(activity, "Error : " + GlobalConst.Description, Toast.LENGTH_LONG).show();
+                            }
+
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+            }, activity, GlobalConst.URL.trim() , params, true);
+
+        }
+    }
+
+    public void getAllSubscribedVideosList(){
 
         videos_list.clear();
         if (AppController.isConnected(activity)) {
@@ -121,6 +151,7 @@ public class SubscribedVideosFragment extends Fragment{
                                     VideosGetterSetter videosGetterSetter = new VideosGetterSetter(CourseName, ModuleName, VideoName, VideoPath);
                                     videos_list.add(videosGetterSetter);
                                     m_videoPath.add(VideoPath);
+                                    GlobalConst.VIDEO_TYPE = "Subscribed Video";
                                     videosAdapter = new VideosAdapter(context, videos_list);
                                     recyclerView.setAdapter(videosAdapter);
                                 }

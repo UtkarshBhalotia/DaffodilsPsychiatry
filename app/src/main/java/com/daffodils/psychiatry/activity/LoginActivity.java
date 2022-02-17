@@ -182,7 +182,7 @@ public class LoginActivity extends AppCompatActivity {
                                     GlobalConst.Mobile = jsonObject.getString("MobileNo");
                                     GlobalConst.Password = jsonObject.getString("Password");
                                     GlobalConst.Username = jsonObject.getString("EmailID");
-                                    GlobalConst.ModuleID = jsonObject.getString("ModuleID");
+                                 //   GlobalConst.ModuleID = jsonObject.getString("ModuleID");
                                     GlobalConst.DeviceID = jsonObject.getString("DeviceID");
                                     GlobalConst.isDeviceChanged = jsonObject.getString("IsDeviceChanged");
 

@@ -28,9 +28,11 @@ public class GlobalConst extends Application {
     public static String SC_SUBSCRIBE_MODULES = "12";
     public static String SC_APP_IMAGES = "13";
     public static String SC_UPDATE_DEVICEID = "14";
+    public static String SC_GET_SUBSCRIBED_MODULES = "15";
 
     public static String Username = "", Name = "", Mobile = "", Address = "", ModuleID = "", User_id = "", Password = "", DeviceID = "";
     public static String Result = "", Description="", GetPassword ="", AppVersion = "", isDeviceChanged = "";
+    public static String VIDEO_TYPE ;
 
     public static String FullCourse = "1";
     public static String CrashCourse = "2";
