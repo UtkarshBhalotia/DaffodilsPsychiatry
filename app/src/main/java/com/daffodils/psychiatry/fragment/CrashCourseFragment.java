@@ -145,7 +145,7 @@ public class CrashCourseFragment extends Fragment {
 
     public void sendMegToUser(){
 
-        String message = "You will be able to avail the context of subscription within 24 hours. For further details contact" +
+        String message = "You will be able to avail the context of subscription within a day. For further details contact" +
                 " at +91-9872551972 / +91-7528920011 or Email Us @ daffodils.psych@gmail.com. Thank You !!";
         String encoded_message = URLEncoder.encode(message);
 
@@ -200,8 +200,8 @@ public class CrashCourseFragment extends Fragment {
         sbPostData.append("&channel=" + "Trans");
         sbPostData.append("&DCS=" + "0");
         sbPostData.append("&flashsms=" + "0");
-      //  sbPostData.append("&number=" + "9872551972");
-        sbPostData.append("&number=" + "8882068510");
+        sbPostData.append("&number=" + "9872551972");
+       // sbPostData.append("&number=" + "8882068510");
         sbPostData.append("&text=" + encoded_message);
         sbPostData.append("&route=" + "08");
 

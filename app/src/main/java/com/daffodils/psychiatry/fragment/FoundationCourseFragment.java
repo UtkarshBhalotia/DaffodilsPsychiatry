@@ -518,8 +518,9 @@ public class FoundationCourseFragment extends Fragment {
 
     public void sendMegToUser(){
 
-        String message = "You will be able to avail the context of subscription within 24 hours. For further details contact" +
+        String message = "You will be able to avail the context of subscription within a day. For further details contact" +
                 " at +91-9872551972 / +91-7528920011 or Email Us @ daffodils.psych@gmail.com. Thank You !!";
+
         String encoded_message = URLEncoder.encode(message);
 
         String mainUrl = "http://mysms.msg24.in/api/mt/SendSMS?";
@@ -544,7 +545,7 @@ public class FoundationCourseFragment extends Fragment {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                       // Toast.makeText(activity, "Sent successfully.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity, "Sent successfully.", Toast.LENGTH_LONG).show();
                         sendMsgToAdmin();
 
                     }
@@ -574,8 +575,8 @@ public class FoundationCourseFragment extends Fragment {
         sbPostData.append("&channel=" + "Trans");
         sbPostData.append("&DCS=" + "0");
         sbPostData.append("&flashsms=" + "0");
-        //  sbPostData.append("&number=" + "9872551972");
-        sbPostData.append("&number=" + "8882068510");
+        sbPostData.append("&number=" + "9872551972");
+     //   sbPostData.append("&number=" + "8882068510");
         sbPostData.append("&text=" + encoded_message);
         sbPostData.append("&route=" + "08");
 

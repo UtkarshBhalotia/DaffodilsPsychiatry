@@ -391,7 +391,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(RegisterActivity.this);
                                 // Setting Dialog Message
                                 alertDialog.setTitle("Registered Successfully !!");
-                                alertDialog.setMessage("Please contact to admin for activation of account or visit https://daffodilspsychiatry.com/ for more details.");
+                              //  alertDialog.setMessage("Please contact to admin for activation of account or visit https://daffodilspsychiatry.com/ for more details.");
+                                alertDialog.setMessage("You have successfully being registered. Thank You!!");
                                 alertDialog.setCancelable(false);
                                 final AlertDialog alertDialog1 = alertDialog.create();
 
