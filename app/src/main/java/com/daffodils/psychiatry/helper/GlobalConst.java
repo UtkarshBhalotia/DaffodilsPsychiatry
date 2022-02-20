@@ -13,6 +13,7 @@ public class GlobalConst extends Application {
     public static String ERROR = "error";
     public static String PLAY_STORE_LINK = "https://play.google.com/store/apps/details?id=";
     public static String APP_COMPATABILITY_VERSION = "1.0";
+    public static String SERVICE_TYPE= "service_type";
 
     public static String SC_REGISTRATION = "1";
     public static String SC_GET_ALL_COURSES = "2";

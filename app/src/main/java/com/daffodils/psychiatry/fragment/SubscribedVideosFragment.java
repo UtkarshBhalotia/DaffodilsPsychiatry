@@ -87,7 +87,9 @@ public class SubscribedVideosFragment extends Fragment{
             }
         }));
 
-        getAllSubscribedVideosList();
+        getSubscribedModuleID();
+
+      //  getAllSubscribedVideosList();
 
         return root;
     }
@@ -97,6 +99,8 @@ public class SubscribedVideosFragment extends Fragment{
             Map<String, String> params = new HashMap<String, String>();
             params.put("SC", GlobalConst.SC_GET_SUBSCRIBED_MODULES);
             params.put("UserID", GlobalConst.User_id);
+
+            GlobalConst.SERVICE_TYPE = GlobalConst.SC_GET_SUBSCRIBED_MODULES;
 
             ApiConfig.RequestToVolley(new VolleyCallback() {
                 @Override

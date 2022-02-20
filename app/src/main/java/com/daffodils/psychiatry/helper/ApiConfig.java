@@ -101,7 +101,12 @@ public class ApiConfig {
                         GlobalConst.Description = response.headers.get("Description");
                         GlobalConst.GetPassword = response.headers.get("Password");
                         GlobalConst.AppVersion = response.headers.get("AppVersion");
-                        GlobalConst.Module1ID = response.headers.get("ModuleID");
+                       // GlobalConst.ModuleID = response.headers.get("ModuleID");
+
+                        if (GlobalConst.SERVICE_TYPE.equals(GlobalConst.SC_GET_SUBSCRIBED_MODULES)){
+                            GlobalConst.ModuleID = response.headers.get("Modules");
+                        }
+
 
                     } catch (UnsupportedEncodingException e) {
                         parsed = new String(response.data);
