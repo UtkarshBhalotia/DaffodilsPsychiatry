@@ -29,4 +29,5 @@
     <color name="transparent">#23000000</color>
     <color name="bg_color">#ececef</color>
     <color name="txt_color">#191919</color>
+    <color name="cart_highlighted_txt_color">#0470C3</color>
 </resources>

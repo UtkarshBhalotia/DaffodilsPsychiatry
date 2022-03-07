@@ -121,4 +121,9 @@
     <string name= "book10">Guidelines - APA, NICE </string>
     <string name="book12">Latest articles and many others</string>
     <string name="book11">DSM-5, ICD- 10, 11</string>
+    <string name="confirm_order_amt">Confirm Order Amount</string>
+    <string name="order_placed1">Order Placed</string>
+    <string name="success_order">Your order has been successfully placed !</string>
+    <string name="continue_shopping">Continue Shopping</string>
+    <string name="summary">View All Orders</string>
 </resources>

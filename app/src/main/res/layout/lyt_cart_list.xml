@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lytmain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_shadow"
+    android:padding="@dimen/margin_5dp">
+
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/imgproduct"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp" />
+
+
+    <TextView
+        android:id="@+id/txtproductname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/imgdelete"
+        android:layout_toEndOf="@+id/imgproduct"
+        android:text="Course Name"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:id="@+id/imgdelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        app:srcCompat="@drawable/ic_close" />
+
+
+
+    <LinearLayout
+        android:id="@+id/lytqty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtproductname"
+        android:layout_toEndOf="@+id/imgproduct"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Module Name"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lytprice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lytqty"
+        android:layout_marginBottom="2dp"
+        android:layout_toEndOf="@+id/imgproduct"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtmeasurement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:gravity="center_horizontal"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtoriginalprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:paddingEnd="@dimen/margin_5dp"
+            android:textSize="@dimen/txt_size" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/txttotalprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lytqty"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_margin="3dp"
+        android:text="Total Price"
+        android:visibility="gone"
+        android:textColor="@color/cart_highlighted_txt_color"
+        android:textStyle="bold" />
+</RelativeLayout>
+
