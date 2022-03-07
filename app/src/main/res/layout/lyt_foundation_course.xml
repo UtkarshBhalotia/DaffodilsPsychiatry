@@ -74,7 +74,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
-                        android:text="Subscribe"
+                        android:text="@string/title_addtocart"
                         android:layout_marginLeft="25dp"
                         android:padding="@dimen/margin_5dp"
                         android:textColor="@color/white"
@@ -148,7 +148,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
-                        android:text="Subscribe"
+                        android:text="@string/title_addtocart"
                         android:padding="@dimen/margin_5dp"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
@@ -222,7 +222,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
-                        android:text="Subscribe"
+                        android:text="@string/title_addtocart"
                         android:padding="@dimen/margin_5dp"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
@@ -296,7 +296,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
-                        android:text="Subscribe"
+                        android:text="@string/title_addtocart"
                         android:padding="@dimen/margin_5dp"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
@@ -370,7 +370,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
-                        android:text="Subscribe"
+                        android:text="@string/title_addtocart"
                         android:padding="@dimen/margin_5dp"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
@@ -444,7 +444,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
-                        android:text="Subscribe"
+                        android:text="@string/title_addtocart"
                         android:padding="@dimen/margin_5dp"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
@@ -518,7 +518,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
-                        android:text="Subscribe"
+                        android:text="@string/title_addtocart"
                         android:padding="@dimen/margin_5dp"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
@@ -592,7 +592,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
-                        android:text="Subscribe"
+                        android:text="@string/title_addtocart"
                         android:padding="@dimen/margin_5dp"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
@@ -664,7 +664,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
-                        android:text="Subscribe"
+                        android:text="@string/title_addtocart"
                         android:padding="@dimen/margin_5dp"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
@@ -738,7 +738,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/green"
-                        android:text="Subscribe"
+                        android:text="@string/title_addtocart"
                         android:padding="@dimen/margin_5dp"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
