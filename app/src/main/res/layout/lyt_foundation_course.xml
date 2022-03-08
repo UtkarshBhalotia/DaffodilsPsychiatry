@@ -1,809 +1,950 @@
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:orientation="vertical">
 
-    <TableLayout
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lytCart">
 
-        <androidx.cardview.widget.CardView
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_5dp">
+            android:layout_height="match_parent">
 
-            <LinearLayout
-                android:id="@+id/llFullFoundCourse"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/lightes"
-                android:padding="@dimen/margin_10dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Full Foundation Course 2021"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="All Modules "
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:textSize="18dp" />
+                android:layout_margin="@dimen/margin_5dp">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:id="@+id/llFullFoundCourse"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:background="@color/lightes"
+                    android:padding="@dimen/margin_10dp"
+                    android:gravity="center">
 
                     <TextView
-                        android:id="@+id/txtFFC"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Rs 32,000 "
+                        android:text="Full Foundation Course 2021"
                         android:textColor="@color/txt_color"
                         android:textStyle="bold"
-                        android:layout_marginRight="@dimen/margin_15dp"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="All Modules "
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/logocolor"
+                        android:textStyle="normal"
+                        android:textSize="18dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtFFC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Rs 32,000 "
+                            android:textColor="@color/txt_color"
+                            android:textStyle="bold"
+                            android:layout_marginRight="@dimen/margin_15dp"
+                            android:textSize="19dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:background="@color/red"
+                            android:text="Rs 15,000 "
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="19dp" />
+
+                        <TextView
+                            android:id="@+id/txtSubsFullCourse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/margin_15dp"
+                            android:background="@drawable/confirm_bg"
+                            android:drawablePadding="@dimen/margin_10dp"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/margin_10dp"
+                            android:paddingTop="7dp"
+                            android:paddingEnd="@dimen/margin_10dp"
+                            android:paddingBottom="7dp"
+                            android:text="@string/title_addtocart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            app:drawableEndCompat="@drawable/ic_cart" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_5dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod1"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="bold"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod_1"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="normal"
+                        android:textSize="17dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Topics"
+                        android:id="@+id/mod1_topic"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/logocolor"
+                        android:textStyle="normal"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="30dp"
+                            android:text="@string/mod1_price"
+                            android:textColor="@color/red"
+                            android:textStyle="bold"
+                            android:textSize="18dp" />
+
+
+                        <TextView
+                            android:id="@+id/txtSubsMod1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/margin_15dp"
+                            android:background="@drawable/confirm_bg"
+                            android:drawablePadding="@dimen/margin_10dp"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/margin_10dp"
+                            android:paddingTop="7dp"
+                            android:paddingEnd="@dimen/margin_10dp"
+                            android:paddingBottom="7dp"
+                            android:text="@string/title_addtocart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            app:drawableEndCompat="@drawable/ic_cart" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_5dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod2"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="bold"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod_2"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="normal"
+                        android:textSize="17dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Topics"
+                        android:id="@+id/mod2_topic"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/logocolor"
+                        android:textStyle="normal"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="30dp"
+                            android:text="@string/mod2_price"
+                            android:textColor="@color/red"
+                            android:textStyle="bold"
+                            android:textSize="18dp" />
+
+
+                        <TextView
+                            android:id="@+id/txtSubsMod2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/margin_15dp"
+                            android:background="@drawable/confirm_bg"
+                            android:drawablePadding="@dimen/margin_10dp"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/margin_10dp"
+                            android:paddingTop="7dp"
+                            android:paddingEnd="@dimen/margin_10dp"
+                            android:paddingBottom="7dp"
+                            android:text="@string/title_addtocart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            app:drawableEndCompat="@drawable/ic_cart"  />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_5dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod3"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="bold"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod_3"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="normal"
+                        android:textSize="17dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Topics"
+                        android:id="@+id/mod3_topic"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/logocolor"
+                        android:textStyle="normal"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="30dp"
+                            android:text="@string/mod3_price"
+                            android:textColor="@color/red"
+                            android:textStyle="bold"
+                            android:textSize="18dp" />
+
+
+                        <TextView
+                            android:id="@+id/txtSubsMod3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/margin_15dp"
+                            android:background="@drawable/confirm_bg"
+                            android:drawablePadding="@dimen/margin_10dp"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/margin_10dp"
+                            android:paddingTop="7dp"
+                            android:paddingEnd="@dimen/margin_10dp"
+                            android:paddingBottom="7dp"
+                            android:text="@string/title_addtocart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            app:drawableEndCompat="@drawable/ic_cart" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_5dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod4"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="bold"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod_4"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="normal"
+                        android:textSize="17dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Topics"
+                        android:id="@+id/mod4_topic"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/logocolor"
+                        android:textStyle="normal"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="30dp"
+                            android:text="@string/mod4_price"
+                            android:textColor="@color/red"
+                            android:textStyle="bold"
+                            android:textSize="18dp" />
+
+
+                        <TextView
+                            android:id="@+id/txtSubsMod4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/margin_15dp"
+                            android:background="@drawable/confirm_bg"
+                            android:drawablePadding="@dimen/margin_10dp"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/margin_10dp"
+                            android:paddingTop="7dp"
+                            android:paddingEnd="@dimen/margin_10dp"
+                            android:paddingBottom="7dp"
+                            android:text="@string/title_addtocart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            app:drawableEndCompat="@drawable/ic_cart" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_5dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod5"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="bold"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod_5"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="normal"
+                        android:textSize="17dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Topics"
+                        android:id="@+id/mod5_topic"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/logocolor"
+                        android:textStyle="normal"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="30dp"
+                            android:text="@string/mod5_price"
+                            android:textColor="@color/red"
+                            android:textStyle="bold"
+                            android:textSize="18dp" />
+
+
+                        <TextView
+                            android:id="@+id/txtSubsMod5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/margin_15dp"
+                            android:background="@drawable/confirm_bg"
+                            android:drawablePadding="@dimen/margin_10dp"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/margin_10dp"
+                            android:paddingTop="7dp"
+                            android:paddingEnd="@dimen/margin_10dp"
+                            android:paddingBottom="7dp"
+                            android:text="@string/title_addtocart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            app:drawableEndCompat="@drawable/ic_cart" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_5dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod6"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="bold"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod_6"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="normal"
+                        android:textSize="17dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Topics"
+                        android:id="@+id/mod6_topic"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/logocolor"
+                        android:textStyle="normal"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="30dp"
+                            android:text="@string/mod6_price"
+                            android:textColor="@color/red"
+                            android:textStyle="bold"
+                            android:textSize="18dp" />
+
+
+                        <TextView
+                            android:id="@+id/txtSubsMod6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/margin_15dp"
+                            android:background="@drawable/confirm_bg"
+                            android:drawablePadding="@dimen/margin_10dp"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/margin_10dp"
+                            android:paddingTop="7dp"
+                            android:paddingEnd="@dimen/margin_10dp"
+                            android:paddingBottom="7dp"
+                            android:text="@string/title_addtocart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            app:drawableEndCompat="@drawable/ic_cart" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_5dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod7"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="bold"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod_7"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="normal"
+                        android:textSize="17dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Topics"
+                        android:id="@+id/mod7_topic"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/logocolor"
+                        android:textStyle="normal"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="30dp"
+                            android:text="@string/mod7_price"
+                            android:textColor="@color/red"
+                            android:textStyle="bold"
+                            android:textSize="18dp" />
+
+
+                        <TextView
+                            android:id="@+id/txtSubsMod7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/margin_15dp"
+                            android:background="@drawable/confirm_bg"
+                            android:drawablePadding="@dimen/margin_10dp"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/margin_10dp"
+                            android:paddingTop="7dp"
+                            android:paddingEnd="@dimen/margin_10dp"
+                            android:paddingBottom="7dp"
+                            android:text="@string/title_addtocart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            app:drawableEndCompat="@drawable/ic_cart" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_5dp"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod8"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="bold"
+                        android:textSize="18dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod_8"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="normal"
+                        android:textSize="17dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Topics"
+                        android:id="@+id/mod8_topic"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/logocolor"
+                        android:textStyle="normal"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="30dp"
+                            android:text="@string/mod8_price"
+                            android:textColor="@color/red"
+                            android:textStyle="bold"
+                            android:textSize="18dp" />
+
+
+                        <TextView
+                            android:id="@+id/txtSubsMod8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/margin_15dp"
+                            android:background="@drawable/confirm_bg"
+                            android:drawablePadding="@dimen/margin_10dp"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/margin_10dp"
+                            android:paddingTop="7dp"
+                            android:paddingEnd="@dimen/margin_10dp"
+                            android:paddingBottom="7dp"
+                            android:text="@string/title_addtocart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            app:drawableEndCompat="@drawable/ic_cart" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_5dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod9"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="bold"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/mod_9"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="normal"
+                        android:textSize="17dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Topics"
+                        android:id="@+id/mod9_topic"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/logocolor"
+                        android:textStyle="normal"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="30dp"
+                            android:text="@string/mod9_price"
+                            android:textColor="@color/red"
+                            android:textStyle="bold"
+                            android:textSize="18dp" />
+
+
+                        <TextView
+                            android:id="@+id/txtSubsMod9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/margin_15dp"
+                            android:background="@drawable/confirm_bg"
+                            android:drawablePadding="@dimen/margin_10dp"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/margin_10dp"
+                            android:paddingTop="7dp"
+                            android:paddingEnd="@dimen/margin_10dp"
+                            android:paddingBottom="7dp"
+                            android:text="@string/title_addtocart"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            app:drawableEndCompat="@drawable/ic_cart" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    android:background="@color/lightes"
+                    android:padding="@dimen/margin_10dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Subscription Duration"
+                        android:textColor="@color/txt_color"
+                        android:paddingBottom="5dp"
+                        android:textStyle="bold"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Full Foundation Course 2021 : 4 Months"
+                        android:textColor="@color/logocolor"
+                        android:textStyle="bold"
                         android:textSize="19dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:background="@color/red"
-                        android:text="Rs 15,000 "
-                        android:textColor="@color/white"
+                        android:text="Any Module(s) : 2 to 3 Months"
+                        android:textColor="@color/logocolor"
                         android:textStyle="bold"
                         android:textSize="19dp" />
 
                     <TextView
-                        android:id="@+id/txtSubsFullCourse"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/green"
-                        android:text="@string/title_addtocart"
-                        android:layout_marginLeft="25dp"
-                        android:padding="@dimen/margin_5dp"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/margin_5dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod1"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod_1"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="normal"
-                    android:textSize="17dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Topics"
-                    android:id="@+id/mod1_topic"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:textSize="16dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="horizontal">
-
-                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:layout_marginRight="30dp"
-                        android:text="@string/mod1_price"
-                        android:textColor="@color/red"
-                        android:textStyle="bold"
-                        android:textSize="18dp" />
-
-
-                    <TextView
-                        android:id="@+id/txtSubsMod1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/green"
-                        android:text="@string/title_addtocart"
-                        android:padding="@dimen/margin_5dp"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
+                        android:text="Crash Course 2022 : 3 Months"
+                        android:textColor="@color/logocolor"
+                        android:textStyle="normal"
+                        android:visibility="gone"
+                        android:textSize="19dp" />
 
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
+        </TableLayout>
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+    </androidx.core.widget.NestedScrollView>
 
-        <androidx.cardview.widget.CardView
+    <RelativeLayout
+        android:id="@+id/lytCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/card_shadow"
+        android:padding="@dimen/margin_10dp"
+        android:visibility="visible">
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
+            android:layout_below="@+id/lytsubtotal"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_button"
+            android:paddingStart="5dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="8dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/txtcheckout"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/margin_5dp"
-                android:gravity="center">
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/imgcheckout"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/gotocart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod2"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod_2"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="normal"
-                    android:textSize="17dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Topics"
-                    android:id="@+id/mod2_topic"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:textSize="16dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginRight="30dp"
-                        android:text="@string/mod2_price"
-                        android:textColor="@color/red"
-                        android:textStyle="bold"
-                        android:textSize="18dp" />
-
-
-                    <TextView
-                        android:id="@+id/txtSubsMod2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/green"
-                        android:text="@string/title_addtocart"
-                        android:padding="@dimen/margin_5dp"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/imgcheckout"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/margin_5dp"
-                android:gravity="center">
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_cart" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod3"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
+        </RelativeLayout>
+    </RelativeLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod_3"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="normal"
-                    android:textSize="17dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Topics"
-                    android:id="@+id/mod3_topic"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:textSize="16dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginRight="30dp"
-                        android:text="@string/mod3_price"
-                        android:textColor="@color/red"
-                        android:textStyle="bold"
-                        android:textSize="18dp" />
-
-
-                    <TextView
-                        android:id="@+id/txtSubsMod3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/green"
-                        android:text="@string/title_addtocart"
-                        android:padding="@dimen/margin_5dp"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/margin_5dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod4"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod_4"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="normal"
-                    android:textSize="17dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Topics"
-                    android:id="@+id/mod4_topic"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:textSize="16dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginRight="30dp"
-                        android:text="@string/mod4_price"
-                        android:textColor="@color/red"
-                        android:textStyle="bold"
-                        android:textSize="18dp" />
-
-
-                    <TextView
-                        android:id="@+id/txtSubsMod4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/green"
-                        android:text="@string/title_addtocart"
-                        android:padding="@dimen/margin_5dp"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/margin_5dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod5"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod_5"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="normal"
-                    android:textSize="17dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Topics"
-                    android:id="@+id/mod5_topic"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:textSize="16dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginRight="30dp"
-                        android:text="@string/mod5_price"
-                        android:textColor="@color/red"
-                        android:textStyle="bold"
-                        android:textSize="18dp" />
-
-
-                    <TextView
-                        android:id="@+id/txtSubsMod5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/green"
-                        android:text="@string/title_addtocart"
-                        android:padding="@dimen/margin_5dp"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/margin_5dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod6"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod_6"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="normal"
-                    android:textSize="17dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Topics"
-                    android:id="@+id/mod6_topic"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:textSize="16dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginRight="30dp"
-                        android:text="@string/mod6_price"
-                        android:textColor="@color/red"
-                        android:textStyle="bold"
-                        android:textSize="18dp" />
-
-
-                    <TextView
-                        android:id="@+id/txtSubsMod6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/green"
-                        android:text="@string/title_addtocart"
-                        android:padding="@dimen/margin_5dp"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/margin_5dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod7"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod_7"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="normal"
-                    android:textSize="17dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Topics"
-                    android:id="@+id/mod7_topic"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:textSize="16dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginRight="30dp"
-                        android:text="@string/mod7_price"
-                        android:textColor="@color/red"
-                        android:textStyle="bold"
-                        android:textSize="18dp" />
-
-
-                    <TextView
-                        android:id="@+id/txtSubsMod7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/green"
-                        android:text="@string/title_addtocart"
-                        android:padding="@dimen/margin_5dp"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/margin_5dp"
-                android:gravity="center">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod8"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod_8"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="normal"
-                    android:textSize="17dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Topics"
-                    android:id="@+id/mod8_topic"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:textSize="16dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginRight="30dp"
-                        android:text="@string/mod8_price"
-                        android:textColor="@color/red"
-                        android:textStyle="bold"
-                        android:textSize="18dp" />
-
-
-                    <TextView
-                        android:id="@+id/txtSubsMod8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/green"
-                        android:text="@string/title_addtocart"
-                        android:padding="@dimen/margin_5dp"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/margin_5dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod9"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/mod_9"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="normal"
-                    android:textSize="17dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Topics"
-                    android:id="@+id/mod9_topic"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:textSize="16dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginRight="30dp"
-                        android:text="@string/mod9_price"
-                        android:textColor="@color/red"
-                        android:textStyle="bold"
-                        android:textSize="18dp" />
-
-
-                    <TextView
-                        android:id="@+id/txtSubsMod9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/green"
-                        android:text="@string/title_addtocart"
-                        android:padding="@dimen/margin_5dp"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="visible"
-                android:background="@color/lightes"
-                android:padding="@dimen/margin_10dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Subscription Duration"
-                    android:textColor="@color/txt_color"
-                    android:paddingBottom="5dp"
-                    android:textStyle="bold"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Full Foundation Course 2021 : 4 Months"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="bold"
-                    android:textSize="19dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Any Module(s) : 2 to 3 Months"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="bold"
-                    android:textSize="19dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Crash Course 2022 : 3 Months"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:visibility="gone"
-                    android:textSize="19dp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-    </TableLayout>
-
-</ScrollView>
+</RelativeLayout>

@@ -12,6 +12,7 @@
     <color name="gray">#bebbbb</color>
     <color name="MainBg">#065379</color>
     <color name="green">#2E8D35</color>
+    <color name="light_green">#14c167</color>
     <color name="lightgray">#e4e4e4</color>
     <color name="colorAccent">#4997da</color>
     <color name="transprent">#00000000</color>
@@ -30,4 +31,6 @@
     <color name="bg_color">#ececef</color>
     <color name="txt_color">#191919</color>
     <color name="cart_highlighted_txt_color">#0470C3</color>
+    <color name="edt_bg_color">#100F314A</color>
+    <color name="overlay_white">#656668</color>
 </resources>

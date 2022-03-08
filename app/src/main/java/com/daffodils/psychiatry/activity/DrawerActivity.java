@@ -27,6 +27,7 @@ import androidx.fragment.app.Fragment;
 
 import com.daffodils.psychiatry.R;
 import com.daffodils.psychiatry.fragment.AboutUsFragment;
+import com.daffodils.psychiatry.fragment.CartFragment;
 import com.daffodils.psychiatry.fragment.ChangePassword;
 import com.daffodils.psychiatry.fragment.CoursesFragment;
 import com.daffodils.psychiatry.fragment.FacultyFragment;
@@ -154,6 +155,15 @@ public class DrawerActivity extends AppCompatActivity {
                         fragment.setArguments(bundle);
                         getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
                         break;
+
+                    case R.id.menu_cart:
+                        fragment = new CartFragment();
+                        bundle = new Bundle();
+                        bundle.putString("type", "Cart");
+                        fragment.setArguments(bundle);
+                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                        break;
+
                     case R.id.menu_faculty:
                         fragment = new FacultyFragment();
                         bundle = new Bundle();

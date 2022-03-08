@@ -141,4 +141,12 @@
     <string name="promo_discount">Promo Discount</string>
     <string name="finalamt">Final Amount</string>
     <string name="total">Amount To Be Paid</string>
+    <string name="btnProceed">Proceed</string>
+
+    <string name="noitem_incart">Your cart is empty</string>
+    <string name="noitem_incart_msg">You have no items in your shopping cart.\nLets\'s go buy something!</string>
+    <string name="shop_now">Shop Now</string>
+    <string name="gotocart">GO TO CART</string>
+
+
 </resources>

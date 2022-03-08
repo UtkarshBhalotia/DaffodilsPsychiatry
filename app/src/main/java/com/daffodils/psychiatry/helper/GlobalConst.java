@@ -2,6 +2,8 @@ package com.daffodils.psychiatry.helper;
 
 import android.app.Application;
 
+import java.text.DecimalFormat;
+
 public class GlobalConst extends Application {
 
     public static String URL = "https://daffodilspsychiatry.com/DaffodilsServices.ashx";
@@ -30,17 +32,38 @@ public class GlobalConst extends Application {
     public static String SC_APP_IMAGES = "13";
     public static String SC_UPDATE_DEVICEID = "14";
     public static String SC_GET_SUBSCRIBED_MODULES = "15";
+    public static String SC_ADD_TO_CART = "16";
+    public static String SC_GET_CART = "17";
+    public static String SC_SAVE_RECHARGE_DETAILS = "18";
+    public static String SC_GET_RECHARGE_DETAILS = "19";
+    public static String SC_APPLY_COUPON = "20";
 
     public static String Username = "", Name = "", Mobile = "", Address = "", ModuleID = "", User_id = "", Password = "", DeviceID = "";
     public static String Result = "", Description="", GetPassword ="", AppVersion = "", isDeviceChanged = "";
     public static String VIDEO_TYPE ;
+    public static String DISCOUNT= "discount";
+    public static String FINALAMOUNT = "finalamt";
+    public static String CART_ADD = "1";
+    public static String CART_REMOVE = "2";
+
+    public static DecimalFormat formater = new DecimalFormat("0.00");
+
+    // Subscription Types ID--------------------------------------------------
 
     public static String FullCourse = "1";
     public static String CrashCourse = "2";
     public static String AnyModule = "3";
 
+    //------------------------------------------------------------------------
+
+    // Courses IDs -----------------------------------------------------------
+
     public static String FoundationCourseID = "1";
     public static String CrashCourseID = "2";
+
+    //--------------------------------------------------------------------------
+
+    // Module IDs --------------------------------------------------------------
 
     public static String Module1ID = "1";
     public static String Module2ID = "2";

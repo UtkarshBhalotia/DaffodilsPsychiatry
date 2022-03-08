@@ -101,7 +101,8 @@ public class ApiConfig {
                         GlobalConst.Description = response.headers.get("Description");
                         GlobalConst.GetPassword = response.headers.get("Password");
                         GlobalConst.AppVersion = response.headers.get("AppVersion");
-                       // GlobalConst.ModuleID = response.headers.get("ModuleID");
+                        GlobalConst.DISCOUNT = response.headers.get("Discount");
+                        GlobalConst.FINALAMOUNT = response.headers.get("FinalAmount");
 
                         if (GlobalConst.SERVICE_TYPE.equals(GlobalConst.SC_GET_SUBSCRIBED_MODULES)){
                             GlobalConst.ModuleID = response.headers.get("Modules");
