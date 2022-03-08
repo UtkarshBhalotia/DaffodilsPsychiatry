@@ -127,4 +127,18 @@
     <string name="success_order">Your order has been successfully placed !</string>
     <string name="continue_shopping">Continue Shopping</string>
     <string name="summary">View All Orders</string>
+    <string name="cart">Cart Details</string>
+    <string name="payment">Payment</string>
+    <string name="promo_code_msg">Have a Promo Code ?</string>
+    <string name="apply">APPLY</string>
+    <string name="promo_code">Promo Code</string>
+    <string name="order_list">Order Summary</string>
+    <string name="course_name">Course Name</string>
+    <string name="modulename">Module Name</string>
+    <string name="price">Price</string>
+    <string name="action">Del</string>
+    <string name="total_amt">Total Amount</string>
+    <string name="promo_discount">Promo Discount</string>
+    <string name="finalamt">Final Amount</string>
+    <string name="total">Amount To Be Paid</string>
 </resources>
