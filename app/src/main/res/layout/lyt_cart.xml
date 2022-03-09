@@ -18,8 +18,8 @@
         android:background="@color/white"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:visibility="visible"
-        android:padding="15dp">
+        android:padding="15dp"
+        android:visibility="visible">
 
         <TextView
             android:layout_width="wrap_content"
@@ -186,6 +186,17 @@
                             android:textAlignment="viewEnd"
                             android:textColor="@color/black" />
                     </LinearLayout>
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@+id/lyttotal">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/summaryRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </androidx.core.widget.NestedScrollView>
 
                     <LinearLayout
                         android:id="@+id/lytOrderList"
