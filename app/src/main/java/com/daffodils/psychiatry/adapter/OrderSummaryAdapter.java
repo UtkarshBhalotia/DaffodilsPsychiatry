@@ -11,16 +11,25 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daffodils.psychiatry.R;
+import static com.daffodils.psychiatry.fragment.FoundationCourseFragment.*;
+import static com.daffodils.psychiatry.fragment.CartFragment.*;
+import com.daffodils.psychiatry.helper.ApiConfig;
+import com.daffodils.psychiatry.helper.AppController;
+import com.daffodils.psychiatry.helper.CommonFunctions;
+import com.daffodils.psychiatry.helper.GlobalConst;
+import com.daffodils.psychiatry.helper.VolleyCallback;
 import com.daffodils.psychiatry.model.OrderSummaryGetterSetter;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class OrderSummaryAdapter extends RecyclerView.Adapter<OrderSummaryAdapter.MyViewHolder> {
     Context context;
     List<OrderSummaryGetterSetter> order_list;
+    CommonFunctions cf = new CommonFunctions();
 
-
-    public OrderSummaryAdapter(Context context, List<OrderSummaryGetterSetter> accLedger_list) {
+    public OrderSummaryAdapter(Context context, List<OrderSummaryGetterSetter> order_list) {
         this.context = context;
         this.order_list = order_list;
     }
@@ -34,6 +43,15 @@ public class OrderSummaryAdapter extends RecyclerView.Adapter<OrderSummaryAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
+
+
+        myViewHolder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                removeFromCartService("0", GlobalConst.CrashCourse);
+                getCartDetailsService();
+            }
+        });
 
 
         if (order_list.get(i).getCourseName().equals("")) {
@@ -57,14 +75,6 @@ public class OrderSummaryAdapter extends RecyclerView.Adapter<OrderSummaryAdapte
             myViewHolder.amount.setText(order_list.get(i).getAmount());
 
         }
-
-      /*  if (order_list.get(i).().equals("")) {
-            myViewHolder.delete.setText("");
-
-        } else {
-            myViewHolder.delete.setText(order_list.get(i).getVchType());
-
-        }*/
     }
 
     @Override
@@ -83,5 +93,7 @@ public class OrderSummaryAdapter extends RecyclerView.Adapter<OrderSummaryAdapte
             delete = itemView.findViewById(R.id.tvDelete);
         }
     }
+
+
 }
 

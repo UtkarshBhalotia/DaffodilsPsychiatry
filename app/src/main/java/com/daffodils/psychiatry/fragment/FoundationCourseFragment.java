@@ -43,7 +43,7 @@ import static android.content.Context.INPUT_METHOD_SERVICE;
 public class FoundationCourseFragment extends Fragment {
 
     View root;
-    Activity activity;
+    public static Activity activity;
     TextView txtFFC;
     TextView txtmod1_topic, txtmod2_topic, txtmod3_topic, txtmod4_topic, txtmod5_topic, txtmod6_topic, txtmod7_topic, txtmod8_topic, txtmod9_topic;
     TextView txtSubsFullCourse, txtSubsMod1, txtSubsMod2, txtSubsMod3, txtSubsMod4, txtSubsMod5, txtSubsMod6, txtSubsMod7, txtSubsMod8, txtSubsMod9;
@@ -110,8 +110,8 @@ public class FoundationCourseFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
-                alertDialog.setTitle("Subscribe Full Course ?");
-                alertDialog.setMessage("Do you want to subscribe Full Course ?");
+                alertDialog.setTitle("Add To Cart Full Course ?");
+                alertDialog.setMessage("Do you want to add Full Course to Cart ?");
                 alertDialog.setCancelable(false);
                 final AlertDialog alertDialog1 = alertDialog.create();
 
@@ -121,14 +121,11 @@ public class FoundationCourseFragment extends Fragment {
                         try {
                                 if (!GlobalConst.User_id.isEmpty()){
                                     addToCartService("1,2,3,4,5,6,7,8,9", GlobalConst.FullCourse);
-                                   // subscribeModuleService("1,2,3,4,5,6,7,8,9", GlobalConst.FullCourse);
-                                    //call web service
                                 } else {
 
                                     Intent i = new Intent(activity, RegisterActivity.class);
                                     startActivity(i);
-                                   // activity.finish();
-                                    Toast.makeText(activity, "Kindly Register to Subscribe.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(activity, "Kindly Register to ADD.", Toast.LENGTH_SHORT).show();
                                 }
 
 
@@ -150,8 +147,8 @@ public class FoundationCourseFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
-                alertDialog.setTitle("Subscribe Module 1 ?");
-                alertDialog.setMessage("Do you want to subscribe Module 1 ?");
+                alertDialog.setTitle("Add To Cart Module 1 ?");
+                alertDialog.setMessage("Do you want to add Module 1 to Cart ?");
                 alertDialog.setCancelable(false);
                 final AlertDialog alertDialog1 = alertDialog.create();
 
@@ -168,7 +165,7 @@ public class FoundationCourseFragment extends Fragment {
                                 Intent i = new Intent(activity, RegisterActivity.class);
                                 startActivity(i);
                                 // activity.finish();
-                                Toast.makeText(activity, "Kindly Register to Subscribe.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(activity, "Kindly Register to ADD.", Toast.LENGTH_SHORT).show();
                                // Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
                             }
 
@@ -190,8 +187,8 @@ public class FoundationCourseFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
-                alertDialog.setTitle("Subscribe Module 2 ?");
-                alertDialog.setMessage("Do you want to subscribe Module 2 ?");
+                alertDialog.setTitle("Add To Cart Module 2 ?");
+                alertDialog.setMessage("Do you want to add Module 2 to Cart ?");
                 alertDialog.setCancelable(false);
                 final AlertDialog alertDialog1 = alertDialog.create();
 
@@ -209,7 +206,7 @@ public class FoundationCourseFragment extends Fragment {
                                 Intent i = new Intent(activity, RegisterActivity.class);
                                 startActivity(i);
                                 // activity.finish();
-                                Toast.makeText(activity, "Kindly Register to Subscribe.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(activity, "Kindly Register to ADD.", Toast.LENGTH_SHORT).show();
                                // Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
                             }
 
@@ -232,8 +229,8 @@ public class FoundationCourseFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
-                alertDialog.setTitle("Subscribe Module 3 ?");
-                alertDialog.setMessage("Do you want to subscribe Module 3 ?");
+                alertDialog.setTitle("Add To Cart Module 3 ?");
+                alertDialog.setMessage("Do you want to add Module 3 to Cart ?");
                 alertDialog.setCancelable(false);
                 final AlertDialog alertDialog1 = alertDialog.create();
 
@@ -251,7 +248,7 @@ public class FoundationCourseFragment extends Fragment {
                                 Intent i = new Intent(activity, RegisterActivity.class);
                                 startActivity(i);
                                 // activity.finish();
-                                Toast.makeText(activity, "Kindly Register to Subscribe.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(activity, "Kindly Register to ADD.", Toast.LENGTH_SHORT).show();
                                // Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
                             }
 
@@ -272,8 +269,8 @@ public class FoundationCourseFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
-                alertDialog.setTitle("Subscribe Module 4 ?");
-                alertDialog.setMessage("Do you want to subscribe Module 4 ?");
+                alertDialog.setTitle("Add To Cart Module 4 ?");
+                alertDialog.setMessage("Do you want to add Module 4 to Cart ?");
                 alertDialog.setCancelable(false);
                 final AlertDialog alertDialog1 = alertDialog.create();
 
@@ -291,7 +288,7 @@ public class FoundationCourseFragment extends Fragment {
                                 Intent i = new Intent(activity, RegisterActivity.class);
                                 startActivity(i);
                                 // activity.finish();
-                                Toast.makeText(activity, "Kindly Register to Subscribe.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(activity, "Kindly Register to ADD.", Toast.LENGTH_SHORT).show();
                                // Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
                             }
 
@@ -313,8 +310,8 @@ public class FoundationCourseFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
-                alertDialog.setTitle("Subscribe Module 5 ?");
-                alertDialog.setMessage("Do you want to subscribe Module 5 ?");
+                alertDialog.setTitle("Add To Cart Module 5 ?");
+                alertDialog.setMessage("Do you want to add Module 5 to Cart ?");
                 alertDialog.setCancelable(false);
                 final AlertDialog alertDialog1 = alertDialog.create();
 
@@ -331,7 +328,7 @@ public class FoundationCourseFragment extends Fragment {
                                 Intent i = new Intent(activity, RegisterActivity.class);
                                 startActivity(i);
                                 // activity.finish();
-                                Toast.makeText(activity, "Kindly Register to Subscribe.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(activity, "Kindly Register to ADD.", Toast.LENGTH_SHORT).show();
                                // Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
                             }
 
@@ -352,8 +349,8 @@ public class FoundationCourseFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
-                alertDialog.setTitle("Subscribe Module 6 ?");
-                alertDialog.setMessage("Do you want to subscribe Module 6 ?");
+                alertDialog.setTitle("Add To Cart Module 6 ?");
+                alertDialog.setMessage("Do you want to add Module 6 to Cart ?");
                 alertDialog.setCancelable(false);
                 final AlertDialog alertDialog1 = alertDialog.create();
 
@@ -370,7 +367,7 @@ public class FoundationCourseFragment extends Fragment {
                                 Intent i = new Intent(activity, RegisterActivity.class);
                                 startActivity(i);
                                 // activity.finish();
-                                Toast.makeText(activity, "Kindly Register to Subscribe.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(activity, "Kindly Register to ADD.", Toast.LENGTH_SHORT).show();
                               //  Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
                             }
 
@@ -392,8 +389,8 @@ public class FoundationCourseFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
-                alertDialog.setTitle("Subscribe Module 7 ?");
-                alertDialog.setMessage("Do you want to subscribe Module 7 ?");
+                alertDialog.setTitle("Add To Cart Module 7 ?");
+                alertDialog.setMessage("Do you want to add Module 7 to Cart ?");
                 alertDialog.setCancelable(false);
                 final AlertDialog alertDialog1 = alertDialog.create();
 
@@ -410,7 +407,7 @@ public class FoundationCourseFragment extends Fragment {
                                 Intent i = new Intent(activity, RegisterActivity.class);
                                 startActivity(i);
                                 // activity.finish();
-                                Toast.makeText(activity, "Kindly Register to Subscribe.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(activity, "Kindly Register to ADD.", Toast.LENGTH_SHORT).show();
                                // Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
                             }
 
@@ -431,8 +428,8 @@ public class FoundationCourseFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
-                alertDialog.setTitle("Subscribe Module 8 ?");
-                alertDialog.setMessage("Do you want to subscribe Module 8 ?");
+                alertDialog.setTitle("Add To Cart Module 8 ?");
+                alertDialog.setMessage("Do you want to add Module 8 to Cart ?");
                 alertDialog.setCancelable(false);
                 final AlertDialog alertDialog1 = alertDialog.create();
 
@@ -449,7 +446,7 @@ public class FoundationCourseFragment extends Fragment {
                                 Intent i = new Intent(activity, RegisterActivity.class);
                                 startActivity(i);
                                 // activity.finish();
-                                Toast.makeText(activity, "Kindly Register to Subscribe.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(activity, "Kindly Register to ADD.", Toast.LENGTH_SHORT).show();
                                // Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
                             }
                         } catch (Exception e) {
@@ -469,8 +466,8 @@ public class FoundationCourseFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
-                alertDialog.setTitle("Subscribe Module 9 ?");
-                alertDialog.setMessage("Do you want to subscribe Module 9 ?");
+                alertDialog.setTitle("Add To Cart Module 9 ?");
+                alertDialog.setMessage("Do you want to add Module 9 to Cart ?");
                 alertDialog.setCancelable(false);
                 final AlertDialog alertDialog1 = alertDialog.create();
 
@@ -487,7 +484,7 @@ public class FoundationCourseFragment extends Fragment {
                                 Intent i = new Intent(activity, RegisterActivity.class);
                                 startActivity(i);
                                 // activity.finish();
-                                Toast.makeText(activity, "Kindly Register to Subscribe.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(activity, "Kindly Register to ADD.", Toast.LENGTH_SHORT).show();
                                // Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
                             }
 
@@ -568,6 +565,41 @@ public class FoundationCourseFragment extends Fragment {
                                 setSnackBar("Item added to cart successfully.", "OK");
                             } else {
                                 setSnackBar("Description : " + GlobalConst.Description, "OK");
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+            }, activity, GlobalConst.URL.trim() , params, true);
+
+        }
+    }
+
+    public static void removeFromCartService(String ModuleNumber, String SubscriptionType){
+
+        if (AppController.isConnected(activity)) {
+
+            Map<String, String> params = new HashMap<String, String>();
+
+            params.put("SC", GlobalConst.SC_ADD_TO_CART);
+            params.put("ModuleID", ModuleNumber);
+            params.put("SubscriptionType", SubscriptionType);
+            params.put("UserID", GlobalConst.User_id);
+            params.put("CartType", GlobalConst.CART_REMOVE);
+
+            ApiConfig.RequestToVolley(new VolleyCallback() {
+                @Override
+                public void onSuccess(boolean result, String response) {
+                    if (result) {
+                        try {
+
+                            if (GlobalConst.Result.equals("T")){
+                                Toast.makeText(activity, "Item removed from cart successfully.", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(activity, "Description : " + GlobalConst.Description, Toast.LENGTH_LONG).show();
                             }
 
                         } catch (Exception e) {

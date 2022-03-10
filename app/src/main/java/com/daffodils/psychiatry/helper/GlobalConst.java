@@ -46,7 +46,8 @@ public class GlobalConst extends Application {
     public static String CART_ADD = "1";
     public static String CART_REMOVE = "2";
 
-    public static DecimalFormat formater = new DecimalFormat("0.00");
+    public static DecimalFormat formater = new DecimalFormat("#,##,##,###.00");
+    public static String SETTING_CURRENCY_SYMBOL = "Rs ";
 
     // Subscription Types ID--------------------------------------------------
 

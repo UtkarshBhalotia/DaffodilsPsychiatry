@@ -67,8 +67,8 @@ public class CrashCourseFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
-                alertDialog.setTitle("Subscribe Crash Course ?");
-                alertDialog.setMessage("Do you want to Subscribe Crash Course ?");
+                alertDialog.setTitle("Add to Cart Crash Course ?");
+                alertDialog.setMessage("Do you want to Add Crash Course to Cart ?");
                 alertDialog.setCancelable(false);
                 final AlertDialog alertDialog1 = alertDialog.create();
 
@@ -78,14 +78,13 @@ public class CrashCourseFragment extends Fragment {
                         try {
 
                             if (!GlobalConst.User_id.isEmpty()){
-
-                                subscribeModuleService("0");
+                                addToCartService("0", GlobalConst.CrashCourse);
+                              //  subscribeModuleService("0");
 
                             } else {
                                 Intent i = new Intent(activity, RegisterActivity.class);
                                 startActivity(i);
-                               // activity.finish();
-                                Toast.makeText(activity, "Kindly Register to Subscribe.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(activity, "Kindly Register to ADD.", Toast.LENGTH_SHORT).show();
                             }
 
 
@@ -130,6 +129,41 @@ public class CrashCourseFragment extends Fragment {
 
                             } else {
                                 setSnackBar("Desc : " + GlobalConst.Description , "OK");
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+            }, activity, GlobalConst.URL.trim() , params, true);
+
+        }
+    }
+
+    public void addToCartService(String ModuleNumber, String SubscriptionType){
+
+        if (AppController.isConnected(activity)) {
+
+            Map<String, String> params = new HashMap<String, String>();
+
+            params.put("SC", GlobalConst.SC_ADD_TO_CART);
+            params.put("ModuleID", ModuleNumber);
+            params.put("SubscriptionType", SubscriptionType);
+            params.put("UserID", GlobalConst.User_id);
+            params.put("CartType", GlobalConst.CART_ADD);
+
+            ApiConfig.RequestToVolley(new VolleyCallback() {
+                @Override
+                public void onSuccess(boolean result, String response) {
+                    if (result) {
+                        try {
+
+                            if (GlobalConst.Result.equals("T")){
+                                setSnackBar("Item added to cart successfully.", "OK");
+                            } else {
+                                setSnackBar("Description : " + GlobalConst.Description, "OK");
                             }
 
                         } catch (Exception e) {

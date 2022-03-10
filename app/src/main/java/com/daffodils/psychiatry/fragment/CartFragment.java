@@ -42,15 +42,16 @@ import java.util.Map;
 public class CartFragment extends Fragment {
 
     View root;
-    Activity activity;
-    Context context;
+    public static Activity activity;
+    public static Context context;
     ProgressBar progressBar;
     EditText edtPromoCode;
     Button btnApply;
-    TextView txtAmtToBePaid, tvProceed, tvTotal, tvPromoDiscount, tvFinalAmt, tvAlert;
-    RecyclerView recyclerView;
+    public static TextView txtAmtToBePaid, tvProceed, tvTotal, tvPromoDiscount, tvFinalAmt, tvAlert;
+    public static RecyclerView recyclerView;
     public static List<OrderSummaryGetterSetter> m_orderSummary = new ArrayList<>();
-    OrderSummaryAdapter orderSummaryAdapter;
+    public static OrderSummaryAdapter orderSummaryAdapter;
+    public static String m_SubTotalAmt;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -69,6 +70,7 @@ public class CartFragment extends Fragment {
         tvPromoDiscount = root.findViewById(R.id.tvPromoDiscount);
         tvFinalAmt = root.findViewById(R.id.tvFinalAmt);
         tvAlert = root.findViewById(R.id.tvAlert);
+        recyclerView = root.findViewById(R.id.summaryRecyclerView);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -93,6 +95,13 @@ public class CartFragment extends Fragment {
             }
         });
 
+        tvProceed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "Payment Gateway Under Construction.", Toast.LENGTH_LONG).show();
+            }
+        });
+
         return root;
     }
 
@@ -103,7 +112,7 @@ public class CartFragment extends Fragment {
 
             params.put("SC", GlobalConst.SC_APPLY_COUPON);
             params.put("CouponCode", edtPromoCode.getText().toString());
-            params.put("TotalAmount", "10000");
+            params.put("TotalAmount", m_SubTotalAmt);
 
             ApiConfig.RequestToVolley(new VolleyCallback() {
                 @Override
@@ -114,6 +123,10 @@ public class CartFragment extends Fragment {
                             if (GlobalConst.Result.equals("T")){
                                 btnApply.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.light_green));
                                 btnApply.setText("Applied");
+                                tvFinalAmt.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(GlobalConst.FINALAMOUNT)));
+                                txtAmtToBePaid.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(GlobalConst.FINALAMOUNT)));
+                                tvPromoDiscount.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(GlobalConst.DISCOUNT)));
+
                             } else {
                                 btnApply.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
                                 btnApply.setText("Apply");
@@ -135,7 +148,9 @@ public class CartFragment extends Fragment {
         }
     }
 
-    public void getCartDetailsService(){
+    public static void getCartDetailsService(){
+
+        m_orderSummary.clear();
         if (AppController.isConnected(activity)) {
 
             Map<String, String> params = new HashMap<String, String>();
@@ -151,10 +166,13 @@ public class CartFragment extends Fragment {
 
                             if (GlobalConst.Result.equals("T")){
                                 JSONObject jsonObject = new JSONObject(response);
-                                String TotalAmt = jsonObject.getString("TotalAmount");
-                                String dtModules = jsonObject.getString("dtModules");
+                                m_SubTotalAmt = jsonObject.getString("TotalAmount");
+                                tvTotal.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(m_SubTotalAmt)));
+                                tvFinalAmt.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(m_SubTotalAmt)));
+                                txtAmtToBePaid.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(m_SubTotalAmt)));
+                                tvPromoDiscount.setText("-");
 
-                                JSONArray jsonArray = jsonObject.getJSONArray(dtModules);
+                                JSONArray jsonArray = jsonObject.getJSONArray("dtModules");
 
                                 for (int i = 0; i < jsonArray.length(); i++) {
 
@@ -170,7 +188,7 @@ public class CartFragment extends Fragment {
                                 }
 
                             } else {
-                                Toast.makeText(context, GlobalConst.Description, Toast.LENGTH_LONG).show();
+                                Toast.makeText(activity, GlobalConst.Description, Toast.LENGTH_LONG).show();
                             }
 
                         } catch (Exception e) {
