@@ -143,8 +143,8 @@
                         android:padding="2dp"
                         android:text="@string/order_list"
                         android:textColor="@color/colorPrimary"
-                        android:textStyle="bold"
-                        android:textSize="18dp" />
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
 
                     <View
                         android:layout_width="match_parent"
@@ -167,8 +167,8 @@
                             android:text="@string/course_name"
                             android:textAlignment="viewStart"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:textSize="17dp"/>
+                            android:textSize="17dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -177,8 +177,8 @@
                             android:text="@string/modulename"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:textSize="17dp"/>
+                            android:textSize="17dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -187,8 +187,8 @@
                             android:text="@string/price"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:textSize="17dp"/>
+                            android:textSize="17dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -197,8 +197,8 @@
                             android:background="@drawable/ic_delete"
                             android:textAlignment="viewEnd"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:textSize="17dp"/>
+                            android:textSize="17dp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <View

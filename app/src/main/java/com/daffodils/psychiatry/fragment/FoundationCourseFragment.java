@@ -578,40 +578,6 @@ public class FoundationCourseFragment extends Fragment {
         }
     }
 
-    public static void removeFromCartService(String ModuleNumber, String SubscriptionType){
-
-        if (AppController.isConnected(activity)) {
-
-            Map<String, String> params = new HashMap<String, String>();
-
-            params.put("SC", GlobalConst.SC_ADD_TO_CART);
-            params.put("ModuleID", ModuleNumber);
-            params.put("SubscriptionType", SubscriptionType);
-            params.put("UserID", GlobalConst.User_id);
-            params.put("CartType", GlobalConst.CART_REMOVE);
-
-            ApiConfig.RequestToVolley(new VolleyCallback() {
-                @Override
-                public void onSuccess(boolean result, String response) {
-                    if (result) {
-                        try {
-
-                            if (GlobalConst.Result.equals("T")){
-                                Toast.makeText(activity, "Item removed from cart successfully.", Toast.LENGTH_LONG).show();
-                            } else {
-                                Toast.makeText(activity, "Description : " + GlobalConst.Description, Toast.LENGTH_LONG).show();
-                            }
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-
-            }, activity, GlobalConst.URL.trim() , params, true);
-
-        }
-    }
 
     public void sendMegToUser(){
 

@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.daffodils.psychiatry.R;
 import static com.daffodils.psychiatry.fragment.FoundationCourseFragment.*;
 import static com.daffodils.psychiatry.fragment.CartFragment.*;
+
+import com.daffodils.psychiatry.fragment.FoundationCourseFragment;
 import com.daffodils.psychiatry.helper.ApiConfig;
 import com.daffodils.psychiatry.helper.AppController;
 import com.daffodils.psychiatry.helper.CommonFunctions;
@@ -48,8 +50,10 @@ public class OrderSummaryAdapter extends RecyclerView.Adapter<OrderSummaryAdapte
         myViewHolder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                removeFromCartService("0", GlobalConst.CrashCourse);
-                getCartDetailsService();
+
+                removeFromCartService(order_list.get(i).getModuleID(), order_list.get(i).getSubscriptionTypeID());
+               // getCartDetailsService();
+                progressBar.setVisibility(View.GONE);
             }
         });
 

@@ -1,10 +1,12 @@
 package com.daffodils.psychiatry.fragment;
 
 import static com.daffodils.psychiatry.R.layout.lyt_cart;
+import static com.daffodils.psychiatry.R.layout.progressbarlayout;
 import static com.daffodils.psychiatry.R.layout.toolbar_layout;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -23,6 +25,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daffodils.psychiatry.R;
+import com.daffodils.psychiatry.activity.MainActivity;
 import com.daffodils.psychiatry.adapter.OrderSummaryAdapter;
 import com.daffodils.psychiatry.helper.ApiConfig;
 import com.daffodils.psychiatry.helper.AppController;
@@ -44,7 +47,7 @@ public class CartFragment extends Fragment {
     View root;
     public static Activity activity;
     public static Context context;
-    ProgressBar progressBar;
+    public static ProgressBar progressBar;
     EditText edtPromoCode;
     Button btnApply;
     public static TextView txtAmtToBePaid, tvProceed, tvTotal, tvPromoDiscount, tvFinalAmt, tvAlert;
@@ -139,6 +142,7 @@ public class CartFragment extends Fragment {
 
                         } catch (Exception e) {
                             e.printStackTrace();
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 }
@@ -177,22 +181,28 @@ public class CartFragment extends Fragment {
                                 for (int i = 0; i < jsonArray.length(); i++) {
 
                                     JSONObject innerObj = jsonArray.getJSONObject(i);
+                                    String ModuleID = innerObj.getString("ModuleID");
+                                    String SubscriptionTypeID = innerObj.getString("SubscriptionType");
                                     String ModuleName = innerObj.getString("ModuleName");
                                     String CourseName = innerObj.getString("CourseName");
                                     String Amount = innerObj.getString("Amount");
 
-                                    OrderSummaryGetterSetter orderSummaryGetterSetter = new OrderSummaryGetterSetter(ModuleName, CourseName, Amount);
+                                    OrderSummaryGetterSetter orderSummaryGetterSetter = new OrderSummaryGetterSetter(ModuleName, CourseName, Amount, ModuleID, SubscriptionTypeID);
                                     m_orderSummary.add(orderSummaryGetterSetter);
                                     orderSummaryAdapter = new OrderSummaryAdapter(context, m_orderSummary);
                                     recyclerView.setAdapter(orderSummaryAdapter);
                                 }
 
+                                progressBar.setVisibility(View.GONE);
+
                             } else {
                                 Toast.makeText(activity, GlobalConst.Description, Toast.LENGTH_LONG).show();
+                                progressBar.setVisibility(View.GONE);
                             }
 
                         } catch (Exception e) {
                             e.printStackTrace();
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 }
@@ -201,4 +211,43 @@ public class CartFragment extends Fragment {
 
         }
     }
+
+    public static void removeFromCartService(String ModuleNumber, String SubscriptionType){
+
+        if (AppController.isConnected(activity)) {
+
+            Map<String, String> params = new HashMap<String, String>();
+
+            params.put("SC", GlobalConst.SC_ADD_TO_CART);
+            params.put("ModuleID", ModuleNumber);
+            params.put("SubscriptionType", SubscriptionType);
+            params.put("UserID", GlobalConst.User_id);
+            params.put("CartType", GlobalConst.CART_REMOVE);
+
+            ApiConfig.RequestToVolley(new VolleyCallback() {
+                @Override
+                public void onSuccess(boolean result, String response) {
+                    if (result) {
+                        try {
+
+                            if (GlobalConst.Result.equals("T")){
+                                Toast.makeText(activity, "Item removed from cart successfully.", Toast.LENGTH_LONG).show();
+                                progressBar.setVisibility(View.GONE);
+                            } else {
+                                Toast.makeText(activity, "Description : " + GlobalConst.Description, Toast.LENGTH_LONG).show();
+                                progressBar.setVisibility(View.GONE);
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            progressBar.setVisibility(View.GONE);
+                        }
+                    }
+                }
+
+            }, activity, GlobalConst.URL.trim() , params, true);
+
+        }
+    }
+
 }
