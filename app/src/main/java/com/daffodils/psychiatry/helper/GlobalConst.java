@@ -9,7 +9,7 @@ public class GlobalConst extends Application {
     public static String URL = "https://daffodilspsychiatry.com/DaffodilsServices.ashx";
 
     public static int MAJOR_VER = 1;
-    public static int MINOR_VER = 2;
+    public static int MINOR_VER = 2;;
 
     public static String TOOLBAR_TITLE;
     public static String ERROR = "error";
