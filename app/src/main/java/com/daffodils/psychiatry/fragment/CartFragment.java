@@ -26,6 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.daffodils.psychiatry.R;
 import com.daffodils.psychiatry.activity.MainActivity;
+import com.daffodils.psychiatry.activity.PayMentGateWay;
 import com.daffodils.psychiatry.adapter.OrderSummaryAdapter;
 import com.daffodils.psychiatry.helper.ApiConfig;
 import com.daffodils.psychiatry.helper.AppController;
@@ -101,7 +102,12 @@ public class CartFragment extends Fragment {
         tvProceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Payment Gateway Under Construction.", Toast.LENGTH_LONG).show();
+
+                Intent i = new Intent(activity, PayMentGateWay.class);
+                i.putExtra("RECHARGE_AMT", m_SubTotalAmt);
+                startActivity(i);
+
+                //Toast.makeText(context, "Payment Gateway Under Construction.", Toast.LENGTH_LONG).show();
             }
         });
 

@@ -38,6 +38,9 @@
         <activity android:name=".activity.DrawerActivity"></activity>
         <activity android:name=".activity.MainActivity"></activity>
         <activity android:name=".activity.LoginActivity"></activity>
+        <activity android:name=".activity.PayMentGateWay"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
 
 
         <service android:name=".helper.MyFirebaseMessagingService">
