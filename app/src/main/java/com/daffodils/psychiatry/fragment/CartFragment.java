@@ -122,6 +122,7 @@ public class CartFragment extends Fragment {
             params.put("SC", GlobalConst.SC_APPLY_COUPON);
             params.put("CouponCode", edtPromoCode.getText().toString());
             params.put("TotalAmount", m_SubTotalAmt);
+            params.put("UserID", GlobalConst.User_id);
 
             ApiConfig.RequestToVolley(new VolleyCallback() {
                 @Override
@@ -160,6 +161,7 @@ public class CartFragment extends Fragment {
 
     public static void getCartDetailsService(){
 
+        progressBar.setVisibility(View.GONE);
         m_orderSummary.clear();
         if (AppController.isConnected(activity)) {
 
@@ -239,9 +241,15 @@ public class CartFragment extends Fragment {
                             if (GlobalConst.Result.equals("T")){
                                 Toast.makeText(activity, "Item removed from cart successfully.", Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
+                                Intent i = new Intent(activity, MainActivity.class);
+                                activity.startActivity(i);
+                                activity.finish();
                             } else {
                                 Toast.makeText(activity, "Description : " + GlobalConst.Description, Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
+                                Intent i = new Intent(activity, MainActivity.class);
+                                activity.startActivity(i);
+                                activity.finish();
                             }
 
                         } catch (Exception e) {

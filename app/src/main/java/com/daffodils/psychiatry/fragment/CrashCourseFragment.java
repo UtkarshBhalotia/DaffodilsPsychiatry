@@ -274,10 +274,10 @@ public class CrashCourseFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(activity, MainActivity.class);
+              /*  Intent intent = new Intent(activity, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
+                startActivity(intent);*/
                 snackbar.dismiss();
 
             }

@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,12 +21,15 @@ import android.webkit.WebViewClient;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -34,11 +38,15 @@ import android.os.Handler;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.NetworkResponse;
+import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -49,8 +57,11 @@ import com.daffodils.psychiatry.helper.AppController;
 import com.daffodils.psychiatry.helper.GlobalConst;
 import com.daffodils.psychiatry.helper.VolleyCallback;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import static java.lang.Math.abs;
 
 public class PayMentGateWay extends Activity {
 
@@ -298,39 +309,80 @@ public class PayMentGateWay extends Activity {
         @JavascriptInterface
         public void success(long id, final String paymentId) {
 
-            if (AppController.isConnected(activity)) {
+            Toast.makeText(getApplicationContext(), "Success payment" + paymentId, Toast.LENGTH_LONG).show();
 
-                Map<String, String> params = new HashMap<String, String>();
+            mHandler.post(new Runnable() {
+                public void run() {
+                    mHandler = null;
+                    String webAddress = GlobalConst.URL;
 
-                params.put("SC", GlobalConst.SC_SAVE_RECHARGE_DETAILS);
-                params.put("UserID", GlobalConst.User_id);
-                params.put("AddByUserID", GlobalConst.User_id);
-                params.put("TransactionID", txnid);
-                params.put("Amount", "1");
-                params.put("Remarks", "PayUmoney Payment Gateway");
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, webAddress, new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
 
-                ApiConfig.RequestToVolley(new VolleyCallback() {
-                    @Override
-                    public void onSuccess(boolean result, String response) {
-                        if (result) {
-                            try {
-
-                                if (GlobalConst.Result.equals("T")){
-                                    sendMegToUser();
-                                } else {
-                                    Toast.makeText(context, "Error : "+ GlobalConst.Description, Toast.LENGTH_LONG).show();
-                                }
-
-
-                            } catch (Exception e) {
-                                e.printStackTrace();
+                            if (GlobalConst.Result.equals("T")){
+                                sendMegToUser();
+                            } else {
+                                Toast.makeText(context, "Error : "+ GlobalConst.Description, Toast.LENGTH_LONG).show();
                             }
                         }
-                    }
+                    }, new Response.ErrorListener() {
 
-                }, activity, GlobalConst.URL.trim() , params, true);
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(PayMentGateWay.this, "Unable to connect to remote server", Toast.LENGTH_LONG).show();
 
-            }
+                        }
+
+                    }) {
+
+
+                        @Override
+                        protected Response parseNetworkResponse(NetworkResponse response) {
+                            try {
+
+
+                                String jsonString = new String(response.data,
+                                        HttpHeaderParser.parseCharset(response.headers));
+
+                                GlobalConst.Result = response.headers.get("Result");
+
+                                return Response.success(jsonString,
+                                        HttpHeaderParser.parseCacheHeaders(response));
+                            } catch (UnsupportedEncodingException e) {
+                                return Response.error(new ParseError(e));
+
+
+                            }
+
+                        }
+
+                        public Map<String, String> getHeaders() throws AuthFailureError {
+                            Map<String, String> params = new HashMap<String, String>();
+
+                            params.put("SC", GlobalConst.SC_SAVE_RECHARGE_DETAILS);
+                            params.put("UserID", GlobalConst.User_id);
+                            params.put("Amount", "1");
+                            params.put("TransactionID", txnid);
+                            params.put("Remarks", "PayuMoney Payment Gateway");
+                            params.put("AddByUserID", GlobalConst.User_id);
+
+                            return params;
+                        }
+                    };
+
+
+                    RequestQueue requestQueue = Volley.newRequestQueue(PayMentGateWay.this);
+                    stringRequest.setShouldCache(false);
+                    stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                            0,
+                            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+                    requestQueue.add(stringRequest);
+
+
+                }
+            });
         }
 
         @JavascriptInterface
@@ -656,6 +708,75 @@ public class PayMentGateWay extends Activity {
             }, activity, GlobalConst.URL.trim() , params, true);
 
         }
+    }
+
+    private void showAccountLedger() {
+
+        String webAddress = GlobalConst.URL;
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, webAddress, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                if (GlobalConst.Result.equals("T")){
+                    sendMegToUser();
+                } else {
+                    Toast.makeText(context, "Error : "+ GlobalConst.Description, Toast.LENGTH_LONG).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(PayMentGateWay.this, "Unable to connect to remote server", Toast.LENGTH_LONG).show();
+
+            }
+
+        }) {
+
+
+            @Override
+            protected Response parseNetworkResponse(NetworkResponse response) {
+                try {
+
+
+                    String jsonString = new String(response.data,
+                            HttpHeaderParser.parseCharset(response.headers));
+
+                    GlobalConst.Result = response.headers.get("Result");
+
+                    return Response.success(jsonString,
+                            HttpHeaderParser.parseCacheHeaders(response));
+                } catch (UnsupportedEncodingException e) {
+                    return Response.error(new ParseError(e));
+
+
+                }
+
+            }
+
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+
+                params.put("SC", GlobalConst.SC_SAVE_RECHARGE_DETAILS);
+                params.put("UserID", GlobalConst.User_id);
+                params.put("Amount", "1");
+                params.put("TransactionID", txnid);
+                params.put("Remarks", "PayuMoney Payment Gateway");
+                params.put("AddByUserID", GlobalConst.User_id);
+
+                return params;
+            }
+        };
+
+
+        RequestQueue requestQueue = Volley.newRequestQueue(PayMentGateWay.this);
+        stringRequest.setShouldCache(false);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                0,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        requestQueue.add(stringRequest);
     }
 
 
