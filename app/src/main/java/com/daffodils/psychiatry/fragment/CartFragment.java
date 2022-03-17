@@ -195,7 +195,7 @@ public class CartFragment extends Fragment {
                                     String CourseName = innerObj.getString("CourseName");
                                     String Amount = innerObj.getString("Amount");
 
-                                    OrderSummaryGetterSetter orderSummaryGetterSetter = new OrderSummaryGetterSetter(ModuleName, CourseName, Amount, ModuleID, SubscriptionTypeID);
+                                    OrderSummaryGetterSetter orderSummaryGetterSetter = new OrderSummaryGetterSetter(CourseName, ModuleName, Amount, ModuleID, SubscriptionTypeID);
                                     m_orderSummary.add(orderSummaryGetterSetter);
                                     orderSummaryAdapter = new OrderSummaryAdapter(context, m_orderSummary);
                                     recyclerView.setAdapter(orderSummaryAdapter);

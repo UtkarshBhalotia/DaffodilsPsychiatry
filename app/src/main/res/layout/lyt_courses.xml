@@ -23,9 +23,9 @@
             android:gravity="center">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/logonew_1">
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/launcher_icon">
 
             </ImageView>
 

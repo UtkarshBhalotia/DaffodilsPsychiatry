@@ -143,7 +143,6 @@ public class PayMentGateWay extends Activity {
             params.put("txnid", txnid);
         } else
             txnid = params.get("txnid");
-        //String udf2 = txnid;
         String txn = "abcd";
         hash = "";
         String hashSequence = "key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|udf10";
@@ -309,7 +308,7 @@ public class PayMentGateWay extends Activity {
         @JavascriptInterface
         public void success(long id, final String paymentId) {
 
-            Toast.makeText(getApplicationContext(), "Success payment" + paymentId, Toast.LENGTH_LONG).show();
+           // Toast.makeText(getApplicationContext(), "Success payment" + paymentId, Toast.LENGTH_LONG).show();
 
             mHandler.post(new Runnable() {
                 public void run() {

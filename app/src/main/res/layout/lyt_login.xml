@@ -8,11 +8,12 @@
 
     <ImageView
         android:id="@+id/imglogo"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/logonew_1" />
+        android:src="@drawable/launcher_icon" />
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -17,8 +17,20 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.NetworkResponse;
+import com.android.volley.ParseError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HttpHeaderParser;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.daffodils.psychiatry.R;
 import com.daffodils.psychiatry.activity.MainActivity;
+import com.daffodils.psychiatry.activity.PayMentGateWay;
 import com.daffodils.psychiatry.adapter.VideosAdapter;
 import com.daffodils.psychiatry.helper.ApiConfig;
 import com.daffodils.psychiatry.helper.AppController;
@@ -29,6 +41,7 @@ import com.daffodils.psychiatry.model.VideosGetterSetter;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -87,14 +100,75 @@ public class SubscribedVideosFragment extends Fragment{
             }
         }));
 
-        getSubscribedModuleID();
-
-      //  getAllSubscribedVideosList();
+        getSubscribedModuleIDs();
 
         return root;
     }
 
-    public void getSubscribedModuleID(){
+    public void getSubscribedModuleIDs(){
+
+        String webAddress = GlobalConst.URL;
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, webAddress, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                if (GlobalConst.Result.equals("T")){
+                    getAllSubscribedVideosList();
+                } else {
+                    Toast.makeText(context, "Error : "+ GlobalConst.Description, Toast.LENGTH_LONG).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(context, "Unable to connect to remote server", Toast.LENGTH_LONG).show();
+
+            }
+
+        }) {
+
+            @Override
+            protected Response parseNetworkResponse(NetworkResponse response) {
+                try {
+                    String jsonString = new String(response.data,
+                            HttpHeaderParser.parseCharset(response.headers));
+
+                    GlobalConst.Result = response.headers.get("Result");
+                    GlobalConst.Description = response.headers.get("Description");
+                    GlobalConst.ModuleID = response.headers.get("Modules");
+
+                    return Response.success(jsonString,
+                            HttpHeaderParser.parseCacheHeaders(response));
+                } catch (UnsupportedEncodingException e) {
+                    return Response.error(new ParseError(e));
+
+                }
+
+            }
+
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+
+                params.put("SC", GlobalConst.SC_GET_SUBSCRIBED_MODULES);
+                params.put("UserID", GlobalConst.User_id);
+
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+        stringRequest.setShouldCache(false);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                0,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        requestQueue.add(stringRequest);
+
+
+    }
+
+  /*  public void getSubscribedModuleID(){
         if (AppController.isConnected(activity)) {
             Map<String, String> params = new HashMap<String, String>();
             params.put("SC", GlobalConst.SC_GET_SUBSCRIBED_MODULES);
@@ -123,7 +197,7 @@ public class SubscribedVideosFragment extends Fragment{
             }, activity, GlobalConst.URL.trim() , params, true);
 
         }
-    }
+    }*/
 
     public void getAllSubscribedVideosList(){
 
