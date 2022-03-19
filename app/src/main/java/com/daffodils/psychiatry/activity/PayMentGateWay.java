@@ -413,8 +413,8 @@ public class PayMentGateWay extends Activity {
 
     public void sendMegToUser(){
 
-        String message = "You will be able to avail the context of subscription within a day. For further details contact" +
-                " at +91-9872551972 / +91-7528920011 or Email Us @ daffodils.psych@gmail.com. Thank You !!";
+        String message = "Welcome to Daffodils Family !! Enjoy your subscription. For any queries or clarifications contact" +
+                " at +91-9872551972 / +91-7528920011. Happy Reading, Daffodils Psychiatry !!";
 
         String encoded_message = URLEncoder.encode(message);
 
@@ -599,7 +599,7 @@ public class PayMentGateWay extends Activity {
 
     @Override
     public void onBackPressed() {
-        // super.onBackPressed(); commented this line in order to disable back press
+         super.onBackPressed(); //commented this line in order to disable back press
         //Write your code here
         // Toast.makeText(getApplicationContext(), "Back press disabled!", Toast.LENGTH_SHORT).show();
     }
@@ -707,75 +707,6 @@ public class PayMentGateWay extends Activity {
             }, activity, GlobalConst.URL.trim() , params, true);
 
         }
-    }
-
-    private void showAccountLedger() {
-
-        String webAddress = GlobalConst.URL;
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, webAddress, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-
-                if (GlobalConst.Result.equals("T")){
-                    sendMegToUser();
-                } else {
-                    Toast.makeText(context, "Error : "+ GlobalConst.Description, Toast.LENGTH_LONG).show();
-                }
-            }
-        }, new Response.ErrorListener() {
-
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(PayMentGateWay.this, "Unable to connect to remote server", Toast.LENGTH_LONG).show();
-
-            }
-
-        }) {
-
-
-            @Override
-            protected Response parseNetworkResponse(NetworkResponse response) {
-                try {
-
-
-                    String jsonString = new String(response.data,
-                            HttpHeaderParser.parseCharset(response.headers));
-
-                    GlobalConst.Result = response.headers.get("Result");
-
-                    return Response.success(jsonString,
-                            HttpHeaderParser.parseCacheHeaders(response));
-                } catch (UnsupportedEncodingException e) {
-                    return Response.error(new ParseError(e));
-
-
-                }
-
-            }
-
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-
-                params.put("SC", GlobalConst.SC_SAVE_RECHARGE_DETAILS);
-                params.put("UserID", GlobalConst.User_id);
-                params.put("Amount", "1");
-                params.put("TransactionID", txnid);
-                params.put("Remarks", "PayuMoney Payment Gateway");
-                params.put("AddByUserID", GlobalConst.User_id);
-
-                return params;
-            }
-        };
-
-
-        RequestQueue requestQueue = Volley.newRequestQueue(PayMentGateWay.this);
-        stringRequest.setShouldCache(false);
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
-                0,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        requestQueue.add(stringRequest);
     }
 
 

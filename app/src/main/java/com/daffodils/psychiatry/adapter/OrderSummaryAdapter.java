@@ -52,7 +52,7 @@ public class OrderSummaryAdapter extends RecyclerView.Adapter<OrderSummaryAdapte
             public void onClick(View view) {
 
                 removeFromCartService(order_list.get(i).getModuleID(), order_list.get(i).getSubscriptionTypeID());
-            //    getCartDetailsService();
+               // getCartDetailsService();
 
                 progressBar.setVisibility(View.GONE);
             }
