@@ -41,6 +41,9 @@
         <activity android:name=".activity.PayMentGateWay"
             android:windowSoftInputMode="stateHidden">
         </activity>
+        <activity android:name=".activity.VideoPlayer1"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
 
 
         <service android:name=".helper.MyFirebaseMessagingService">

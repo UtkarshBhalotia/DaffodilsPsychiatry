@@ -2,6 +2,7 @@ package com.daffodils.psychiatry.fragment;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -31,6 +32,7 @@ import com.android.volley.toolbox.Volley;
 import com.daffodils.psychiatry.R;
 import com.daffodils.psychiatry.activity.MainActivity;
 import com.daffodils.psychiatry.activity.PayMentGateWay;
+import com.daffodils.psychiatry.activity.VideoPlayer1;
 import com.daffodils.psychiatry.adapter.VideosAdapter;
 import com.daffodils.psychiatry.helper.ApiConfig;
 import com.daffodils.psychiatry.helper.AppController;
@@ -86,11 +88,15 @@ public class SubscribedVideosFragment extends Fragment{
             public void onClick(View view, int position) {
 
                 String value = m_videoPath.get(position);
-                Fragment fragment = new VideoPlayer();
+                Intent i = new Intent(activity, VideoPlayer1.class);
+                i.putExtra("VideoURL", "https://daffodilspsychiatry.com/"+ value);
+                startActivity(i);
+
+               /* Fragment fragment = new VideoPlayer();
                 Bundle bundle = new Bundle();
                 bundle.putString("VideoURL", "https://daffodilspsychiatry.com/"+ value);
                 fragment.setArguments(bundle);
-                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();*/
 
             }
 

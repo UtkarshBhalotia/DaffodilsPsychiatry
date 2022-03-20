@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <!-- adding VideoView to the layout -->
+
     <VideoView
         android:id="@+id/videoView"
         android:layout_width="match_parent"
