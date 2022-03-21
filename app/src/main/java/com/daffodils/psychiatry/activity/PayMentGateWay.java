@@ -114,7 +114,7 @@ public class PayMentGateWay extends Activity {
         params = new HashMap<String, String>();
         params.put("key", merchant_key);
 
-        params.put("amount", "1");
+        params.put("amount", getRechargeAmt);
         params.put("firstname", GlobalConst.Name);
         params.put("email", GlobalConst.Username);
         params.put("phone", GlobalConst.Mobile);
@@ -361,7 +361,7 @@ public class PayMentGateWay extends Activity {
 
                             params.put("SC", GlobalConst.SC_SAVE_RECHARGE_DETAILS);
                             params.put("UserID", GlobalConst.User_id);
-                            params.put("Amount", "1");
+                            params.put("Amount", getRechargeAmt);
                             params.put("TransactionID", txnid);
                             params.put("Remarks", "PayuMoney Payment Gateway");
                             params.put("AddByUserID", GlobalConst.User_id);
