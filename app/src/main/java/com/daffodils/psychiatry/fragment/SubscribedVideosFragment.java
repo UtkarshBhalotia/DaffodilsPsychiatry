@@ -88,15 +88,15 @@ public class SubscribedVideosFragment extends Fragment{
             public void onClick(View view, int position) {
 
                 String value = m_videoPath.get(position);
-                Intent i = new Intent(activity, VideoPlayer1.class);
+               /* Intent i = new Intent(activity, VideoPlayer1.class);
                 i.putExtra("VideoURL", "https://daffodilspsychiatry.com/"+ value);
-                startActivity(i);
+                startActivity(i);*/
 
-               /* Fragment fragment = new VideoPlayer();
+                Fragment fragment = new VideoPlayer();
                 Bundle bundle = new Bundle();
                 bundle.putString("VideoURL", "https://daffodilspsychiatry.com/"+ value);
                 fragment.setArguments(bundle);
-                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();*/
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
 
             }
 

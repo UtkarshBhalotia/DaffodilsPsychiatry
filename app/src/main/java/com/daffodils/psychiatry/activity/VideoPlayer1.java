@@ -22,13 +22,7 @@ import com.daffodils.psychiatry.helper.GlobalConst;
 
 public class VideoPlayer1 extends Activity {
 
-    Context context;
-    Activity activity;
-    Bundle bundle;
-    String videoUrl ="";
-    ProgressBar progressBar;
     VideoView videoView;
-    MediaController mediaController;
     int index = 0;
 
     @Override
@@ -36,33 +30,16 @@ public class VideoPlayer1 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lyt_video_player);
 
-        context = getApplicationContext();
-        progressBar = new ProgressBar(context);
+        videoView = findViewById(R.id.videoView);
+        final MediaController mediacontroller = new MediaController(this);
+        mediacontroller.setAnchorView(videoView);
 
         Intent i = getIntent();
-        videoUrl = i.getStringExtra("VideoURL");
+        String URL =  "https://daffodilspsychiatry.com/Videos/Course/1_1_CP%20D1.mp4";
 
-       /* Bundle bundle = VideoPlayer1.getArguments();
-        if (bundle != null) {
-            videoUrl = bundle.getString("VideoURL");
-        }
-        */
-
-      //  if (AppController.isConnected(activity)){
-            progressBar.setVisibility(View.VISIBLE);
-            videoView = findViewById(R.id.videoView);
-            Uri uri = Uri.parse(videoUrl);
-            videoView.setVideoURI(uri);
-            mediaController = new MediaController(context);
-            mediaController.setAnchorView(videoView);
-            mediaController.setMediaPlayer(videoView);
-            videoView.setMediaController(mediaController);
-            videoView.start();
-            progressBar.setVisibility(View.GONE);
-
-       /* } else {
-            Toast.makeText(context, "Please check your internet connection", Toast.LENGTH_LONG).show();
-        }*/
+        videoView.setMediaController(mediacontroller);
+        videoView.setVideoURI(Uri.parse(URL));
+        videoView.requestFocus();
 
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -70,8 +47,8 @@ public class VideoPlayer1 extends Activity {
                 mp.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() {
                     @Override
                     public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
-                        videoView.setMediaController(mediaController);
-                        mediaController.setAnchorView(videoView);
+                        videoView.setMediaController(mediacontroller);
+                        mediacontroller.setAnchorView(videoView);
 
                     }
                 });
@@ -85,7 +62,6 @@ public class VideoPlayer1 extends Activity {
                 return false;
             }
         });
-
     }
 
     @Override
