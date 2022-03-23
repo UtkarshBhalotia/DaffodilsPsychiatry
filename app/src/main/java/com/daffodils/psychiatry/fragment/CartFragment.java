@@ -38,6 +38,7 @@ import com.android.volley.toolbox.Volley;
 import com.daffodils.psychiatry.R;
 import com.daffodils.psychiatry.activity.MainActivity;
 import com.daffodils.psychiatry.activity.PayMentGateWay;
+import com.daffodils.psychiatry.activity.RazorpayPaymentActivity;
 import com.daffodils.psychiatry.adapter.OrderSummaryAdapter;
 import com.daffodils.psychiatry.helper.ApiConfig;
 import com.daffodils.psychiatry.helper.AppController;
@@ -115,7 +116,7 @@ public class CartFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(activity, PayMentGateWay.class);
+                Intent i = new Intent(activity, RazorpayPaymentActivity.class);
                 i.putExtra("RECHARGE_AMT", m_SubTotalAmt);
                 startActivity(i);
 
