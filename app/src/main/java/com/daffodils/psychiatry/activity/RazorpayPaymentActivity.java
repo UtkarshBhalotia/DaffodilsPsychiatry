@@ -223,7 +223,7 @@ public class RazorpayPaymentActivity extends Activity implements PaymentResultLi
         queue.add(stringRequest);
     }
 
-    public void sendMsgToAdmin(){
+    public void sendMsgToAdmin() {
 
         String message = "New Subscription details : Name : " + GlobalConst.Name + " , Mobile No " + GlobalConst.Mobile + " , Recharge Amt " + getRechargeAmt +
                 " . Plz visit portal to know more." +". Thank You !!";
