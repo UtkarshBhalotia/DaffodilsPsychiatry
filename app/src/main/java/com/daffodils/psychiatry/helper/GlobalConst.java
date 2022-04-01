@@ -9,7 +9,7 @@ public class GlobalConst extends Application {
     public static String URL = "https://daffodilspsychiatry.com/DaffodilsServices.ashx";
 
     public static int MAJOR_VER = 1;
-    public static int MINOR_VER = 3;
+    public static int MINOR_VER = 4;
 
     public static String TOOLBAR_TITLE;
     public static String ERROR = "error";
@@ -37,6 +37,7 @@ public class GlobalConst extends Application {
     public static String SC_SAVE_RECHARGE_DETAILS = "18";
     public static String SC_GET_RECHARGE_DETAILS = "19";
     public static String SC_APPLY_COUPON = "20";
+    public static String SC_GET_PROFILE_DETAILS = "21";
 
     public static String Username = "", Name = "", Mobile = "", Address = "", ModuleID = "", User_id = "", Password = "", DeviceID = "";
     public static String Result = "", Description="", GetPassword ="", AppVersion = "", isDeviceChanged = "";

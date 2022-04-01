@@ -37,6 +37,7 @@ import com.daffodils.psychiatry.fragment.HelpSupportFragment;
 import com.daffodils.psychiatry.fragment.ProfileFragment;
 import com.daffodils.psychiatry.fragment.ReferenceBooksFragment;
 import com.daffodils.psychiatry.fragment.SubscribedVideosFragment;
+import com.daffodils.psychiatry.fragment.ValidityDetails;
 import com.daffodils.psychiatry.helper.DbHelper;
 import com.daffodils.psychiatry.helper.GlobalConst;
 import com.google.android.material.navigation.NavigationView;
@@ -152,6 +153,13 @@ public class DrawerActivity extends AppCompatActivity {
                         fragment = new ProfileFragment();
                         bundle = new Bundle();
                         bundle.putString("type", "Profile");
+                        fragment.setArguments(bundle);
+                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                        break;
+                    case R.id.menu_Validity:
+                        fragment = new ValidityDetails();
+                        bundle = new Bundle();
+                        bundle.putString("type", "Validity");
                         fragment.setArguments(bundle);
                         getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
                         break;

@@ -39,7 +39,10 @@
         android:id="@+id/menu_Profile"
         android:icon="@drawable/ic_profile"
         android:title="@string/title_profile"/>
-
+    <item
+        android:id="@+id/menu_Validity"
+        android:icon="@drawable/ic_validity"
+        android:title="@string/title_validity"/>
     <item
         android:id="@+id/menu_AboutUs"
         android:icon="@drawable/ic_about"
