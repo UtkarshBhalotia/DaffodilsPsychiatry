@@ -23,8 +23,8 @@ import static com.daffodils.psychiatry.R.layout.lyt_courses;
 
 public class CoursesFragment extends Fragment {
 
-    LinearLayout llFoundation, llCrash, llDiscount;
-    CircleImageView imgFoundation, imgCrash, imgDiscount;
+    LinearLayout llFoundation, llCrash, llMRCPsych, llDiscount;
+    CircleImageView imgFoundation, imgCrash, imgMRCPsych, imgDiscount;
     View root;
     Activity activity;
 
@@ -36,14 +36,17 @@ public class CoursesFragment extends Fragment {
         setHasOptionsMenu(true);
         llFoundation = root.findViewById(R.id.llFoundation2021);
         llCrash = root.findViewById(R.id.llCrash2022);
+        llMRCPsych = root.findViewById(R.id.llMRCPsych);
         llDiscount = root.findViewById(R.id.llDiscount);
 
         imgFoundation = root.findViewById(R.id.imgFound2021);
         imgCrash = root.findViewById(R.id.imgCrash2022);
+        imgMRCPsych = root.findViewById(R.id.imgMRCPsych);
         imgDiscount = root.findViewById(R.id.imgdiscount);
 
         imgFoundation.setDefaultImageResId(R.drawable.foundation_course);
         imgCrash.setDefaultImageResId(R.drawable.crash_course);
+        imgMRCPsych.setDefaultImageResId(R.drawable.mrc_psych);
         imgDiscount.setDefaultImageResId(R.drawable.discount);
 
         llFoundation.setOnClickListener(new View.OnClickListener() {
