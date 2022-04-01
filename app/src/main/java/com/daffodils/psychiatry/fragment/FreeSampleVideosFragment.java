@@ -3,6 +3,7 @@ package com.daffodils.psychiatry.fragment;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,16 +13,15 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.MediaController;
-import android.widget.Toast;
-import android.widget.VideoView;
 
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daffodils.psychiatry.R;
+import com.daffodils.psychiatry.activity.ExoPlayerActivity;
 import com.daffodils.psychiatry.activity.MainActivity;
 import com.daffodils.psychiatry.adapter.VideosAdapter;
 import com.daffodils.psychiatry.helper.ApiConfig;
@@ -33,6 +33,8 @@ import com.daffodils.psychiatry.model.VideosGetterSetter;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -74,15 +76,18 @@ public class FreeSampleVideosFragment extends Fragment {
 
         recyclerView.addOnItemTouchListener(new MainActivity.RecyclerTouchListener(getContext(), recyclerView, new MainActivity.ClickListener() {
             @Override
-            public void onClick(View view, int position) {
+            public void onClick(View view, int position) throws IOException {
 
                 String value = m_videoPath.get(position);
-                Fragment fragment = new VideoPlayer();
+                Intent i = new Intent(context, ExoPlayerActivity.class);
+                i.putExtra("VideoURL", "https://daffodilspsychiatry.com/"+ value);
+                startActivity(i);
+
+              /*  Fragment fragment = new ExoPlayerFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("VideoURL", "https://daffodilspsychiatry.com/"+ value);
                 fragment.setArguments(bundle);
-                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();*/
             }
 
             @Override

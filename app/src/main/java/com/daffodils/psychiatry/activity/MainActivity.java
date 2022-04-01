@@ -31,6 +31,8 @@ import com.daffodils.psychiatry.helper.GlobalConst;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 
+import java.io.IOException;
+
 public class MainActivity extends DrawerActivity {
 
     private static final String TAG = "MAIN ACTIVITY";
@@ -317,7 +319,11 @@ public class MainActivity extends DrawerActivity {
 
             View child = rv.findChildViewUnder(e.getX(), e.getY());
             if (child != null && clickListener != null && gestureDetector.onTouchEvent(e)) {
-                clickListener.onClick(child, rv.getChildPosition(child));
+                try {
+                    clickListener.onClick(child, rv.getChildPosition(child));
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
             }
             return false;
         }
@@ -333,7 +339,7 @@ public class MainActivity extends DrawerActivity {
     }
 
     public interface ClickListener {
-        void onClick(View view, int position);
+        void onClick(View view, int position) throws IOException;
 
         void onLongClick(View view, int position);
     }
