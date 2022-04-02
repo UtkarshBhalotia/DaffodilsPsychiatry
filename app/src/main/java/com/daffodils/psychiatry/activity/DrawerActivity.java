@@ -165,11 +165,16 @@ public class DrawerActivity extends AppCompatActivity {
                         break;
 
                     case R.id.menu_cart:
-                        fragment = new CartFragment();
-                        bundle = new Bundle();
-                        bundle.putString("type", "Cart");
-                        fragment.setArguments(bundle);
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+                        if (GlobalConst.User_id.equals("")){
+                           Toast.makeText(getApplicationContext(), "Kindly Login to view cart details.", Toast.LENGTH_LONG).show();
+                        } else {
+                            fragment = new CartFragment();
+                            bundle = new Bundle();
+                            bundle.putString("type", "Cart");
+                            fragment.setArguments(bundle);
+                            getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                        }
                         break;
 
                     case R.id.menu_faculty:
@@ -233,7 +238,7 @@ public class DrawerActivity extends AppCompatActivity {
 
                                 try {
 
-                                    dbHelper.openToRead();
+                                    dbHelper.openToWrite();
                                     dbHelper.deleteAllLoginData();
                                     dbHelper.close();
                                     Intent i = new Intent(DrawerActivity.this, LoginActivity.class);

@@ -437,7 +437,7 @@ public class RegisterActivity extends AppCompatActivity {
         if (AppController.isConnected(activity)) {
 
             Map<String, String> params = new HashMap<String, String>();
-            params.put("SC", GlobalConst.SC_GET_ALL_COURSES);
+            params.put("SC", GlobalConst. SC_GET_ALL_COURSES);
 
             ApiConfig.RequestToVolley(new VolleyCallback() {
                 @Override

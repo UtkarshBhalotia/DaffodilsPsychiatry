@@ -916,7 +916,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/lytsubtotal"
             android:layout_marginTop="5dp"
             android:background="@drawable/bg_button"
             android:paddingStart="5dp"

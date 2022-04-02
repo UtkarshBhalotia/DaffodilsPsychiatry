@@ -34,7 +34,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="Crash Course 2022"
+                    android:text="MRCPsych Course 2022"
                     android:textColor="@color/txt_color"
                     android:textStyle="bold"
                     android:textSize="20dp" />
@@ -43,7 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="Paper 1 + Paper 2 + Paper 3 + Paper 4 "
+                    android:text="Paper B "
                     android:paddingBottom="5dp"
                     android:textColor="@color/logocolor"
                     android:textStyle="bold"
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:background="@color/red"
-                    android:text="Rs 9,000 per person"
+                    android:text="Rs 15,000 per person"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="19dp" />
@@ -79,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="@string/paper1"
+                    android:text="@string/paperb"
                     android:textColor="@color/txt_color"
                     android:textStyle="bold"
                     android:textSize="18dp" />
@@ -89,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:text="Topics"
-                    android:id="@+id/pap1_topic"
+                    android:id="@+id/papb_topic"
                     android:paddingBottom="5dp"
                     android:textColor="@color/logocolor"
                     android:textStyle="normal"
@@ -108,168 +108,6 @@
                         android:text="Subscribe"
                         android:padding="@dimen/margin_5dp"
                         android:visibility="gone"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/margin_5dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/paper2"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Topics"
-                    android:id="@+id/pap2_topic"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:textSize="16dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/green"
-                        android:text="Subscribe"
-                        android:visibility="gone"
-                        android:padding="@dimen/margin_5dp"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/margin_5dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/paper3"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Topics"
-                    android:id="@+id/pap3_topic"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:textSize="16dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/green"
-                        android:text="Subscribe"
-                        android:visibility="gone"
-                        android:padding="@dimen/margin_5dp"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/margin_5dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/paper4"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Topics"
-                    android:id="@+id/pap4_topic"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:textSize="16dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/green"
-                        android:text="Subscribe"
-                        android:visibility="gone"
-                        android:padding="@dimen/margin_5dp"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
 
@@ -297,7 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="Subscription Duration"
+                    android:text="Important Points : "
                     android:textColor="@color/txt_color"
                     android:paddingBottom="5dp"
                     android:textStyle="bold"
@@ -307,27 +145,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="Full Foundation Course 2021 : 4 Months"
+                    android:text="- Validity / Duration : 1 Year"
                     android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:visibility="gone"
+                    android:textStyle="bold"
                     android:textSize="19dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="Any Modules : 2 Months each"
+                    android:text="- Classes Every Tuesday &amp; Friday"
                     android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:visibility="gone"
+                    android:textStyle="bold"
                     android:textSize="19dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="Crash Course 2022 : 3 Months"
+                    android:text="- Total No. of Classes : 30"
                     android:textColor="@color/logocolor"
                     android:textStyle="bold"
                     android:textSize="19dp" />

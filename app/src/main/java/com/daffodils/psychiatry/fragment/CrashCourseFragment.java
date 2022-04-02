@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +44,8 @@ public class CrashCourseFragment extends Fragment {
     Activity activity;
     TextView txtpap1_topic, txtpap2_topic, txtpap3_topic, txtpap4_topic;
     Button btnSubscribe;
+    RelativeLayout lytCart;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -55,6 +58,7 @@ public class CrashCourseFragment extends Fragment {
         txtpap2_topic = root.findViewById(R.id.pap2_topic);
         txtpap3_topic = root.findViewById(R.id.pap3_topic);
         txtpap4_topic = root.findViewById(R.id.pap4_topic);
+        lytCart = root.findViewById(R.id.lytCart);
 
         btnSubscribe = root.findViewById(R.id.btnSubscribe);
 
@@ -62,6 +66,19 @@ public class CrashCourseFragment extends Fragment {
         txtpap2_topic.setText("Adult ADHD, Anxiety , spectrum, Attenuated psychoois syndrome, Body dysmorphic disorder, CANMAT guidelines, Catatonia, Dissociation, Eating disorders, Erectile Dysfunction, Gender identity disorder, Grief reaction,  Lithium  toxicity, Mood  disorders,  Mx  of  acute psychiatric  patient,  OCD,  Outcome  studies of schizophrenia, JED, Recovery in schizophrenia, Schizo.obsessive disorder, Schizophrenia, Sexual dysfunction, Sleep disorders, Suicide and Deliberate self.harm");
         txtpap3_topic.setText("Child Psychiatry including ADHD, Specific Learning disorder, Child abuse,Autistic spectrum disorders, Conduct Disor.ders. Enuresis, Tourette syndrome, Psychosis and Mood disorder in childhood; Delirium tremens, Depots/ LAls (Long acting injectables, ECT; Forensic and Community Psychiatry including Mental health act, 20 17, NM HP. RPwD 20 14, NDPS, IDEAS,Testamentary capacity,Psycho logical autopsy,Medical negligence and others; Geriatric depression, NMS / EPS, PMDD premenstrual dysphoric disorder. POCSO Act, Post partum psychiatric disorder. RTMS, Substance use Disorders including Opioid, Cocaine, Inhalant abuse, Solvent abuse . Nicotine dependence, Benzodiazepine abuse, Club drugs,Tobacco control in India, Epidemiology of SUD in India (AJJMS Study)");
         txtpap4_topic.setText("Breaking the bad news, CL psychiatry, Contributions of famous Psychiatrists, Culture bound syndromes in India, Dementia, Drug trials, EEG, Ethics in psychiatry, Euthanasia, Functional neuroimaging in psychiatry, Headache, HIV, ICU psychosis, Landmaik studies in psychia try, Lobru- function test and Neuropsychological assessment, Neuroleptic malignant syndrome, NeuroPsychiatry including Cerebral dominance, Soft neurological signs, Phantom limb, Frontal Iobe syndrome");
+
+        lytCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Fragment fragment = new CartFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("from", "Cart");
+                fragment.setArguments(bundle);
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+            }
+        });
 
         btnSubscribe.setOnClickListener(new View.OnClickListener() {
             @Override

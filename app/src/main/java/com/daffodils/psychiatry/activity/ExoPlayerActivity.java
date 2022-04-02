@@ -119,4 +119,11 @@ public class ExoPlayerActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        exoPlayer.stop();
+        finish();
+    }
 }

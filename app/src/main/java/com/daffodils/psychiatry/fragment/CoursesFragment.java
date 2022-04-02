@@ -75,6 +75,19 @@ public class CoursesFragment extends Fragment {
             }
         });
 
+        llMRCPsych.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Fragment fragment = new MRCPsychFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("from", "MRCPsych ");
+                fragment.setArguments(bundle);
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+            }
+        });
+
         llDiscount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

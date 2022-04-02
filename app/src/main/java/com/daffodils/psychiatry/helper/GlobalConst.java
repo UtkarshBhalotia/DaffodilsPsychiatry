@@ -55,6 +55,7 @@ public class GlobalConst extends Application {
     public static String FullCourse = "1";
     public static String CrashCourse = "2";
     public static String AnyModule = "3";
+    public static String MRCPsych = "5";
 
     //------------------------------------------------------------------------
 
