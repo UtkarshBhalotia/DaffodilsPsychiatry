@@ -9,12 +9,12 @@ public class GlobalConst extends Application {
     public static String URL = "https://daffodilspsychiatry.com/DaffodilsServices.ashx";
 
     public static int MAJOR_VER = 1;
-    public static int MINOR_VER = 4;
+    public static int MINOR_VER = 5;
 
     public static String TOOLBAR_TITLE;
     public static String ERROR = "error";
     public static String PLAY_STORE_LINK = "https://play.google.com/store/apps/details?id=";
-    public static String APP_COMPATABILITY_VERSION = "1.1";
+    public static String APP_COMPATABILITY_VERSION = "1.2";
     public static String SERVICE_TYPE= "service_type";
 
     public static String SC_REGISTRATION = "1";

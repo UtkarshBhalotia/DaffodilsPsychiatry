@@ -68,7 +68,7 @@ public class CartFragment extends Fragment {
     public static RecyclerView recyclerView;
     public static List<OrderSummaryGetterSetter> m_orderSummary = new ArrayList<>();
     public static OrderSummaryAdapter orderSummaryAdapter;
-    public static String m_SubTotalAmt;
+    public static String m_SubTotalAmt, m_FinalAmt;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -117,7 +117,7 @@ public class CartFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent i = new Intent(activity, RazorpayPaymentActivity.class);
-                i.putExtra("RECHARGE_AMT", m_SubTotalAmt);
+                i.putExtra("RECHARGE_AMT", m_FinalAmt);
                 startActivity(i);
 
                 //Toast.makeText(context, "Payment Gateway Under Construction.", Toast.LENGTH_LONG).show();
@@ -149,6 +149,7 @@ public class CartFragment extends Fragment {
                                 tvFinalAmt.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(GlobalConst.FINALAMOUNT)));
                                 txtAmtToBePaid.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(GlobalConst.FINALAMOUNT)));
                                 tvPromoDiscount.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(GlobalConst.DISCOUNT)));
+                                m_FinalAmt = GlobalConst.FINALAMOUNT;
 
                             } else {
                                 btnApply.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
@@ -195,6 +196,7 @@ public class CartFragment extends Fragment {
                                 tvTotal.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(m_SubTotalAmt)));
                                 tvFinalAmt.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(m_SubTotalAmt)));
                                 txtAmtToBePaid.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(m_SubTotalAmt)));
+                                m_FinalAmt = m_SubTotalAmt;
                                 tvPromoDiscount.setText("-");
 
                                 JSONArray jsonArray = jsonObject.getJSONArray("dtModules");
