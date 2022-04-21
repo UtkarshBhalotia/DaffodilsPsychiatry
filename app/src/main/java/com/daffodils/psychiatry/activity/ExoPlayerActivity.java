@@ -8,9 +8,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
 
 import com.daffodils.psychiatry.R;
 import com.google.android.exoplayer2.ExoPlaybackException;
@@ -39,6 +41,7 @@ public class ExoPlayerActivity extends AppCompatActivity {
     SimpleExoPlayer exoPlayer;
     ProgressBar progressBar;
     String videoURL = "";
+    private TextView playbackSpeed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,9 @@ public class ExoPlayerActivity extends AppCompatActivity {
         setContentView(R.layout.lyt_exoplayer);
         exoPlayerView = findViewById(R.id.idExoPlayerVIew);
         progressBar = new ProgressBar(this);
+
+        playbackSpeed = (TextView) findViewById(R.id.playbackSpeed);
+        playbackSpeed.setVisibility(View.VISIBLE);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
        // requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -118,7 +124,40 @@ public class ExoPlayerActivity extends AppCompatActivity {
             }
         });
 
+      /*  playbackSpeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPlayerSpeedDialog();
+            }
+        });*/
+
     }
+
+    /*private void showPlayerSpeedDialog() {
+        String[] playerSpeedArrayLabels = {"0.8x", "1.0x", "1.2x", "1.5x", "1.8x", "2.0x"};
+
+        PopupMenu popupMenu = new PopupMenu(ExoPlayerActivity.this, playbackSpeed);
+        for (int i = 0; i < playerSpeedArrayLabels.length; i++) {
+            popupMenu.getMenu().add(i, i, i, playerSpeedArrayLabels[i]);
+        }
+        popupMenu.setOnMenuItemClickListener(item -> {
+            int id = item.getItemId();
+            CharSequence itemTitle = item.getTitle();
+            float playbackSpeed = Float.parseFloat(itemTitle.subSequence(0, 3).toString());
+            PlaybackParameters param = new PlaybackParameters(playbackSpeed);
+            exoPlayer.setPlaybackParameters(param);
+           // changePlayerSpeed(playbackSpeed, itemTitle.subSequence(0, 3).toString());
+            return false;
+        });
+        popupMenu.show();
+    }*/
+
+    /*private void changePlayerSpeed(float speed, String speedLabel) {
+        // Set playback speed
+        ((ExoPlayer.ExoPlayerComponent) exoPlayer.getVideoFormat().getVideoDisplay()).getExoPlayer().setPlaybackParameters(new PlaybackParameters(speed, 1.0f));
+        // Set playback speed label
+        playbackSpeed.setText("Speed: " + speedLabel + "x");
+    }*/
 
     @Override
     public void onBackPressed() {
