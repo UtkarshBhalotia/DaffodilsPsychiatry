@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -69,14 +70,6 @@ public class SubscribedVideosFragment extends Fragment{
         activity = getActivity();
         setHasOptionsMenu(true);
 
-       /* if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
-            Window window = getActivity().getWindow();
-            WindowManager wm = getActivity().getWindowManager();
-            wm.removeViewImmediate(window.getDecorView());
-            wm.addView(window.getDecorView(), window.getAttributes());
-
-        }*/
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(mLayoutManager);

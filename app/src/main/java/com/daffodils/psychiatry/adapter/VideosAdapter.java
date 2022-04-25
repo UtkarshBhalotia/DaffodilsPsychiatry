@@ -1,16 +1,19 @@
 package com.daffodils.psychiatry.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daffodils.psychiatry.R;
+import com.daffodils.psychiatry.activity.DownloadFile;
 import com.daffodils.psychiatry.helper.GlobalConst;
 import com.daffodils.psychiatry.model.VideosGetterSetter;
 
@@ -38,8 +41,10 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.MyViewHold
 
         if (GlobalConst.VIDEO_TYPE.equals("Sample Video")){
             myViewHolder.module.setVisibility(View.GONE);
+            myViewHolder.lytSaveToOffline.setVisibility(View.GONE);
         } else {
             myViewHolder.module.setVisibility(View.VISIBLE);
+            myViewHolder.lytSaveToOffline.setVisibility(View.VISIBLE );
         }
 
         if (videos_list.get(i).getCourseName().equals("")) {
@@ -70,6 +75,14 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.MyViewHold
         } else {
             myViewHolder.path.setText("");
         }
+
+        myViewHolder.lytSaveToOffline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(context, DownloadFile.class);
+
+            }
+        });
     }
 
     @Override
@@ -79,6 +92,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView course, module, video, path;
+        LinearLayout lytSaveToOffline;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -86,6 +100,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.MyViewHold
             module = itemView.findViewById(R.id.tvModName);
             video = itemView.findViewById(R.id.tvVideoName);
             path = itemView.findViewById(R.id.image_title);
+            lytSaveToOffline = itemView.findViewById(R.id.lytsave);
 
         }
     }
