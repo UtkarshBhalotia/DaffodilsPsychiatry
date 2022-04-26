@@ -34,6 +34,7 @@ import com.daffodils.psychiatry.fragment.FacultyFragment;
 import com.daffodils.psychiatry.fragment.FeeStructureFragment;
 import com.daffodils.psychiatry.fragment.FreeSampleVideosFragment;
 import com.daffodils.psychiatry.fragment.HelpSupportFragment;
+import com.daffodils.psychiatry.fragment.OfflineVideoFragment;
 import com.daffodils.psychiatry.fragment.ProfileFragment;
 import com.daffodils.psychiatry.fragment.ReferenceBooksFragment;
 import com.daffodils.psychiatry.fragment.SubscribedVideosFragment;
@@ -141,6 +142,14 @@ public class DrawerActivity extends AppCompatActivity {
                             fragment.setArguments(bundle);
                             getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
                         }
+                        break;
+                    case R.id.menu_offline_vdo:
+
+                        fragment = new OfflineVideoFragment();
+                        bundle = new Bundle();
+                        bundle.putString("type", "OfflineVideo");
+                        fragment.setArguments(bundle);
+                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
                         break;
                     case R.id.menu_pricing:
                         fragment = new FeeStructureFragment();

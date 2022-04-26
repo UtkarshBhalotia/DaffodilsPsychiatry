@@ -25,6 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.daffodils.psychiatry.R;
 import com.daffodils.psychiatry.activity.ExoPlayerActivity;
 import com.daffodils.psychiatry.activity.MainActivity;
+import com.daffodils.psychiatry.adapter.OfflineVideoAdapter;
 import com.daffodils.psychiatry.adapter.VideosAdapter;
 import com.daffodils.psychiatry.helper.ApiConfig;
 import com.daffodils.psychiatry.helper.AppController;
@@ -44,15 +45,15 @@ import java.util.Map;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
-public class FreeSampleVideosFragment extends Fragment {
+public class OfflineVideoFragment extends Fragment {
 
     View root;
     Context context;
     Activity activity;
     RecyclerView recyclerView;
-    VideosAdapter videosAdapter;
-    public List<String> m_videoPath = new ArrayList<>();
-    public static List<VideosGetterSetter> videos_list = new ArrayList<>();
+    OfflineVideoAdapter videosAdapter;
+    public List<String> m_offlinevideoPath = new ArrayList<>();
+    public static List<VideosGetterSetter> offline_videos_list = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -71,16 +72,11 @@ public class FreeSampleVideosFragment extends Fragment {
             @Override
             public void onClick(View view, int position) throws IOException {
 
-                String value = m_videoPath.get(position);
+                String value = m_offlinevideoPath.get(position);
                 Intent i = new Intent(context, ExoPlayerActivity.class);
-                i.putExtra("VideoURL", "https://daffodilspsychiatry.com/"+ value);
+                i.putExtra("VideoURL", value);
                 startActivity(i);
 
-              /*  Fragment fragment = new ExoPlayerFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("VideoURL", "https://daffodilspsychiatry.com/"+ value);
-                fragment.setArguments(bundle);
-                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();*/
             }
 
             @Override
@@ -89,58 +85,37 @@ public class FreeSampleVideosFragment extends Fragment {
             }
         }));
 
-        getAllFreeVideosList();
+            getAllVideosListInOfflineMode();
+
 
 
         return root;
     }
 
-    public void getAllFreeVideosList(){
+    public void getAllVideosListInOfflineMode(){
 
-        videos_list.clear();
-        if (AppController.isConnected(activity)) {
+        offline_videos_list.clear();
+        m_offlinevideoPath.clear();
 
-            Map<String, String> params = new HashMap<String, String>();
-            params.put("SC", GlobalConst.SC_GET_SAMPLE_VIDEOS);
+        String path = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS + File.separator + ".offlinemode"));
+        Log.d("Files", "Path: " + path);
 
-            ApiConfig.RequestToVolley(new VolleyCallback() {
-                @Override
-                public void onSuccess(boolean result, String response) {
-                    if (result) {
-                        try {
+        File directory = new File(path);
+        File[] files = directory.listFiles();
 
-                            if (GlobalConst.Result.equals("T")) {
-                                JSONArray jsonArray = new JSONArray(response);
-                                JSONObject jsonObject;
+        Log.d("Files", "Size: "+ files.length);
 
-                                for(int i =0; i<jsonArray.length();i++){
-                                    jsonObject = jsonArray.getJSONObject(i);
-                                    String CourseName = jsonObject.getString("CourseName");
-                                    String ModuleName = jsonObject.getString("ModuleName");
-                                    String VideoName = jsonObject.getString("VideoName");
-                                    String VideoPath= jsonObject.getString("VideoPath");
-
-                                    VideosGetterSetter videosGetterSetter = new VideosGetterSetter(CourseName, ModuleName, VideoName, VideoPath);
-                                    videos_list.add(videosGetterSetter);
-                                    m_videoPath.add(VideoPath);
-                                    GlobalConst.VIDEO_TYPE = "Sample Video";
-                                    videosAdapter = new VideosAdapter(context, videos_list);
-                                    recyclerView.setAdapter(videosAdapter);
-                                }
-
-                            }
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-
-            }, activity, GlobalConst.URL.trim() , params, true);
-
+        for (int i = 0; i < files.length; i++)
+        {
+            VideosGetterSetter videosGetterSetter = new VideosGetterSetter("CourseName", "ModuleName", files[i].getName(), "VideoPath");
+            offline_videos_list.add(videosGetterSetter);
+            m_offlinevideoPath.add(String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS + File.separator + ".offlinemode" + File.separator + files[i].getName())));
+            GlobalConst.VIDEO_TYPE = "Sample Video";
+            videosAdapter = new OfflineVideoAdapter(context, offline_videos_list);
+            recyclerView.setAdapter(videosAdapter);
+            Log.d("Files", "FileName:" + files[i].getName());
         }
     }
-
 
     @Override
     public void onResume() {

@@ -43,6 +43,7 @@ public class GlobalConst extends Application {
     public static String Result = "", Description="", GetPassword ="", AppVersion = "", isDeviceChanged = "";
     public static String VIDEO_TYPE ;
     public static String DISCOUNT= "discount";
+    public static String OFFLINE_MODE = "False";
     public static String FINALAMOUNT = "finalamt";
     public static String CART_ADD = "1";
     public static String CART_REMOVE = "2";

@@ -25,12 +25,12 @@ import java.util.List;
 
 import static com.daffodils.psychiatry.fragment.SubscribedVideosFragment.mProgressDialog;
 
-public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.MyViewHolder> {
+public class OfflineVideoAdapter extends RecyclerView.Adapter<OfflineVideoAdapter.MyViewHolder> {
     Context context;
     List<VideosGetterSetter> videos_list;
 
 
-    public VideosAdapter(Context context, List<VideosGetterSetter> videos_list) {
+    public OfflineVideoAdapter(Context context, List<VideosGetterSetter> videos_list) {
         this.context = context;
         this.videos_list = videos_list;
     }
@@ -45,15 +45,10 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
 
-        if (GlobalConst.VIDEO_TYPE.equals("Sample Video")){
-            myViewHolder.module.setVisibility(View.GONE);
-            myViewHolder.lytSaveToOffline.setVisibility(View.GONE);
-            myViewHolder.lytWatchVideo.setVisibility(View.GONE);
-        } else {
-            myViewHolder.module.setVisibility(View.VISIBLE);
-            myViewHolder.lytSaveToOffline.setVisibility(View.VISIBLE );
-            myViewHolder.lytWatchVideo.setVisibility(View.VISIBLE);
-        }
+        myViewHolder.lytSaveToOffline.setVisibility(View.GONE);
+        myViewHolder.lytWatchVideo.setVisibility(View.GONE);
+        myViewHolder.course.setVisibility(View.GONE);
+        myViewHolder.module.setVisibility(View.GONE);
 
         if (videos_list.get(i).getCourseName().equals("")) {
             myViewHolder.course.setText("");
@@ -84,38 +79,6 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.MyViewHold
             myViewHolder.path.setText("");
         }
 
-        myViewHolder.lytSaveToOffline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                mProgressDialog = new ProgressDialog(context);
-                mProgressDialog.setMessage("Downloading Video. Plz do not cancel");
-                mProgressDialog.setIndeterminate(true);
-                mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                mProgressDialog.setCancelable(true);
-
-                final SubscribedVideosFragment.DownloadTask downloadTask = new SubscribedVideosFragment.DownloadTask(context, videos_list.get(i).getVideoName().trim());
-             //   downloadTask.execute("https://daffodilspsychiatry.com/Videos/Sample/2_0_Lecture%2024.mp4");
-                downloadTask.execute("https://daffodilspsychiatry.com/" + videos_list.get(i).getVideoPath());
-
-                mProgressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-
-                    @Override
-                    public void onCancel(DialogInterface dialog) {
-                        downloadTask.cancel(true); //cancel the task
-                    }
-                });
-            }
-        });
-
-        myViewHolder.lytWatchVideo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent ii = new Intent(context, ExoPlayerActivity.class);
-                ii.putExtra("VideoURL", "https://daffodilspsychiatry.com/"+ videos_list.get(i).getVideoPath());
-                context.startActivity(ii);
-            }
-        });
     }
 
     @Override
