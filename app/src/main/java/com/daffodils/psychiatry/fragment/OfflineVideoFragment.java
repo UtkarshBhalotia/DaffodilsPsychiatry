@@ -85,9 +85,8 @@ public class OfflineVideoFragment extends Fragment {
             }
         }));
 
-            getAllVideosListInOfflineMode();
-
-
+        getAllVideosDaysLeft();
+//        getAllVideosListInOfflineMode();
 
         return root;
     }
@@ -114,6 +113,46 @@ public class OfflineVideoFragment extends Fragment {
             videosAdapter = new OfflineVideoAdapter(context, offline_videos_list);
             recyclerView.setAdapter(videosAdapter);
             Log.d("Files", "FileName:" + files[i].getName());
+        }
+    }
+
+    public void getAllVideosDaysLeft(){
+
+        if (AppController.isConnected(activity)) {
+
+            Map<String, String> params = new HashMap<String, String>();
+            params.put("SC", GlobalConst.SC_GET_SUBSCRIBED_VIDEO_DETAILS);
+            params.put("UserID", GlobalConst.User_id);
+
+            ApiConfig.RequestToVolley(new VolleyCallback() {
+                @Override
+                public void onSuccess(boolean result, String response) {
+                    if (result) {
+                        try {
+
+                            if (GlobalConst.Result.equals("T")) {
+                                JSONArray jsonArray = new JSONArray(response);
+                                JSONObject jsonObject;
+
+                                for(int i =0; i<jsonArray.length();i++){
+
+                                    jsonObject = jsonArray.getJSONObject(i);
+                                    String VideoName = jsonObject.getString("VideoName");
+                                    String DaysLeft = jsonObject.getString("DaysLeft");
+                                }
+
+                                getAllVideosListInOfflineMode();
+
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+            }, activity, GlobalConst.URL.trim() , params, true);
+
         }
     }
 

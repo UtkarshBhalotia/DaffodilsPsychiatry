@@ -1,10 +1,6 @@
 package com.daffodils.psychiatry.adapter;
 
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,15 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daffodils.psychiatry.R;
-import com.daffodils.psychiatry.activity.DownloadFile;
-import com.daffodils.psychiatry.activity.ExoPlayerActivity;
-import com.daffodils.psychiatry.fragment.SubscribedVideosFragment;
-import com.daffodils.psychiatry.helper.GlobalConst;
 import com.daffodils.psychiatry.model.VideosGetterSetter;
 
 import java.util.List;
-
-import static com.daffodils.psychiatry.fragment.SubscribedVideosFragment.mProgressDialog;
 
 public class OfflineVideoAdapter extends RecyclerView.Adapter<OfflineVideoAdapter.MyViewHolder> {
     Context context;
