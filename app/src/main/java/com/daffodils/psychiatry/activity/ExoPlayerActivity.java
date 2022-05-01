@@ -15,6 +15,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 
 import com.daffodils.psychiatry.R;
+import com.daffodils.psychiatry.helper.GlobalConst;
+import com.google.android.exoplayer2.DefaultLoadControl;
+import com.google.android.exoplayer2.DefaultRenderersFactory;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.ExoPlayerFactory;
@@ -32,7 +35,9 @@ import com.google.android.exoplayer2.trackselection.TrackSelectionArray;
 import com.google.android.exoplayer2.trackselection.TrackSelector;
 import com.google.android.exoplayer2.ui.SimpleExoPlayerView;
 import com.google.android.exoplayer2.upstream.BandwidthMeter;
+import com.google.android.exoplayer2.upstream.DataSpec;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 
 public class ExoPlayerActivity extends AppCompatActivity {
@@ -51,9 +56,6 @@ public class ExoPlayerActivity extends AppCompatActivity {
         exoPlayerView = findViewById(R.id.idExoPlayerVIew);
         progressBar = new ProgressBar(this);
 
-        playbackSpeed = (TextView) findViewById(R.id.playbackSpeed);
-        playbackSpeed.setVisibility(View.VISIBLE);
-
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
        // requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -61,7 +63,11 @@ public class ExoPlayerActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         videoURL = i.getStringExtra("VideoURL");
-        try {
+
+        if (GlobalConst.OFFLINE_MODE.equals("True")) {
+            initializePlayer();
+        } else {
+               try {
 
             Toast.makeText(this, "Please wait while the video is Buffering.", Toast.LENGTH_LONG).show();
 
@@ -80,7 +86,6 @@ public class ExoPlayerActivity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
             Log.e("TAG", "Error : " + e.toString());
         }
-
         exoPlayer.addListener(new ExoPlayer.EventListener() {
             @Override
             public void onTimelineChanged(Timeline timeline, Object manifest) {
@@ -123,6 +128,9 @@ public class ExoPlayerActivity extends AppCompatActivity {
 
             }
         });
+        }
+
+
 
       /*  playbackSpeed.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,6 +140,30 @@ public class ExoPlayerActivity extends AppCompatActivity {
         });*/
 
     }
+
+    private void initializePlayer() {
+        exoPlayer = ExoPlayerFactory.newSimpleInstance(
+                new DefaultRenderersFactory(this),
+                new DefaultTrackSelector(), new DefaultLoadControl());
+       /* String filePath = Environment.getExternalStorageDirectory() + File.separator +
+                "video" + File.separator + "video1.mp4";
+        Log.e("filepath", filePath);*/
+        String filePath = videoURL;
+        Uri uri = Uri.parse(filePath);
+
+        ExtractorMediaSource audioSource = new ExtractorMediaSource(
+                uri,
+                new DefaultDataSourceFactory(this, "MyExoplayer"),
+                new DefaultExtractorsFactory(),
+                null,
+                null
+        );
+
+        exoPlayer.prepare(audioSource);
+        exoPlayerView.setPlayer(exoPlayer);
+        exoPlayer.setPlayWhenReady(true);
+    }
+
 
     /*private void showPlayerSpeedDialog() {
         String[] playerSpeedArrayLabels = {"0.8x", "1.0x", "1.2x", "1.5x", "1.8x", "2.0x"};
@@ -163,6 +195,5 @@ public class ExoPlayerActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         exoPlayer.stop();
-        finish();
     }
 }

@@ -3,6 +3,7 @@ package com.daffodils.psychiatry.fragment;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -18,6 +19,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -36,7 +38,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.daffodils.psychiatry.R;
 import com.daffodils.psychiatry.activity.ExoPlayerActivity;
+import com.daffodils.psychiatry.activity.LoginActivity;
 import com.daffodils.psychiatry.activity.MainActivity;
+import com.daffodils.psychiatry.activity.RegisterActivity;
 import com.daffodils.psychiatry.adapter.VideosAdapter;
 import com.daffodils.psychiatry.helper.ApiConfig;
 import com.daffodils.psychiatry.helper.AppController;
@@ -55,6 +59,8 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -72,6 +78,10 @@ public class SubscribedVideosFragment extends Fragment{
     public static ProgressDialog mProgressDialog;
     public List<String> m_videoPath = new ArrayList<>();
     public static List<VideosGetterSetter> videos_list = new ArrayList<>();
+    private static double SPACE_KB = 1024;
+    private static double SPACE_MB = 1024 * SPACE_KB;
+    private static double SPACE_GB = 1024 * SPACE_MB;
+    private static double SPACE_TB = 1024 * SPACE_GB;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -262,6 +272,8 @@ public class SubscribedVideosFragment extends Fragment{
         private Context context;
         private String VideoName;
         private PowerManager.WakeLock mWakeLock;
+        int fileLengthinMB;
+        long total = 0;
 
         public DownloadTask(Context context, String VideoName) {
             this.context = context;
@@ -293,6 +305,7 @@ public class SubscribedVideosFragment extends Fragment{
                 // this will be useful to display download percentage
                 // might be -1: server did not report the length
                 int fileLength = connection.getContentLength();
+                fileLengthinMB = fileLength;
 
                 // download the file
                 input = connection.getInputStream();
@@ -300,7 +313,7 @@ public class SubscribedVideosFragment extends Fragment{
                 //  output = new FileOutputStream("/sdcard/file_name.extension");
 
                 byte data[] = new byte[4096];
-                long total = 0;
+                //long total = 0;
                 int count;
                 while ((count = input.read(data)) != -1) {
                     // allow canceling with back button
@@ -347,6 +360,8 @@ public class SubscribedVideosFragment extends Fragment{
         protected void onProgressUpdate(Integer... progress) {
             super.onProgressUpdate(progress);
             // if we get here, length is known, now set indeterminate to false
+        //    mProgressDialog.setMessage(String.valueOf(fileLengthinMB) + "MB");
+            mProgressDialog.setProgressNumberFormat((bytes2String(total)) + "/" + (bytes2String(fileLengthinMB)));
             mProgressDialog.setIndeterminate(false);
             mProgressDialog.setMax(100);
             mProgressDialog.setProgress(progress[0]);
@@ -357,9 +372,29 @@ public class SubscribedVideosFragment extends Fragment{
             mWakeLock.release();
             mProgressDialog.dismiss();
             if (result != null)
-                Toast.makeText(context, "Download error: " + result, Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Download error: Kidly give storage permissions", Toast.LENGTH_LONG).show();
             else
                 Toast.makeText(context, "File downloaded", Toast.LENGTH_SHORT).show();
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+                // Setting Dialog Message
+                alertDialog.setTitle("Saved Successfully !!");
+                //  alertDialog.setMessage("Please contact to admin for activation of account or visit https://daffodilspsychiatry.com/ for more details.");
+                alertDialog.setMessage("Your video is successfully saved in offline mode. Thank You!!");
+                alertDialog.setCancelable(false);
+                final AlertDialog alertDialog1 = alertDialog.create();
+
+                alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        try {
+
+                           alertDialog1.cancel();
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
         }
     }
 
@@ -380,4 +415,28 @@ public class SubscribedVideosFragment extends Fragment{
             e.printStackTrace();
         }
     }
+
+    public static String bytes2String(long sizeInBytes) {
+
+        NumberFormat nf = new DecimalFormat();
+        nf.setMaximumFractionDigits(2);
+
+        try {
+            if ( sizeInBytes < SPACE_KB ) {
+                return nf.format(sizeInBytes) + " Byte(s)";
+            } else if ( sizeInBytes < SPACE_MB ) {
+                return nf.format(sizeInBytes/SPACE_KB) + " KB";
+            } else if ( sizeInBytes < SPACE_GB ) {
+                return nf.format(sizeInBytes/SPACE_MB) + " MB";
+            } else if ( sizeInBytes < SPACE_TB ) {
+                return nf.format(sizeInBytes/SPACE_GB) + " GB";
+            } else {
+                return nf.format(sizeInBytes/SPACE_TB) + " TB";
+            }
+        } catch (Exception e) {
+            return sizeInBytes + " Byte(s)";
+        }
+
+    }
+
 }

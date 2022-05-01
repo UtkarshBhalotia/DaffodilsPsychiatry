@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -68,11 +69,15 @@ public class OfflineVideoFragment extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
+
         recyclerView.addOnItemTouchListener(new MainActivity.RecyclerTouchListener(getContext(), recyclerView, new MainActivity.ClickListener() {
             @Override
             public void onClick(View view, int position) throws IOException {
 
                 String value = m_offlinevideoPath.get(position);
+                GlobalConst.OFFLINE_MODE = "True";
                 Intent i = new Intent(context, ExoPlayerActivity.class);
                 i.putExtra("VideoURL", value);
                 startActivity(i);
@@ -139,7 +144,21 @@ public class OfflineVideoFragment extends Fragment {
                                     jsonObject = jsonArray.getJSONObject(i);
                                     String VideoName = jsonObject.getString("VideoName");
                                     String DaysLeft = jsonObject.getString("DaysLeft");
+
+                                    if (DaysLeft.equals("0")){
+                                        String path = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS + File.separator + ".offlinemode" + File.separator + VideoName));
+                                        File fdelete = new File(path);
+                                        if (fdelete.exists()) {
+                                            if (fdelete.delete()) {
+                                                System.out.println("file Deleted :");
+                                            } else {
+                                                System.out.println("file not Deleted :");
+                                            }
+                                        }
+                                    }
                                 }
+
+
 
                                 getAllVideosListInOfflineMode();
 
@@ -159,7 +178,7 @@ public class OfflineVideoFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        GlobalConst.TOOLBAR_TITLE = getString(R.string.title_sample_vdo);
+        GlobalConst.TOOLBAR_TITLE = getString(R.string.title_offline_vdo);
         getActivity().invalidateOptionsMenu();
         hideKeyboard();
     }
