@@ -39,6 +39,7 @@ public class GlobalConst extends Application {
     public static String SC_APPLY_COUPON = "20";
     public static String SC_GET_PROFILE_DETAILS = "21";
     public static String SC_GET_SUBSCRIBED_VIDEO_DETAILS = "22";
+    public static String SC_GET_COURSE_DURATION ="23";
 
     public static String Username = "", Name = "", Mobile = "", Address = "", ModuleID = "", User_id = "", Password = "", DeviceID = "";
     public static String Result = "", Description="", GetPassword ="", AppVersion = "", isDeviceChanged = "";
@@ -46,8 +47,13 @@ public class GlobalConst extends Application {
     public static String DISCOUNT= "discount";
     public static String OFFLINE_MODE = "False";
     public static String FINALAMOUNT = "finalamt";
+    public static String TRANCHARGES = "trancharges";
     public static String CART_ADD = "1";
     public static String CART_REMOVE = "2";
+    public static String FULL_COURSE_DURATION = "";
+    public static String CRASH_COURSE_DURATION = "";
+    public static String MRCPSYCH_DURATION = "";
+    public static String ANY_MODULE_DURATION = "";
 
     public static DecimalFormat formater = new DecimalFormat("#,##,##,###.00");
     public static String SETTING_CURRENCY_SYMBOL = "Rs ";

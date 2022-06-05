@@ -870,19 +870,21 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/txtFullCourseDuration"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Full Foundation Course 2021 : 4 Months"
+                        android:text="Full Foundation Course 2021 : "
                         android:textColor="@color/logocolor"
                         android:textStyle="bold"
                         android:textSize="19dp" />
 
                     <TextView
+                        android:id="@+id/txtAnyModDuration"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Any Module(s) : 2 to 3 Months"
+                        android:text="Any Module(s) : "
                         android:textColor="@color/logocolor"
                         android:textStyle="bold"
                         android:textSize="19dp" />

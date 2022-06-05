@@ -42,7 +42,7 @@ public class CrashCourseFragment extends Fragment {
 
     View root;
     Activity activity;
-    TextView txtpap1_topic, txtpap2_topic, txtpap3_topic, txtpap4_topic;
+    TextView txtpap1_topic, txtpap2_topic, txtpap3_topic, txtpap4_topic, txtDuration;
     Button btnSubscribe;
     RelativeLayout lytCart;
 
@@ -59,6 +59,9 @@ public class CrashCourseFragment extends Fragment {
         txtpap3_topic = root.findViewById(R.id.pap3_topic);
         txtpap4_topic = root.findViewById(R.id.pap4_topic);
         lytCart = root.findViewById(R.id.lytCart);
+        txtDuration = root.findViewById(R.id.txtDuration);
+
+        txtDuration.setText("Crash Course 2022 : " + GlobalConst.CRASH_COURSE_DURATION);
 
         btnSubscribe = root.findViewById(R.id.btnSubscribe);
 

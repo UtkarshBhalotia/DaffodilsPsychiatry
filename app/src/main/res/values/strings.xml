@@ -142,6 +142,7 @@
     <string name="price">Price</string>
     <string name="action">Del</string>
     <string name="sub_total">Sub Total</string>
+    <string name="tran_fees">Transactional Charges</string>
     <string name="promo_discount">Promo Discount</string>
     <string name="final_amt">Final Amount</string>
     <string name="total_amt">Total Amount</string>

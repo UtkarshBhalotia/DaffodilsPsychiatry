@@ -42,7 +42,7 @@ public class MRCPsychFragment extends Fragment {
 
     View root;
     Activity activity;
-    TextView txtpapb_topic;
+    TextView txtpapb_topic, txtDuration;
     Button btnSubscribe;
     RelativeLayout lytCart;
 
@@ -56,6 +56,9 @@ public class MRCPsychFragment extends Fragment {
         txtpapb_topic = root.findViewById(R.id.papb_topic);
         lytCart = root.findViewById(R.id.lytCart);
         btnSubscribe = root.findViewById(R.id.btnSubscribe);
+        txtDuration = root.findViewById(R.id.txtDuration);
+
+        txtDuration.setText("- Validity / Duration : " + GlobalConst.MRCPSYCH_DURATION);
 
         txtpapb_topic.setText("Topics Covered : \n 1. Forensic Psychiatry \n 2. Addiction Psychiatry \n 3. Adult Psychiatry \n 4. Learning Disability \n 5. Child Psychiatry \n 6. Old Age Psychiatry \n 7. Pre-Natal Psychiatry \n 8. Psychiatry Services \n 9. Emergency Psychiatry \n 10. Psychotherapy \n 11. Quality Improvement \n 12. Epidemiology");
 

@@ -44,10 +44,11 @@ public class FoundationCourseFragment extends Fragment {
 
     View root;
     public static Activity activity;
-    TextView txtFFC;
+    TextView txtFFC, txtFullCourseDuration, txtAnyModDuration;
     TextView txtmod1_topic, txtmod2_topic, txtmod3_topic, txtmod4_topic, txtmod5_topic, txtmod6_topic, txtmod7_topic, txtmod8_topic, txtmod9_topic;
     TextView txtSubsFullCourse, txtSubsMod1, txtSubsMod2, txtSubsMod3, txtSubsMod4, txtSubsMod5, txtSubsMod6, txtSubsMod7, txtSubsMod8, txtSubsMod9;
     RelativeLayout lyCart;
+
 
     @Override
 
@@ -67,6 +68,8 @@ public class FoundationCourseFragment extends Fragment {
         txtmod8_topic = root.findViewById(R.id.mod8_topic);
         txtmod9_topic = root.findViewById(R.id.mod9_topic);
         txtFFC = root.findViewById(R.id.txtFFC);
+        txtFullCourseDuration = root.findViewById(R.id.txtFullCourseDuration);
+        txtAnyModDuration = root.findViewById(R.id.txtAnyModDuration);
 
         txtFFC.setPaintFlags(txtFFC.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
@@ -92,6 +95,9 @@ public class FoundationCourseFragment extends Fragment {
         txtmod7_topic.setText("Epilepsy, Consultation Liasion, Ect, rTMS, Soft Neurological Signs, Vascular Depression, Neurotransmitters and receptors, Limbic systems, Cerebral Dominance, Phantom Limb, Sterios Induced Psychosis, Depression in clinical setting, Headache.");
         txtmod8_topic.setText("Detailed mental status examination, Psychopathology discussion, Cases on Schizophrenia, Bipolace disorder, Elderly Depression, Substance use disorder, Explanation of Token Economy, Lithium toxicity, Cognitive Behaviour therapy, Kirby's method, Treatment Substance Schizophrenia.");
         txtmod9_topic.setText("Pathways and receptors of Dopamine, Glutamate, GABA; NMDA Hypo functioning hypothesis of Schizophrenia, Serotonergic pathways and receptors, Hypnosis, anti-manic, antidepressants, antipsychotics, Clozapine, Individual antipsychotic drugs including Newer 3rd Gen antipsychotics, Depression and mania, SSRIs in detail, SPARI, SNRIs, Agomelatine, alpha blockers, SARIs,TCAs, Vortioxetin, Mood stabilizers, Lithium, Valproate and other mood stabilizers including special considerations, ADHD including individual drugs, Addiction, impulsivity, compulsivity including individual drugs, anxiety.");
+
+        txtFullCourseDuration.setText("Full Foundation Course 2021 : " + GlobalConst.FULL_COURSE_DURATION);
+        txtAnyModDuration.setText("Any Module(s) : " + GlobalConst.ANY_MODULE_DURATION);
 
         lyCart.setOnClickListener(new View.OnClickListener() {
             @Override

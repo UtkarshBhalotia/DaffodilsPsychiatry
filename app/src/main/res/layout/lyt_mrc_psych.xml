@@ -142,10 +142,11 @@
                     android:textSize="20dp" />
 
                 <TextView
+                    android:id="@+id/txtDuration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="- Validity / Duration : 1 Year"
+                    android:text="- Validity / Duration : "
                     android:textColor="@color/logocolor"
                     android:textStyle="bold"
                     android:textSize="19dp" />

@@ -58,4 +58,23 @@
         android:layout_marginBottom="8dp"
         android:indeterminate="true"/>
 
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/gray"
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:id="@+id/playbackSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:padding="7dp"
+            android:text="Change Speed"
+            android:textStyle="bold"
+            android:textColor="@color/txt_color" />
+
+    </FrameLayout>
+
 </RelativeLayout>

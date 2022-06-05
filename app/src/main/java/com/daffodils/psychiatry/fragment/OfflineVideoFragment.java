@@ -145,7 +145,7 @@ public class OfflineVideoFragment extends Fragment {
                                     String VideoName = jsonObject.getString("VideoName");
                                     String DaysLeft = jsonObject.getString("DaysLeft");
 
-                                    if (DaysLeft.equals("0")){
+                                    if (DaysLeft.equals("0") || (DaysLeft.contains("-"))){
                                         String path = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS + File.separator + ".offlinemode" + File.separator + VideoName));
                                         File fdelete = new File(path);
                                         if (fdelete.exists()) {

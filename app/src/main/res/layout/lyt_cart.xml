@@ -75,7 +75,6 @@
                         android:id="@+id/tvMessage"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toStartOf="@+id/imgRefresh"
                         android:text="@string/promo_code_msg"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/mid_text" />
@@ -252,6 +251,26 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/lytTransFees"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="@string/tran_fees" />
+
+                        <TextView
+                            android:id="@+id/tvTransFees"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:id="@+id/lytPromoDiscount"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -305,8 +324,8 @@
         android:layout_alignParentBottom="true"
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
-        android:paddingStart="@dimen/margin_10dp"
-        android:paddingEnd="@dimen/margin_10dp"
+        android:paddingStart="@dimen/margin_5dp"
+        android:paddingEnd="@dimen/margin_5dp"
         android:visibility="visible">
 
         <TextView
@@ -326,7 +345,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/tvConfirmOrder"
             android:layout_toEndOf="@+id/tvPreTotal"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/black" />
@@ -349,6 +367,7 @@
             android:textColor="@color/white"
             app:drawableEndCompat="@drawable/ic_confirm" />
     </RelativeLayout>
+
 
     <ProgressBar
         android:id="@+id/progressBar"

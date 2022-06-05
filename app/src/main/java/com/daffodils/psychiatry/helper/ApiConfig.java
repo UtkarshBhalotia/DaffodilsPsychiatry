@@ -103,6 +103,7 @@ public class ApiConfig {
                         GlobalConst.AppVersion = response.headers.get("AppVersion");
                         GlobalConst.DISCOUNT = response.headers.get("Discount");
                         GlobalConst.FINALAMOUNT = response.headers.get("FinalAmount");
+                        GlobalConst.TRANCHARGES = response.headers.get("TransactionCharges");
 
                         if (GlobalConst.SERVICE_TYPE.equals(GlobalConst.SC_GET_SUBSCRIBED_MODULES)){
                             GlobalConst.ModuleID = response.headers.get("Modules");

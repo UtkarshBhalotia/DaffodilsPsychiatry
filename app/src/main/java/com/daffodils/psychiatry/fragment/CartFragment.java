@@ -64,7 +64,7 @@ public class CartFragment extends Fragment {
     public static ProgressBar progressBar;
     EditText edtPromoCode;
     Button btnApply;
-    public static TextView txtAmtToBePaid, tvProceed, tvTotal, tvPromoDiscount, tvFinalAmt, tvAlert;
+    public static TextView txtAmtToBePaid, tvProceed, tvTotal, tvPromoDiscount, tvFinalAmt, tvAlert, tvTranFees;
     public static RecyclerView recyclerView;
     public static List<OrderSummaryGetterSetter> m_orderSummary = new ArrayList<>();
     public static OrderSummaryAdapter orderSummaryAdapter;
@@ -87,6 +87,7 @@ public class CartFragment extends Fragment {
         tvPromoDiscount = root.findViewById(R.id.tvPromoDiscount);
         tvFinalAmt = root.findViewById(R.id.tvFinalAmt);
         tvAlert = root.findViewById(R.id.tvAlert);
+        tvTranFees = root.findViewById(R.id.tvTransFees);
         recyclerView = root.findViewById(R.id.summaryRecyclerView);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
@@ -193,6 +194,7 @@ public class CartFragment extends Fragment {
                             if (GlobalConst.Result.equals("T")){
                                 JSONObject jsonObject = new JSONObject(response);
                                 m_SubTotalAmt = jsonObject.getString("TotalAmount");
+                                tvTranFees.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(GlobalConst.TRANCHARGES)));
                                 tvTotal.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(m_SubTotalAmt)));
                                 tvFinalAmt.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(m_SubTotalAmt)));
                                 txtAmtToBePaid.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(m_SubTotalAmt)));

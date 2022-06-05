@@ -328,7 +328,7 @@ public class SubscribedVideosFragment extends Fragment{
                     output.write(data, 0, count);
                 }
             } catch (Exception e) {
-                return e.toString();
+              //   return e.toString();
             } finally {
                 try {
                     if (output != null)

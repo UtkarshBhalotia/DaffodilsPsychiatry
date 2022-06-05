@@ -22,6 +22,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
@@ -49,6 +50,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -101,7 +103,8 @@ public class SplashScreen extends Activity {
                                     if (Build.VERSION.SDK_INT > 22 && !hasPermissions(requiredPermissions)) {
                                         checkPermission();
                                     } else {
-                                        fetchLoginData(context);
+                                      //  fetchLoginData(context);
+                                        getDurationDetails();
                                     }
 
                                 } else {
@@ -157,6 +160,55 @@ public class SplashScreen extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(context, ""+ e, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void getDurationDetails(){
+        if (AppController.isConnected(activity)) {
+
+            Map<String, String> params = new HashMap<String, String>();
+            params.put("SC", GlobalConst.SC_GET_COURSE_DURATION);
+
+            ApiConfig.RequestToVolley(new VolleyCallback() {
+                @Override
+                public void onSuccess(boolean result, String response) {
+                    if (result) {
+                        try {
+
+                            if (GlobalConst.Result.equals("T")) {
+                                JSONArray jsonArray = new JSONArray(response);
+                                JSONObject jsonObject;
+
+                                for(int i =0; i<jsonArray.length();i++){
+
+                                    jsonObject = jsonArray.getJSONObject(i);
+                                    String CourseName = jsonObject.getString("CourseName");
+                                    String CourseDuration = jsonObject.getString("CourseDuration");
+
+                                    if (CourseName.equals("Full Foundation Course")){
+                                        GlobalConst.FULL_COURSE_DURATION = CourseDuration;
+                                    }else if (CourseName.equals("Crash Course")){
+                                        GlobalConst.CRASH_COURSE_DURATION = CourseDuration;
+                                    } else if (CourseName.equals("MRCPsych Course")){
+                                        GlobalConst.MRCPSYCH_DURATION = CourseDuration;
+                                    } else if (CourseName.equals("Module")){
+                                        GlobalConst.ANY_MODULE_DURATION = CourseDuration;
+                                    }
+
+                                }
+
+                                fetchLoginData(context);
+
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+            }, activity, GlobalConst.URL.trim() , params, true);
+
         }
     }
 
