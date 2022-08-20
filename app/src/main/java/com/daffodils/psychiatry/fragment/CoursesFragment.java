@@ -23,8 +23,8 @@ import static com.daffodils.psychiatry.R.layout.lyt_courses;
 
 public class CoursesFragment extends Fragment {
 
-    LinearLayout llFoundation, llCrash, llMRCPsych, llDiscount;
-    CircleImageView imgFoundation, imgCrash, imgMRCPsych, imgDiscount;
+    LinearLayout llFoundation, llCrash, llMRCPsych, llMRCPsychPaperB, llDiscount;
+    CircleImageView imgFoundation, imgCrash, imgMRCPsych, imgMRCPsychPaperB, imgDiscount;
     View root;
     Activity activity;
 
@@ -37,16 +37,19 @@ public class CoursesFragment extends Fragment {
         llFoundation = root.findViewById(R.id.llFoundation2021);
         llCrash = root.findViewById(R.id.llCrash2022);
         llMRCPsych = root.findViewById(R.id.llMRCPsych);
+        llMRCPsychPaperB = root.findViewById(R.id.llMRCPsychPaperB);
         llDiscount = root.findViewById(R.id.llDiscount);
 
         imgFoundation = root.findViewById(R.id.imgFound2021);
         imgCrash = root.findViewById(R.id.imgCrash2022);
         imgMRCPsych = root.findViewById(R.id.imgMRCPsych);
+        imgMRCPsychPaperB = root.findViewById(R.id.imgMRCPsychPaperB);
         imgDiscount = root.findViewById(R.id.imgdiscount);
 
         imgFoundation.setDefaultImageResId(R.drawable.foundation_course);
         imgCrash.setDefaultImageResId(R.drawable.crash_course);
         imgMRCPsych.setDefaultImageResId(R.drawable.mrc_psych);
+        imgMRCPsychPaperB.setDefaultImageResId(R.drawable.mrc_psych);
         imgDiscount.setDefaultImageResId(R.drawable.discount);
 
         llFoundation.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +85,19 @@ public class CoursesFragment extends Fragment {
                 Fragment fragment = new MRCPsychFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("from", "MRCPsych ");
+                fragment.setArguments(bundle);
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+            }
+        });
+
+        llMRCPsychPaperB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Fragment fragment = new MRCPsychPaperBFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("from", "MRCPsychPaperB");
                 fragment.setArguments(bundle);
                 MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
 

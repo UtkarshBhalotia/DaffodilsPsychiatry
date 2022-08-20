@@ -47,7 +47,8 @@ public class HomeFragment extends Fragment {
     SwipeRefreshLayout swipeLayout;
     View root;
     int timerDelay = 0, timerWaiting = 0;
-    public static Integer [] images = {R.drawable.daff_banner1, R.drawable.daff_banner2, R.drawable.daff_banner3, R.drawable.daff_banner4};
+    public static Integer [] images = {R.drawable.daff_banner5, R.drawable.daff_banner6, R.drawable.daff_banner7, R.drawable.daff_banner8, R.drawable.daff_banner9, R.drawable.daff_banner10, R.drawable.daff_banner11};
+
     private ViewPager mPager;
     private LinearLayout mMarkersLayout;
     private int size = 5;

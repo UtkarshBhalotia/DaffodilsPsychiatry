@@ -161,8 +161,8 @@ public class LoginActivity extends AppCompatActivity {
             Map<String, String> params = new HashMap<String, String>();
 
             params.put("SC", GlobalConst.SC_LOGIN);
-            params.put("EmailID", Email);
-            params.put("Password", Password);
+            params.put("EmailID", Email.trim());
+            params.put("Password", Password.trim());
 
             ApiConfig.RequestToVolley(new VolleyCallback() {
                 @Override

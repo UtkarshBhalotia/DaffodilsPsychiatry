@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/DaffodilsPsychiatry/app/src/main/res/layout/forgot_pass_layout.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/DaffodilsPsychiatry/app/src/main/res/layout/lyt_courses.xml" value="0.14666666666666667" />
+        <entry key="..\:/AndroidStudioProjects/DaffodilsPsychiatry/app/src/main/res/layout/lyt_login.xml" value="0.1796875" />
+        <entry key="..\:/AndroidStudioProjects/DaffodilsPsychiatry/app/src/main/res/layout/lyt_mrc_psych.xml" value="0.1796875" />
+        <entry key="..\:/AndroidStudioProjects/DaffodilsPsychiatry/app/src/main/res/layout/lyt_mrc_psych_paper_b.xml" value="0.1796875" />
         <entry key="..\:/DaffodilsPsychiatry/app/src/main/res/drawable/bg_button.xml" value="0.1165" />
         <entry key="..\:/DaffodilsPsychiatry/app/src/main/res/drawable/confirm_bg.xml" value="0.1165" />
         <entry key="..\:/DaffodilsPsychiatry/app/src/main/res/drawable/edt_bg.xml" value="0.1165" />

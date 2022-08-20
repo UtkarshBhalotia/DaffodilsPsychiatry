@@ -12,185 +12,185 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/lytCart">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.cardview.widget.CardView
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_5dp">
+            android:layout_height="match_parent">
 
-            <LinearLayout
-                android:id="@+id/llCrashCourse"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/lightes"
-                android:padding="@dimen/margin_10dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="MRCPsych Course 2022"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Paper B "
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:background="@color/red"
-                    android:text="Rs 15,000 per person"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="19dp" />
-
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/margin_5dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/paperb"
-                    android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Topics"
-                    android:id="@+id/papb_topic"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="normal"
-                    android:textSize="16dp" />
+                android:layout_margin="@dimen/margin_5dp">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:id="@+id/llCrashCourse"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:orientation="horizontal">
+                    android:background="@color/lightes"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/green"
-                        android:text="Subscribe"
-                        android:padding="@dimen/margin_5dp"
-                        android:visibility="gone"
+                        android:layout_gravity="left"
+                        android:text="MRCPsych Course 2022"
+                        android:textColor="@color/txt_color"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:paddingBottom="5dp"
+                        android:text="Paper B "
+                        android:textColor="@color/logocolor"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:background="@color/red"
+                        android:text="Rs 15,000 per person"
                         android:textColor="@color/white"
-                        android:textSize="16dp" />
+                        android:textSize="19dp"
+                        android:textStyle="bold" />
+
 
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_5dp">
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="visible"
-                android:background="@color/lightes"
-                android:padding="@dimen/margin_10dp"
-                android:gravity="center">
+                android:layout_margin="5dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Important Points : "
-                    android:textColor="@color/txt_color"
-                    android:paddingBottom="5dp"
-                    android:textStyle="bold"
-                    android:textSize="20dp" />
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_5dp">
 
-                <TextView
-                    android:id="@+id/txtDuration"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/paperb"
+                        android:textColor="@color/txt_color"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/papb_topic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:paddingBottom="5dp"
+                        android:text="Topics"
+                        android:textColor="@color/logocolor"
+                        android:textSize="16dp"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/green"
+                            android:padding="@dimen/margin_5dp"
+                            android:text="Subscribe"
+                            android:textColor="@color/white"
+                            android:textSize="16dp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="- Validity / Duration : "
-                    android:textColor="@color/logocolor"
-                    android:textStyle="bold"
-                    android:textSize="19dp" />
+                    android:background="@color/lightes"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_10dp"
+                    android:visibility="visible">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="- Classes Every Tuesday &amp; Friday"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="bold"
-                    android:textSize="19dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:paddingBottom="5dp"
+                        android:text="Important Points : "
+                        android:textColor="@color/txt_color"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="- Total No. of Classes : 30"
-                    android:textColor="@color/logocolor"
-                    android:textStyle="bold"
-                    android:textSize="19dp" />
+                    <TextView
+                        android:id="@+id/txtDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="- Validity / Duration : "
+                        android:textColor="@color/logocolor"
+                        android:textSize="19dp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="- Classes Every Tuesday &amp; Friday"
+                        android:textColor="@color/logocolor"
+                        android:textSize="19dp"
+                        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnSubscribe"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/confirm_bg"
-            android:drawablePadding="@dimen/margin_10dp"
-            android:gravity="center"
-            android:paddingStart="@dimen/margin_10dp"
-            android:paddingTop="7dp"
-            android:paddingEnd="@dimen/margin_10dp"
-            android:paddingBottom="7dp"
-            android:text="@string/title_addtocart"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            app:drawableEndCompat="@drawable/ic_cart" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="- Total No. of Classes : 30"
+                        android:textColor="@color/logocolor"
+                        android:textSize="19dp"
+                        android:textStyle="bold" />
 
-        </Button>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-    </TableLayout>
+            <Button
+                android:id="@+id/btnSubscribe"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/confirm_bg"
+                android:drawablePadding="@dimen/margin_10dp"
+                android:gravity="center"
+                android:paddingStart="@dimen/margin_10dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="@dimen/margin_10dp"
+                android:paddingBottom="7dp"
+                android:text="@string/title_addtocart"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                app:drawableEndCompat="@drawable/ic_cart">
+
+            </Button>
+
+        </TableLayout>
 
     </androidx.core.widget.NestedScrollView>
 

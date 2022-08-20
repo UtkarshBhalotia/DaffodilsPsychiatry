@@ -331,15 +331,15 @@ public class RegisterActivity extends AppCompatActivity {
         JSONObject jsonObject = new JSONObject();
 
         try {
-            jsonObject.put("Name", Name);
-            jsonObject.put("EmailID", Email);
-            jsonObject.put("Password", Password);
-            jsonObject.put("MobileNo", Mobile);
+            jsonObject.put("Name", Name.trim());
+            jsonObject.put("EmailID", Email.trim());
+            jsonObject.put("Password", Password.trim());
+            jsonObject.put("MobileNo", Mobile.trim());
          //   jsonObject.put("CourseID", jsonArray);
          //   jsonObject.put("ModuleID", jsonArray1);
-            jsonObject.put("YearOfPG", PG);
-            jsonObject.put("Pursuing", Pursuing);
-            jsonObject.put("College", College);
+            jsonObject.put("YearOfPG", PG.trim());
+            jsonObject.put("Pursuing", Pursuing.trim());
+            jsonObject.put("College", College.trim());
             jsonObject.put("DeviceID", android_id);
             jsonObject.put("TokenID", token_id);
         } catch (JSONException e) {
