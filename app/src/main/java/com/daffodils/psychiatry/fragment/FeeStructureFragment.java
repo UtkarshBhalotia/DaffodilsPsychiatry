@@ -22,7 +22,7 @@ public class FeeStructureFragment extends Fragment {
     View root;
     Activity activity;
     TableLayout tblAll;
-    TableRow trCrash, trMRCPsychStat, trMRCPsych;
+    TableRow trCrash, trMRCPsychStat, trMRCPsych, trCombinedCourse;
     TextView txtmod1_topic, txtmod2_topic, txtmod3_topic, txtmod4_topic, txtmod5_topic, txtmod6_topic, txtmod7_topic, txtmod8_topic, txtmod9_topic;
 
     @Override
@@ -36,6 +36,7 @@ public class FeeStructureFragment extends Fragment {
         trCrash = root.findViewById(R.id.trCrash);
         trMRCPsych = root.findViewById(R.id.trMRCPsych);
         trMRCPsychStat = root.findViewById(R.id.trMRCPsychPaperB);
+        trCombinedCourse = root.findViewById(R.id.trCombinedCourse);
 
        /* txtmod1_topic = root.findViewById(R.id.mod1_topic);
         txtmod2_topic = root.findViewById(R.id.mod2_topic);
@@ -97,6 +98,17 @@ public class FeeStructureFragment extends Fragment {
                 Fragment fragment = new MRCPsychPaperBFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("from", "MRCPsychPaperB");
+                fragment.setArguments(bundle);
+                MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+            }
+        });
+
+        trCombinedCourse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new CombinedCourseFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("from", "CombinedCourse");
                 fragment.setArguments(bundle);
                 MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }

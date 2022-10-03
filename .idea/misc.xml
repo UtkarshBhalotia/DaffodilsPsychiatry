@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/DaffodilsPsychiatry/app/src/main/res/layout/forgot_pass_layout.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/DaffodilsPsychiatry/app/src/main/res/layout/lyt_books.xml" value="0.1796875" />
+        <entry key="..\:/AndroidStudioProjects/DaffodilsPsychiatry/app/src/main/res/layout/lyt_combined_course.xml" value="0.1796875" />
         <entry key="..\:/AndroidStudioProjects/DaffodilsPsychiatry/app/src/main/res/layout/lyt_courses.xml" value="0.14666666666666667" />
+        <entry key="..\:/AndroidStudioProjects/DaffodilsPsychiatry/app/src/main/res/layout/lyt_foundation_course.xml" value="0.1796875" />
         <entry key="..\:/AndroidStudioProjects/DaffodilsPsychiatry/app/src/main/res/layout/lyt_login.xml" value="0.1796875" />
         <entry key="..\:/AndroidStudioProjects/DaffodilsPsychiatry/app/src/main/res/layout/lyt_mrc_psych.xml" value="0.1796875" />
         <entry key="..\:/AndroidStudioProjects/DaffodilsPsychiatry/app/src/main/res/layout/lyt_mrc_psych_paper_b.xml" value="0.1796875" />

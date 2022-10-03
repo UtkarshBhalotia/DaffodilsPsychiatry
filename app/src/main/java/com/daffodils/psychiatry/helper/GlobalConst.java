@@ -9,7 +9,7 @@ public class GlobalConst extends Application {
     public static String URL = "https://daffodilspsychiatry.com/DaffodilsServices.ashx";
 
     public static int MAJOR_VER = 2;
-    public static int MINOR_VER = 0;
+    public static int MINOR_VER = 1;
 
     public static String TOOLBAR_TITLE;
     public static String ERROR = "error";
@@ -54,6 +54,7 @@ public class GlobalConst extends Application {
     public static String CRASH_COURSE_DURATION = "";
     public static String MRCPSYCH_DURATION = "";
     public static String ANY_MODULE_DURATION = "";
+    public static String COMBINED_COURSE = "";
 
     public static DecimalFormat formater = new DecimalFormat("#,##,##,###.00");
     public static String SETTING_CURRENCY_SYMBOL = "Rs ";
@@ -65,10 +66,10 @@ public class GlobalConst extends Application {
     public static String AnyModule = "3";
     public static String MRCPsych = "5";
     public static String MRCPsychStaticsPaperB = "6";
-
+    public static String CombinedCourse = "7";
     //------------------------------------------------------------------------
 
-    // Courses IDs -----------------------------------------------------------
+    // Courses IDs (Not in USE)-----------------------------------------------------------
 
     public static String FoundationCourseID = "1";
     public static String CrashCourseID = "2";
@@ -86,5 +87,15 @@ public class GlobalConst extends Application {
     public static String Module7ID = "7";
     public static String Module8ID = "8";
     public static String Module9ID = "9";
+
+    public static String CModule1ID = "15";
+    public static String CModule2ID = "16";
+    public static String CModule3ID = "17";
+    public static String CModule4ID = "18";
+    public static String CModule5ID = "19";
+    public static String CModule6ID = "20";
+    public static String CModule7ID = "21";
+    public static String CModule8ID = "22";
+    public static String CModule9ID = "23";
 
 }

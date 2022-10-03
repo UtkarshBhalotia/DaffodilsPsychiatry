@@ -19,6 +19,7 @@
     <string name="title_payment_details">Payment Details </string>
     <string name="title_crash">Crash Course 2022</string>
     <string name="title_mrcPsych">MRCPsych Course 2022</string>
+    <string name="title_combinedcourse">Combined Course 2022-23</string>
     <string name="title_change_pass">Change Password</string>
     <string name="title_share">Share</string>
     <string name="title_logout">Logout</string>
@@ -124,9 +125,13 @@
     <string name="book7">Baron Psychology</string>
     <string name="book8">King and Morgan Psychology</string>
     <string name="book9">Nambi &amp; Jileha - Forensic Psychiatry</string>
-    <string name= "book10">Guidelines - APA, NICE </string>
+    <string name="book10">Guidelines - APA, NICE </string>
     <string name="book12">Latest articles and many others</string>
     <string name="book11">DSM-5, ICD- 10, 11</string>
+    <string name="book13">Rutters Child Psychiatry</string>
+    <string name="book14">Substance Use disorder by Dr Rakesh Lal</string>
+    <string name="book15">Clinical practice guidelines on Newer and Emerging Addictive Disorders in India by Indian Psychiatric Society</string>
+
     <string name="confirm_order_amt">Confirm Order Amount</string>
     <string name="order_placed1">Order Placed</string>
     <string name="success_order">Your order has been successfully placed !</string>

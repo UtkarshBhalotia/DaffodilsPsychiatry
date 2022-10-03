@@ -45,6 +45,7 @@ import com.daffodils.psychiatry.helper.AppController;
 import com.daffodils.psychiatry.helper.DbHelper;
 import com.daffodils.psychiatry.helper.GlobalConst;
 import com.daffodils.psychiatry.helper.VolleyCallback;
+import com.google.android.exoplayer2.C;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -191,8 +192,10 @@ public class SplashScreen extends Activity {
                                         GlobalConst.CRASH_COURSE_DURATION = CourseDuration;
                                     } else if (CourseName.equals("MRCPsych Course")){
                                         GlobalConst.MRCPSYCH_DURATION = CourseDuration;
-                                    } else if (CourseName.equals("Module")){
-                                        GlobalConst.ANY_MODULE_DURATION = CourseDuration;
+                                    } else if (CourseName.equals("Combined Course")){
+                                        GlobalConst.CombinedCourse = CourseDuration;
+                                    } else {
+                                        GlobalConst.ANY_MODULE_DURATION = "2 Months";
                                     }
 
                                 }
