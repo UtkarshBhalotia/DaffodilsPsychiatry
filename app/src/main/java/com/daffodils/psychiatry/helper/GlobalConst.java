@@ -14,7 +14,7 @@ public class GlobalConst extends Application {
     public static String TOOLBAR_TITLE;
     public static String ERROR = "error";
     public static String PLAY_STORE_LINK = "https://play.google.com/store/apps/details?id=";
-    public static String APP_COMPATABILITY_VERSION = "1.4"; // change from 1.3 to 1.4 (21-08-2022)
+    public static String APP_COMPATABILITY_VERSION = "1.5"; // change from 1.4 to 1.5 (05-10-2022)
     public static String SERVICE_TYPE= "service_type";
 
     public static String SC_REGISTRATION = "1";
