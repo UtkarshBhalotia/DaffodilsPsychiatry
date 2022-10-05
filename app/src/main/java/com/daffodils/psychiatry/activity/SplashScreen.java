@@ -193,7 +193,7 @@ public class SplashScreen extends Activity {
                                     } else if (CourseName.equals("MRCPsych Course")){
                                         GlobalConst.MRCPSYCH_DURATION = CourseDuration;
                                     } else if (CourseName.equals("Combined Course")){
-                                        GlobalConst.CombinedCourse = CourseDuration;
+                                        GlobalConst.COMBINED_COURSE_DURATION = CourseDuration;
                                     } else {
                                         GlobalConst.ANY_MODULE_DURATION = "2 Months";
                                     }

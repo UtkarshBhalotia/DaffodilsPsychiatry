@@ -93,7 +93,7 @@ public class CombinedCourseFragment extends Fragment {
         txtmod8_topic.setText(Topic);
         txtmod9_topic.setText(Topic);
 
-        txtCombinedCourse.setText("Combined Course 2022-23 : " + GlobalConst.CombinedCourse);
+        txtCombinedCourse.setText("Combined Course 2022-23 : " + GlobalConst.COMBINED_COURSE_DURATION);
         txtAnyModDuration.setText("Any Module(s) : " + GlobalConst.ANY_MODULE_DURATION);
 
         lyCart.setOnClickListener(new View.OnClickListener() {

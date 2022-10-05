@@ -54,7 +54,7 @@ public class GlobalConst extends Application {
     public static String CRASH_COURSE_DURATION = "";
     public static String MRCPSYCH_DURATION = "";
     public static String ANY_MODULE_DURATION = "";
-    public static String COMBINED_COURSE = "";
+    public static String COMBINED_COURSE_DURATION = "";
 
     public static DecimalFormat formater = new DecimalFormat("#,##,##,###.00");
     public static String SETTING_CURRENCY_SYMBOL = "Rs ";
