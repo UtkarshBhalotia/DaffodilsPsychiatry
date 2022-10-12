@@ -9,12 +9,12 @@ public class GlobalConst extends Application {
     public static String URL = "https://daffodilspsychiatry.com/DaffodilsServices.ashx";
 
     public static int MAJOR_VER = 2;
-    public static int MINOR_VER = 1;
+    public static int MINOR_VER = 2;
 
     public static String TOOLBAR_TITLE;
     public static String ERROR = "error";
     public static String PLAY_STORE_LINK = "https://play.google.com/store/apps/details?id=";
-    public static String APP_COMPATABILITY_VERSION = "1.5"; // change from 1.4 to 1.5 (05-10-2022)
+    public static String APP_COMPATABILITY_VERSION = "1.6"; // change from 1.5 to 1.6 (12-10-2022)
     public static String SERVICE_TYPE= "service_type";
 
     public static String SC_REGISTRATION = "1";
@@ -97,5 +97,5 @@ public class GlobalConst extends Application {
     public static String CModule7ID = "21";
     public static String CModule8ID = "22";
     public static String CModule9ID = "23";
-
+    public static String CModule10ID = "24";
 }

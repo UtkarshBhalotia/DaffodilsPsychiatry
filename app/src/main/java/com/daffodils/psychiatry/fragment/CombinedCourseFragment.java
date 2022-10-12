@@ -45,8 +45,8 @@ public class CombinedCourseFragment extends Fragment {
     View root;
     public static Activity activity;
     TextView txtCombinedCourse, txtAnyModDuration;
-    TextView txtmod1_topic, txtmod2_topic, txtmod3_topic, txtmod4_topic, txtmod5_topic, txtmod6_topic, txtmod7_topic, txtmod8_topic, txtmod9_topic;
-    TextView txtSubsFullCourse, txtSubsMod1, txtSubsMod2, txtSubsMod3, txtSubsMod4, txtSubsMod5, txtSubsMod6, txtSubsMod7, txtSubsMod8, txtSubsMod9;
+    TextView txtmod1_topic, txtmod2_topic, txtmod3_topic, txtmod4_topic, txtmod5_topic, txtmod6_topic, txtmod7_topic, txtmod8_topic, txtmod9_topic, txtmod10_topic;
+    TextView txtSubsFullCourse, txtSubsMod1, txtSubsMod2, txtSubsMod3, txtSubsMod4, txtSubsMod5, txtSubsMod6, txtSubsMod7, txtSubsMod8, txtSubsMod9, txtSubsMod10;
     RelativeLayout lyCart;
     String Topic = "Neurobiological changes, Newer drugs , ECT, rTMS, Trials and Landmark studies, ICD-11 changes, DSM5 -R and other misc topics";
 
@@ -67,6 +67,7 @@ public class CombinedCourseFragment extends Fragment {
         txtmod7_topic = root.findViewById(R.id.mod7_topic);
         txtmod8_topic = root.findViewById(R.id.mod8_topic);
         txtmod9_topic = root.findViewById(R.id.mod9_topic);
+        txtmod10_topic = root.findViewById(R.id.mod10_topic);
         txtCombinedCourse = root.findViewById(R.id.txtCombinedCourse);
         txtAnyModDuration = root.findViewById(R.id.txtAnyModDuration);
 
@@ -80,6 +81,7 @@ public class CombinedCourseFragment extends Fragment {
         txtSubsMod7 = root.findViewById(R.id.txtSubsMod7);
         txtSubsMod8 = root.findViewById(R.id.txtSubsMod8);
         txtSubsMod9 = root.findViewById(R.id.txtSubsMod9);
+        txtSubsMod10 = root.findViewById(R.id.txtSubsMod10);
 
         lyCart = root.findViewById(R.id.lytCart);
 
@@ -92,6 +94,7 @@ public class CombinedCourseFragment extends Fragment {
         txtmod7_topic.setText(Topic);
         txtmod8_topic.setText(Topic);
         txtmod9_topic.setText(Topic);
+        txtmod10_topic.setText(Topic);
 
         txtCombinedCourse.setText("Combined Course 2022-23 : " + GlobalConst.COMBINED_COURSE_DURATION);
         txtAnyModDuration.setText("Any Module(s) : " + GlobalConst.ANY_MODULE_DURATION);
@@ -123,7 +126,7 @@ public class CombinedCourseFragment extends Fragment {
 
                         try {
                             if (!GlobalConst.User_id.isEmpty()){
-                                addToCartService("15,16,17,18,19,20,21,22,23", GlobalConst.CombinedCourse);
+                                addToCartService("15,16,17,18,19,20,21,22,23,24", GlobalConst.CombinedCourse);
                             } else {
 
                                 Intent i = new Intent(activity, RegisterActivity.class);
@@ -465,6 +468,7 @@ public class CombinedCourseFragment extends Fragment {
                 alertDialog.show();
             }
         });
+
         txtSubsMod9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -505,6 +509,46 @@ public class CombinedCourseFragment extends Fragment {
             }
         });
 
+        txtSubsMod10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
+                alertDialog.setTitle("Subscribe Module 10 ?");
+                alertDialog.setMessage("Do you want to subscribe Module 10 ?");
+                alertDialog.setCancelable(false);
+                final AlertDialog alertDialog1 = alertDialog.create();
+
+                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        try {
+                            if (!GlobalConst.User_id.isEmpty()){
+                                //call web service
+                                subscribeModuleService(GlobalConst.CModule10ID, GlobalConst.AnyModule);
+                                //addToCartService(GlobalConst.CModule9ID, GlobalConst.AnyModule);
+                            } else {
+
+                                Intent i = new Intent(activity, RegisterActivity.class);
+                                startActivity(i);
+                                // activity.finish();
+                                Toast.makeText(activity, "Kindly Register to ADD.", Toast.LENGTH_SHORT).show();
+                                // Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        alertDialog1.dismiss();
+                    }
+                });
+                alertDialog.show();
+            }
+        });
+
         return root;
 
     }
@@ -516,7 +560,7 @@ public class CombinedCourseFragment extends Fragment {
             Map<String, String> params = new HashMap<String, String>();
 
             params.put("SC", GlobalConst.SC_SUBSCRIBE_MODULES);
-            params.put("CourseID", GlobalConst.FoundationCourseID);
+            params.put("CourseID", "5");
             params.put("ModuleID", ModuleNumber);
             params.put("SubscriptionType", SubscriptionType);
             params.put("UserID", GlobalConst.User_id);
@@ -611,7 +655,7 @@ public class CombinedCourseFragment extends Fragment {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(activity, "Sent successfully.", Toast.LENGTH_LONG).show();
+                       // Toast.makeText(activity, "Sent successfully.", Toast.LENGTH_LONG).show();
                         sendMsgToAdmin();
 
                     }
@@ -657,9 +701,9 @@ public class CombinedCourseFragment extends Fragment {
                     public void onResponse(String response) {
 
                         Toast.makeText(activity, "You have successfully been subscribed.", Toast.LENGTH_LONG).show();
-                        Fragment fragment = new PaymentDetailsFragment();
+                        Fragment fragment = new HomeFragment();
                         Bundle bundle = new Bundle();
-                        bundle.putString("from", "Payment");
+                        bundle.putString("from", "Home");
                         fragment.setArguments(bundle);
                         MainActivity.fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
 
