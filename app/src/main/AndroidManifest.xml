@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.daffodils.psychiatry"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -30,35 +28,66 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme"
+        android:exported="true"
         tools:replace="android:usesCleartextTraffic,android:allowBackup">
 
-        <activity android:name=".activity.SplashScreen">
+        <activity android:name=".activity.SplashScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.RegisterActivity">
+        <activity android:name=".activity.RegisterActivity"
+            android:exported="true">
         </activity>
-        <activity android:name=".activity.DrawerActivity"></activity>
-        <activity android:name=".activity.MainActivity"></activity>
-        <activity android:name=".activity.LoginActivity"></activity>
+        <activity android:name=".activity.DrawerActivity"
+            android:exported="true"></activity>
+        <activity android:name=".activity.MainActivity"
+            android:exported="true"></activity>
+        <activity android:name=".activity.LoginActivity"
+            android:exported="true"></activity>
         <activity android:name=".activity.PayMentGateWay"
+            android:exported="true"
             android:windowSoftInputMode="stateHidden">
         </activity>
         <activity android:name=".activity.RazorpayPaymentActivity"
+            android:exported="true"
             android:windowSoftInputMode="stateHidden">
         </activity>
 
         <activity android:name=".activity.ExoPlayerActivity"
+            android:exported="true"
             android:windowSoftInputMode="stateHidden"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode">
         </activity>
 
-        <service android:name=".helper.MyFirebaseMessagingService">
+        <receiver
+            android:name="com.razorpay.RzpTokenReceiver"
+            android:exported="false">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="rzp.device_token.share" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.razorpay.CheckoutActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@style/CheckoutTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <data
+                    android:host="rzp.io"
+                    android:scheme="io.rzp" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".helper.MyFirebaseMessagingService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"  android:exported="true"/>
             </intent-filter>
         </service>
     </application>

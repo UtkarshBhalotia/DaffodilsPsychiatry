@@ -85,16 +85,17 @@ public class CombinedCourseFragment extends Fragment {
 
         lyCart = root.findViewById(R.id.lytCart);
 
-        txtmod1_topic.setText(Topic);
-        txtmod2_topic.setText(Topic);
-        txtmod3_topic.setText(Topic);
-        txtmod4_topic.setText(Topic);
-        txtmod5_topic.setText(Topic);
-        txtmod6_topic.setText(Topic);
-        txtmod7_topic.setText(Topic);
-        txtmod8_topic.setText(Topic);
-        txtmod9_topic.setText(Topic);
-        txtmod10_topic.setText(Topic);
+        txtmod7_topic.setText("");
+        txtmod8_topic.setText("");
+        txtmod10_topic.setText("");
+        txtmod2_topic.setText("Schizophrenia, Mood disorders, Anxiety and Grief Disorders, Suicide, Mood Stabilizers, OCD, Body Dysmorphic disorder.");
+        txtmod4_topic.setText("Sleep and Psychiatry, Somatoform Disorder, Dissociative Disorders, Factitious Disorders, Gender Identity Disorders, Sexual Disorders, Dementia, Special population in Psychiatry.");
+        txtmod5_topic.setText("Criminal Responsibilty and Psychiatry, Fitness to stand trail, MHCA-2017, NDPS, RPWD, Informed consent, Medical Negliganece, Psychological, Autopsy, Testamentary Capacity, Psychiatrist in court, IDEAS, NMHS, NMHP, DMHP.");
+        txtmod3_topic.setText("Alcohol, Cannabis & Endocannabinoid system, Opioids, Cocaine, Inhalants, Tobacco, Behavioral Addiction, Dual Diagnosis.");
+        txtmod6_topic.setText("Intelligence, Emotional Quotient, Kindling, Imprinting, Theory of Mind, Learning, Memory, Expressed emotions, Coping Strategies, Defense Mechanism, Freud, Neofreud theories, Personality Testing.");
+        txtmod1_topic.setText("Epilepsy, Consultation Liasion, Ect, rTMS, Soft Neurological Signs, Vascular Depression, Neurotransmitters and receptors, Limbic systems, Cerebral Dominance, Phantom Limb, Sterios Induced Psychosis, Depression in clinical setting, Headache.");
+        txtmod9_topic.setText("Detailed mental status examination, Psychopathology discussion, Cases on Schizophrenia, Bipolace disorder, Elderly Depression, Substance use disorder, Explanation of Token Economy, Lithium toxicity, Cognitive Behaviour therapy, Kirby's method, Treatment Substance Schizophrenia.");
+
 
         txtCombinedCourse.setText("Combined Course 2022-23 : " + GlobalConst.COMBINED_COURSE_DURATION);
         txtAnyModDuration.setText("Any Module(s) : " + GlobalConst.ANY_MODULE_DURATION);

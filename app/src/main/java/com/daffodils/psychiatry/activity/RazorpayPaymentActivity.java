@@ -61,7 +61,8 @@ public class RazorpayPaymentActivity extends Activity implements PaymentResultLi
         final Activity activity = this;
 
         final Checkout co = new Checkout();
-        co.setKeyID("rzp_live_h8me54AFmh1HvG");
+       // co.setKeyID("rzp_live_h8me54AFmh1HvG");
+        co.setKeyID("rzp_live_lB2JitECy52a60");
 
         try {
             JSONObject options = new JSONObject();

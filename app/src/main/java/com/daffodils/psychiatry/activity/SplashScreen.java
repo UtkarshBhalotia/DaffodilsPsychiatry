@@ -58,7 +58,7 @@ import java.util.Map;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-public class SplashScreen extends Activity {
+public class SplashScreen extends AppCompatActivity {
 
     TextView txtRelease;
     Context context;

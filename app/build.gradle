@@ -1,19 +1,16 @@
 plugins {
     id 'com.android.application'
-    id 'com.google.gms.google-services'
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
-
-
+    compileSdkVersion 32
+    buildToolsVersion "32.0.0"
     defaultConfig {
         applicationId "com.daffodils.psychiatry"
-        minSdkVersion 19
-        targetSdkVersion 30
-        versionCode 12
-        versionName "2.2"
+        minSdkVersion 21
+        targetSdkVersion 32
+        versionCode 17
+        versionName "2.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -28,6 +25,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    namespace 'com.daffodils.psychiatry'
 
 
 }
@@ -54,4 +52,7 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer-hls:r2.4.0'
     implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:r2.4.0'
     implementation 'com.google.android.exoplayer:exoplayer-ui:r2.4.0'
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'androidx.work:work-runtime:2.7.0-alpha05'
+
 }
