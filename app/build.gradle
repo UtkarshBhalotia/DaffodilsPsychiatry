@@ -9,8 +9,8 @@ android {
         applicationId "com.daffodils.psychiatry"
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 18
-        versionName "2.5"
+        versionCode 19
+        versionName "2.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
