@@ -74,6 +74,7 @@ public class RazorpayPaymentActivity extends Activity implements PaymentResultLi
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
             options.put("currency", "INR");
             options.put("amount", amount);
+            options.put("capture", 1); // 1 for auto-capture
 
             JSONObject preFill = new JSONObject();
             preFill.put("email", GlobalConst.Username);
@@ -270,4 +271,26 @@ public class RazorpayPaymentActivity extends Activity implements PaymentResultLi
 
         queue.add(stringRequest);
     }
+
+//    public static void main(String[] args) {
+//        // Initialize the Razorpay client with your API key and secret
+//        RazorpayClient client = new RazorpayClient("YOUR_API_KEY", "YOUR_API_SECRET");
+//
+//        try {
+//            // Capture the authorized payment using the payment ID
+//            ApiResponse response = client.Payments.capture("PAYMENT_ID", AMOUNT_IN_PAISE);
+//
+//            // Check the response and handle the capture status
+//            if ("captured".equals(response.get("status"))) {
+//                // Payment has been successfully captured
+//                System.out.println("Payment captured successfully");
+//            } else {
+//                // Payment capture failed
+//                System.out.println("Payment capture failed");
+//            }
+//        } catch (RazorpayException e) {
+//            // Handle any exceptions that occur during the capture process
+//            e.printStackTrace();
+//        }
+//    }
 }

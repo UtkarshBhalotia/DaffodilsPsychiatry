@@ -68,7 +68,7 @@ public class CartFragment extends Fragment {
     public static RecyclerView recyclerView;
     public static List<OrderSummaryGetterSetter> m_orderSummary = new ArrayList<>();
     public static OrderSummaryAdapter orderSummaryAdapter;
-    public static String m_SubTotalAmt, m_FinalAmt;
+    public static String m_SubTotalAmt, m_FinalAmt, m_TotalAmt;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -148,6 +148,7 @@ public class CartFragment extends Fragment {
                                 btnApply.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.light_green));
                                 btnApply.setText("Applied");
                                 tvFinalAmt.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(GlobalConst.FINALAMOUNT)));
+                                tvTranFees.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(GlobalConst.TRANCHARGES)));
                                 txtAmtToBePaid.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(GlobalConst.FINALAMOUNT)));
                                 tvPromoDiscount.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(GlobalConst.DISCOUNT)));
                                 m_FinalAmt = GlobalConst.FINALAMOUNT;
@@ -193,12 +194,14 @@ public class CartFragment extends Fragment {
 
                             if (GlobalConst.Result.equals("T")){
                                 JSONObject jsonObject = new JSONObject(response);
-                                m_SubTotalAmt = jsonObject.getString("TotalAmount");
+                                m_SubTotalAmt = jsonObject.getString("SubTotalAmount");
+                                m_TotalAmt = jsonObject.getString("TotalAmount");
                                 tvTranFees.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(GlobalConst.TRANCHARGES)));
                                 tvTotal.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(m_SubTotalAmt)));
-                                tvFinalAmt.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(m_SubTotalAmt)));
-                                txtAmtToBePaid.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(m_SubTotalAmt)));
-                                m_FinalAmt = m_SubTotalAmt;
+                                tvFinalAmt.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(m_TotalAmt)));
+                                txtAmtToBePaid.setText(GlobalConst.SETTING_CURRENCY_SYMBOL + GlobalConst.formater.format(Double.valueOf(m_TotalAmt)));
+                              //  m_FinalAmt = m_SubTotalAmt;
+                                m_FinalAmt = m_TotalAmt;
                                 tvPromoDiscount.setText("-");
 
                                 JSONArray jsonArray = jsonObject.getJSONArray("dtModules");

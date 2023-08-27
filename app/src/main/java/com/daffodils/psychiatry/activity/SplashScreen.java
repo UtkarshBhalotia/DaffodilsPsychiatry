@@ -101,12 +101,13 @@ public class SplashScreen extends AppCompatActivity {
                             if (GlobalConst.Result.equals("T")){
                                 if (GlobalConst.APP_COMPATABILITY_VERSION.equals(GlobalConst.AppVersion)) {
 
-                                    if (Build.VERSION.SDK_INT > 22 && !hasPermissions(requiredPermissions)) {
-                                        checkPermission();
-                                    } else {
-                                      //  fetchLoginData(context);
-                                        getDurationDetails();
-                                    }
+                                    getDurationDetails();
+//                                    if (Build.VERSION.SDK_INT > 22 && !hasPermissions(requiredPermissions)) {
+//                                        checkPermission();
+//                                    } else {
+//                                      //  fetchLoginData(context);
+//                                        getDurationDetails();
+//                                    }
 
                                 } else {
                                     Intent intent = new Intent(Intent.ACTION_VIEW ,Uri.parse(GlobalConst.PLAY_STORE_LINK + getPackageName()));
@@ -151,7 +152,7 @@ public class SplashScreen extends AppCompatActivity {
                 }
             } else {
 
-                Intent i = new Intent(SplashScreen.this, MainActivity.class);
+                Intent i = new Intent(SplashScreen.this, LoginActivity.class);
                 startActivity(i);
                 finish();
 

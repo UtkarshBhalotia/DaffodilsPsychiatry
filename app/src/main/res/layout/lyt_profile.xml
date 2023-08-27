@@ -38,14 +38,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/imglogo"
         android:layout_marginTop="160dp"
         android:background="@color/White"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imglogo"
         android:layout_marginStart="25dp"
         android:layout_marginTop="170dp"
         android:layout_marginEnd="25dp"
