@@ -23,30 +23,31 @@ import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.DefaultRenderersFactory;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.ExoPlayer;
-import com.google.android.exoplayer2.ExoPlayerFactory;
+import com.google.android.exoplayer2.MediaItem;
+import com.google.android.exoplayer2.PlaybackException;
 import com.google.android.exoplayer2.PlaybackParameters;
+import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
 import com.google.android.exoplayer2.extractor.ExtractorsFactory;
-import com.google.android.exoplayer2.source.ExtractorMediaSource;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.TrackGroupArray;
 import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.trackselection.TrackSelectionArray;
 import com.google.android.exoplayer2.trackselection.TrackSelector;
-import com.google.android.exoplayer2.ui.SimpleExoPlayerView;
+import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.upstream.BandwidthMeter;
+import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DataSpec;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
-import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 
 public class ExoPlayerActivity extends AppCompatActivity {
 
-    SimpleExoPlayerView exoPlayerView;
-    SimpleExoPlayer exoPlayer;
+    PlayerView exoPlayerView;
+    ExoPlayer exoPlayer;
     ProgressBar progressBar;
     String videoURL = "";
     private TextView playbackSpeed;
@@ -78,26 +79,21 @@ public class ExoPlayerActivity extends AppCompatActivity {
         } else {
                try {
 
-                   playbackSpeed.setVisibility(View.VISIBLE);
+            playbackSpeed.setVisibility(View.VISIBLE);
 
             Toast.makeText(this, "Please wait while the video is Buffering.", Toast.LENGTH_LONG).show();
-
-            BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
-            TrackSelector trackSelector = new DefaultTrackSelector(new AdaptiveTrackSelection.Factory(bandwidthMeter));
-            exoPlayer = ExoPlayerFactory.newSimpleInstance(this, trackSelector);
+            exoPlayer = new ExoPlayer.Builder(this).build();
             Uri videouri = Uri.parse(videoURL);
-            DefaultHttpDataSourceFactory dataSourceFactory = new DefaultHttpDataSourceFactory("exoplayer_video");
-            ExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();
-            MediaSource mediaSource = new ExtractorMediaSource(videouri, dataSourceFactory, extractorsFactory, null, null);
+            MediaItem mediaItem = MediaItem.fromUri(videouri);
+            exoPlayer.setMediaItem(mediaItem);
+            exoPlayer.setPlayWhenReady(true);
+            exoPlayer.prepare();
             exoPlayerView.setPlayer(exoPlayer);
-            exoPlayer.prepare(mediaSource);
 
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-               param = new PlaybackParams();
+                param = new PlaybackParams();
             }
-          /*  param.setSpeed(playBackSpeed);// 1f is 1x, 2f is 2x
-            exoPlayer.setPlaybackParams(param);*/
-            exoPlayer.setPlayWhenReady(true);
+            //exoPlayer.setPlayWhenReady(true);
 
         } catch (Exception e) {
             progressBar.setVisibility(View.GONE);
@@ -112,16 +108,7 @@ public class ExoPlayerActivity extends AppCompatActivity {
         });
 
 
-        exoPlayer.addListener(new ExoPlayer.EventListener() {
-            @Override
-            public void onTimelineChanged(Timeline timeline, Object manifest) {
-
-            }
-
-            @Override
-            public void onTracksChanged(TrackGroupArray trackGroups, TrackSelectionArray trackSelections) {
-
-            }
+        exoPlayer.addListener(new Player.Listener() {
 
             @Override
             public void onLoadingChanged(boolean isLoading) {
@@ -138,15 +125,10 @@ public class ExoPlayerActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onPlayerError(ExoPlaybackException error) {
+            public void onPlayerError(PlaybackException error) {
                 progressBar.setVisibility(View.VISIBLE);
                 exoPlayer.stop();
                 exoPlayer.setPlayWhenReady(true);
-            }
-
-            @Override
-            public void onPositionDiscontinuity() {
-
             }
 
             @Override
@@ -160,24 +142,14 @@ public class ExoPlayerActivity extends AppCompatActivity {
 
     private void initializePlayer() {
         playbackSpeed.setVisibility(View.GONE);
-        exoPlayer = ExoPlayerFactory.newSimpleInstance(
-                new DefaultRenderersFactory(this),
-                new DefaultTrackSelector(), new DefaultLoadControl());
-       /* String filePath = Environment.getExternalStorageDirectory() + File.separator +
-                "video" + File.separator + "video1.mp4";
-        Log.e("filepath", filePath);*/
         String filePath = videoURL;
         Uri uri = Uri.parse(filePath);
 
-        ExtractorMediaSource audioSource = new ExtractorMediaSource(
-                uri,
-                new DefaultDataSourceFactory(this, "MyExoplayer"),
-                new DefaultExtractorsFactory(),
-                null,
-                null
-        );
-
-        exoPlayer.prepare(audioSource);
+        DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(this, "MyExoPlayer");
+        MediaItem mediaItem = MediaItem.fromUri(uri);
+        exoPlayer.setMediaItem(mediaItem);
+        exoPlayer.prepare();
+        exoPlayer.play();
         exoPlayerView.setPlayer(exoPlayer);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
@@ -201,16 +173,16 @@ public class ExoPlayerActivity extends AppCompatActivity {
 
             playbackSpeed.setText("Change Speed (" + itemTitle + ")" );
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                param.setSpeed(playBackSpeed);// 1f is 1x, 2f is 2x
-            }
-            exoPlayer.setPlaybackParams(param);
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                param.setSpeed(playBackSpeed);// 1f is 1x, 2f is 2x
+//            }
+            exoPlayer.setPlaybackSpeed(playBackSpeed);
 
-        //    changePlayerSpeed(playbackSpeed, itemTitle.subSequence(0, 3).toString());
             return false;
         });
         popupMenu.show();
     }
+
 
     @Override
     public void onBackPressed() {

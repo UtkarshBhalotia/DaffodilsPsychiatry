@@ -61,7 +61,7 @@ public class CrashCourseFragment extends Fragment {
         lytCart = root.findViewById(R.id.lytCart);
         txtDuration = root.findViewById(R.id.txtDuration);
 
-        txtDuration.setText("Crash Course 2022 : " + GlobalConst.CRASH_COURSE_DURATION);
+        txtDuration.setText("Crash Course : " + GlobalConst.CRASH_COURSE_DURATION);
 
         btnSubscribe = root.findViewById(R.id.btnSubscribe);
 

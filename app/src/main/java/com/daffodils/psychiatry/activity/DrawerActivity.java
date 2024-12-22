@@ -107,172 +107,314 @@ public class DrawerActivity extends AppCompatActivity {
                 drawer_layout.closeDrawers();
                 Fragment fragment;
                 Bundle bundle = null;
-                switch (menuItem.getItemId()) {
-                    case R.id.menu_home:
-                        Intent intent = new Intent(DrawerActivity.this, MainActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        intent.putExtra("from", "home");
-                        startActivity(intent);
-                        finish();
-                        break;
+//                switch (menuItem.getItemId()) {
+//                    case R.id.menu_home:
+//                        Intent intent = new Intent(DrawerActivity.this, MainActivity.class);
+//                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        intent.putExtra("from", "home");
+//                        startActivity(intent);
+//                        finish();
+//                        break;
+//
+//                    case R.id.menu_courses:
+//                        fragment = new CoursesFragment();
+//                        bundle = new Bundle();
+//                        bundle.putString("type", "Courses");
+//                        fragment.setArguments(bundle);
+//                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+//                        break;
+//
+//                    case R.id.menu_sample_vdo:
+//                        fragment = new FreeSampleVideosFragment();
+//                        bundle = new Bundle();
+//                        bundle.putString("type", "SampleVdo");
+//                        fragment.setArguments(bundle);
+//                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+//                        break;
+//                    case R.id.menu_subs_vdo:
+//                        if(GlobalConst.ModuleID.equals("")){
+//                            Toast.makeText(DrawerActivity.this, "Please register yourself to view subscribed videos", Toast.LENGTH_LONG).show();
+//                        } else {
+//                            fragment = new SubscribedVideosFragment();
+//                            bundle = new Bundle();
+//                            bundle.putString("type", "SubscribedVdo");
+//                            fragment.setArguments(bundle);
+//                            getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+//                        }
+//                        break;
+//                    case R.id.menu_offline_vdo:
+//
+//                        fragment = new OfflineVideoFragment();
+//                        bundle = new Bundle();
+//                        bundle.putString("type", "OfflineVideo");
+//                        fragment.setArguments(bundle);
+//                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+//                        break;
+//                    case R.id.menu_pricing:
+//                        fragment = new FeeStructureFragment();
+//                        bundle = new Bundle();
+//                        bundle.putString("type", "FeeStructure");
+//                        fragment.setArguments(bundle);
+//                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+//                        break;
+//                    case R.id.menu_Profile:
+//                        fragment = new ProfileFragment();
+//                        bundle = new Bundle();
+//                        bundle.putString("type", "Profile");
+//                        fragment.setArguments(bundle);
+//                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+//                        break;
+//                    case R.id.menu_Validity:
+//                        fragment = new ValidityDetails();
+//                        bundle = new Bundle();
+//                        bundle.putString("type", "Validity");
+//                        fragment.setArguments(bundle);
+//                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+//                        break;
+//
+//                    case R.id.menu_cart:
+//
+//                        if (GlobalConst.User_id.equals("")){
+//                           Toast.makeText(getApplicationContext(), "Kindly Login to view cart details.", Toast.LENGTH_LONG).show();
+//                        } else {
+//                            fragment = new CartFragment();
+//                            bundle = new Bundle();
+//                            bundle.putString("type", "Cart");
+//                            fragment.setArguments(bundle);
+//                            getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+//                        }
+//                        break;
+//
+//                    case R.id.menu_faculty:
+//                        fragment = new FacultyFragment();
+//                        bundle = new Bundle();
+//                        bundle.putString("type", "Faculty");
+//                        fragment.setArguments(bundle);
+//                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+//                        break;
+//                    case R.id.menu_books:
+//                        fragment = new ReferenceBooksFragment();
+//                        bundle = new Bundle();
+//                        bundle.putString("type", "Books");
+//                        fragment.setArguments(bundle);
+//                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+//                        break;
+//
+//                    case R.id.menu_AboutUs:
+//                        fragment = new AboutUsFragment();
+//                        bundle = new Bundle();
+//                        bundle.putString("type", "AboutUs");
+//                        fragment.setArguments(bundle);
+//                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+//                        break;
+//
+//                    case R.id.menu_help:
+//                        fragment = new HelpSupportFragment();
+//                        bundle = new Bundle();
+//                        bundle.putString("type", "Help");
+//                        fragment.setArguments(bundle);
+//                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+//                        break;
+//
+//                    case R.id.menu_changepass:
+//                        fragment = new ChangePassword();
+//                        bundle = new Bundle();
+//                        bundle.putString("type", "ChangePass");
+//                        fragment.setArguments(bundle);
+//                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+//                        break;
+//
+//                    case R.id.menu_share:
+//                        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+//                        shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+//                        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.take_a_look) + "\"" + getString(R.string.app_name) + "\" - " + GlobalConst.PLAY_STORE_LINK + getPackageName());
+//                        shareIntent.setType("text/plain");
+//                        startActivity(Intent.createChooser(shareIntent, getString(R.string.share_via)));
+//                        break;
+//                    case R.id.menu_logout:
+//
+//                        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(DrawerActivity.this);
+//                        // Setting Dialog Message
+//                        alertDialog.setTitle("Exit Application");
+//                        alertDialog.setMessage("Do you want to close this application ?");
+//                        alertDialog.setCancelable(false);
+//                        final AlertDialog alertDialog1 = alertDialog.create();
+//
+//                        // Setting OK Button
+//                        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int which) {
+//
+//                                try {
+//
+//                                    dbHelper.openToWrite();
+//                                    dbHelper.deleteAllLoginData();
+//                                    dbHelper.close();
+//                                    Intent i = new Intent(DrawerActivity.this, LoginActivity.class);
+//                                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                                    startActivity(i);
+//                                    finish();
+//
+//                                } catch (Exception e) {
+//                                    e.printStackTrace();
+//                                }
+//                            }
+//                        });
+//                        alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                alertDialog1.dismiss();
+//                            }
+//                        });
+//                        // Showing Alert Message
+//                        alertDialog.show();
+//
+//                       /* session.logoutUser(DrawerActivity.this);
+//                        ApiConfig.clearFCM(DrawerActivity.this, session);*/
+//                        break;
+//                }
+                int id = menuItem.getItemId();
 
-                    case R.id.menu_courses:
-                        fragment = new CoursesFragment();
+                if (id == R.id.menu_home) {
+                    Intent intent = new Intent(DrawerActivity.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("from", "home");
+                    startActivity(intent);
+                    finish();
+
+                } else if (id == R.id.menu_courses) {
+                    fragment = new CoursesFragment();
+                    bundle = new Bundle();
+                    bundle.putString("type", "Courses");
+                    fragment.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+                } else if (id == R.id.menu_sample_vdo) {
+                    fragment = new FreeSampleVideosFragment();
+                    bundle = new Bundle();
+                    bundle.putString("type", "SampleVdo");
+                    fragment.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+                } else if (id == R.id.menu_subs_vdo) {
+                    if (GlobalConst.ModuleID.equals("")) {
+                        Toast.makeText(DrawerActivity.this, "Please register yourself to view subscribed videos", Toast.LENGTH_LONG).show();
+                    } else {
+                        fragment = new SubscribedVideosFragment();
                         bundle = new Bundle();
-                        bundle.putString("type", "Courses");
+                        bundle.putString("type", "SubscribedVdo");
                         fragment.setArguments(bundle);
                         getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                        break;
+                    }
 
-                    case R.id.menu_sample_vdo:
-                        fragment = new FreeSampleVideosFragment();
+                } else if (id == R.id.menu_offline_vdo) {
+                    fragment = new OfflineVideoFragment();
+                    bundle = new Bundle();
+                    bundle.putString("type", "OfflineVideo");
+                    fragment.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+                } else if (id == R.id.menu_pricing) {
+                    fragment = new FeeStructureFragment();
+                    bundle = new Bundle();
+                    bundle.putString("type", "FeeStructure");
+                    fragment.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+                } else if (id == R.id.menu_Profile) {
+                    fragment = new ProfileFragment();
+                    bundle = new Bundle();
+                    bundle.putString("type", "Profile");
+                    fragment.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+                } else if (id == R.id.menu_Validity) {
+                    fragment = new ValidityDetails();
+                    bundle = new Bundle();
+                    bundle.putString("type", "Validity");
+                    fragment.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+                } else if (id == R.id.menu_cart) {
+                    if (GlobalConst.User_id.equals("")) {
+                        Toast.makeText(getApplicationContext(), "Kindly Login to view cart details.", Toast.LENGTH_LONG).show();
+                    } else {
+                        fragment = new CartFragment();
                         bundle = new Bundle();
-                        bundle.putString("type", "SampleVdo");
+                        bundle.putString("type", "Cart");
                         fragment.setArguments(bundle);
                         getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                        break;
-                    case R.id.menu_subs_vdo:
-                        if(GlobalConst.ModuleID.equals("")){
-                            Toast.makeText(DrawerActivity.this, "Please register yourself to view subscribed videos", Toast.LENGTH_LONG).show();
-                        } else {
-                            fragment = new SubscribedVideosFragment();
-                            bundle = new Bundle();
-                            bundle.putString("type", "SubscribedVdo");
-                            fragment.setArguments(bundle);
-                            getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                    }
+
+                } else if (id == R.id.menu_faculty) {
+                    fragment = new FacultyFragment();
+                    bundle = new Bundle();
+                    bundle.putString("type", "Faculty");
+                    fragment.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+                } else if (id == R.id.menu_books) {
+                    fragment = new ReferenceBooksFragment();
+                    bundle = new Bundle();
+                    bundle.putString("type", "Books");
+                    fragment.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+                } else if (id == R.id.menu_AboutUs) {
+                    fragment = new AboutUsFragment();
+                    bundle = new Bundle();
+                    bundle.putString("type", "AboutUs");
+                    fragment.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+                } else if (id == R.id.menu_help) {
+                    fragment = new HelpSupportFragment();
+                    bundle = new Bundle();
+                    bundle.putString("type", "Help");
+                    fragment.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+                } else if (id == R.id.menu_changepass) {
+                    fragment = new ChangePassword();
+                    bundle = new Bundle();
+                    bundle.putString("type", "ChangePass");
+                    fragment.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
+                } else if (id == R.id.menu_share) {
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.take_a_look) + "\"" + getString(R.string.app_name) + "\" - " + GlobalConst.PLAY_STORE_LINK + getPackageName());
+                    shareIntent.setType("text/plain");
+                    startActivity(Intent.createChooser(shareIntent, getString(R.string.share_via)));
+
+                } else if (id == R.id.menu_logout) {
+                    final AlertDialog.Builder alertDialog = new AlertDialog.Builder(DrawerActivity.this);
+                    alertDialog.setTitle("Exit Application");
+                    alertDialog.setMessage("Do you want to close this application?");
+                    alertDialog.setCancelable(false);
+                    final AlertDialog alertDialog1 = alertDialog.create();
+
+                    alertDialog.setPositiveButton("Yes", (dialog, which) -> {
+                        try {
+                            dbHelper.openToWrite();
+                            dbHelper.deleteAllLoginData();
+                            dbHelper.close();
+                            Intent i = new Intent(DrawerActivity.this, LoginActivity.class);
+                            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(i);
+                            finish();
+                        } catch (Exception e) {
+                            e.printStackTrace();
                         }
-                        break;
-                    case R.id.menu_offline_vdo:
+                    });
 
-                        fragment = new OfflineVideoFragment();
-                        bundle = new Bundle();
-                        bundle.putString("type", "OfflineVideo");
-                        fragment.setArguments(bundle);
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                        break;
-                    case R.id.menu_pricing:
-                        fragment = new FeeStructureFragment();
-                        bundle = new Bundle();
-                        bundle.putString("type", "FeeStructure");
-                        fragment.setArguments(bundle);
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                        break;
-                    case R.id.menu_Profile:
-                        fragment = new ProfileFragment();
-                        bundle = new Bundle();
-                        bundle.putString("type", "Profile");
-                        fragment.setArguments(bundle);
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                        break;
-                    case R.id.menu_Validity:
-                        fragment = new ValidityDetails();
-                        bundle = new Bundle();
-                        bundle.putString("type", "Validity");
-                        fragment.setArguments(bundle);
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                        break;
-
-                    case R.id.menu_cart:
-
-                        if (GlobalConst.User_id.equals("")){
-                           Toast.makeText(getApplicationContext(), "Kindly Login to view cart details.", Toast.LENGTH_LONG).show();
-                        } else {
-                            fragment = new CartFragment();
-                            bundle = new Bundle();
-                            bundle.putString("type", "Cart");
-                            fragment.setArguments(bundle);
-                            getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                        }
-                        break;
-
-                    case R.id.menu_faculty:
-                        fragment = new FacultyFragment();
-                        bundle = new Bundle();
-                        bundle.putString("type", "Faculty");
-                        fragment.setArguments(bundle);
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                        break;
-                    case R.id.menu_books:
-                        fragment = new ReferenceBooksFragment();
-                        bundle = new Bundle();
-                        bundle.putString("type", "Books");
-                        fragment.setArguments(bundle);
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                        break;
-
-                    case R.id.menu_AboutUs:
-                        fragment = new AboutUsFragment();
-                        bundle = new Bundle();
-                        bundle.putString("type", "AboutUs");
-                        fragment.setArguments(bundle);
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                        break;
-
-                    case R.id.menu_help:
-                        fragment = new HelpSupportFragment();
-                        bundle = new Bundle();
-                        bundle.putString("type", "Help");
-                        fragment.setArguments(bundle);
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                        break;
-
-                    case R.id.menu_changepass:
-                        fragment = new ChangePassword();
-                        bundle = new Bundle();
-                        bundle.putString("type", "ChangePass");
-                        fragment.setArguments(bundle);
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                        break;
-
-                    case R.id.menu_share:
-                        Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                        shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
-                        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.take_a_look) + "\"" + getString(R.string.app_name) + "\" - " + GlobalConst.PLAY_STORE_LINK + getPackageName());
-                        shareIntent.setType("text/plain");
-                        startActivity(Intent.createChooser(shareIntent, getString(R.string.share_via)));
-                        break;
-                    case R.id.menu_logout:
-
-                        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(DrawerActivity.this);
-                        // Setting Dialog Message
-                        alertDialog.setTitle("Exit Application");
-                        alertDialog.setMessage("Do you want to close this application ?");
-                        alertDialog.setCancelable(false);
-                        final AlertDialog alertDialog1 = alertDialog.create();
-
-                        // Setting OK Button
-                        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-
-                                try {
-
-                                    dbHelper.openToWrite();
-                                    dbHelper.deleteAllLoginData();
-                                    dbHelper.close();
-                                    Intent i = new Intent(DrawerActivity.this, LoginActivity.class);
-                                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    startActivity(i);
-                                    finish();
-
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        });
-                        alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                alertDialog1.dismiss();
-                            }
-                        });
-                        // Showing Alert Message
-                        alertDialog.show();
-
-                       /* session.logoutUser(DrawerActivity.this);
-                        ApiConfig.clearFCM(DrawerActivity.this, session);*/
-                        break;
+                    alertDialog.setNegativeButton("No", (dialog, which) -> alertDialog1.dismiss());
+                    alertDialog.show();
                 }
+
 
                 return true;
             }

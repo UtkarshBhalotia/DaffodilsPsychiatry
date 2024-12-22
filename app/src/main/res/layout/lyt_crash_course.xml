@@ -34,10 +34,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="Crash Course 2022"
+                    android:text="Crash Course"
                     android:textColor="@color/txt_color"
-                    android:textStyle="bold"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -307,7 +307,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="Full Foundation Course 2021 : 4 Months"
+                    android:text="Full Foundation Course : 4 Months"
                     android:textColor="@color/logocolor"
                     android:textStyle="normal"
                     android:visibility="gone"
@@ -328,7 +328,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="Crash Course 2022 : "
+                    android:text="Crash Course : "
                     android:textColor="@color/logocolor"
                     android:textStyle="bold"
                     android:textSize="19dp" />

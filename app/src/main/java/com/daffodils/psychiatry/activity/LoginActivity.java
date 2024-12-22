@@ -3,6 +3,7 @@ package com.daffodils.psychiatry.activity;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
@@ -250,41 +252,65 @@ public class LoginActivity extends AppCompatActivity {
 
                             if (GlobalConst.Result.equals("T")) {
                                 String message = "Your password for the registered number is " + GlobalConst.GetPassword + ". Thank You !!";
-                                String encoded_message = URLEncoder.encode(message);
+                                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(LoginActivity.this);
+                                // Setting Dialog Message
+                                alertDialog.setTitle("Registered Password !!");
+                                //  alertDialog.setMessage("Please contact to admin for activation of account or visit https://daffodilspsychiatry.com/ for more details.");
+                                alertDialog.setMessage(message);
+                                alertDialog.setCancelable(false);
+                                final AlertDialog alertDialog1 = alertDialog.create();
 
-                                String mainUrl = "http://mysms.msg24.in/api/mt/SendSMS?";
+                                alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
 
-                                StringBuilder sbPostData = new StringBuilder(mainUrl);
-                                sbPostData.append("user=" + "RowallaEnterprises");
-                                sbPostData.append("&password=" + "123456");
-                                sbPostData.append("&senderid=" + "RNITBP");
-                                sbPostData.append("&channel=" + "Trans");
-                                sbPostData.append("&DCS=" + "0");
-                                sbPostData.append("&flashsms=" + "0");
-                                sbPostData.append("&number=" + MobileNo);
-                                sbPostData.append("&text=" + encoded_message);
-                                sbPostData.append("&route=" + "08");
+                                        try {
 
-                                mainUrl = sbPostData.toString();
+                                            alertDialog1.hide();
 
-                                RequestQueue queue = Volley.newRequestQueue(context);
-                                String url = mainUrl;
-
-                                StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                                        new Response.Listener<String>() {
-                                            @Override
-                                            public void onResponse(String response) {
-                                                Toast.makeText(context, "Password sent successfully.", Toast.LENGTH_LONG).show();
-
-                                            }
-                                        }, new Response.ErrorListener() {
-                                    @Override
-                                    public void onErrorResponse(VolleyError error) {
-                                        Toast.makeText(context, "Failed", Toast.LENGTH_LONG).show();
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
                                     }
                                 });
+                                // Showing Alert Message
+                                alertDialog.show();
 
-                                queue.add(stringRequest);
+
+                                //                                String encoded_message = URLEncoder.encode(message);
+//
+//                                String mainUrl = "http://mysms.msg24.in/api/mt/SendSMS?";
+//
+//                                StringBuilder sbPostData = new StringBuilder(mainUrl);
+//                                sbPostData.append("user=" + "RowallaEnterprises");
+//                                sbPostData.append("&password=" + "123456");
+//                                sbPostData.append("&senderid=" + "RNITBP");
+//                                sbPostData.append("&channel=" + "Trans");
+//                                sbPostData.append("&DCS=" + "0");
+//                                sbPostData.append("&flashsms=" + "0");
+//                                sbPostData.append("&number=" + MobileNo);
+//                                sbPostData.append("&text=" + encoded_message);
+//                                sbPostData.append("&route=" + "08");
+//
+//                                mainUrl = sbPostData.toString();
+//
+//                                RequestQueue queue = Volley.newRequestQueue(context);
+//                                String url = mainUrl;
+
+//                                StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+//                                        new Response.Listener<String>() {
+//                                            @Override
+//                                            public void onResponse(String response) {
+//                                                Toast.makeText(context, "Password sent successfully.", Toast.LENGTH_LONG).show();
+//
+//                                            }
+//                                        }, new Response.ErrorListener() {
+//                                    @Override
+//                                    public void onErrorResponse(VolleyError error) {
+//                                        Toast.makeText(context, "Failed", Toast.LENGTH_LONG).show();
+//                                    }
+//                                });
+//
+//                                queue.add(stringRequest);
                             } else {
                                 Toast.makeText(context, GlobalConst.Description, Toast.LENGTH_LONG).show();
                             }

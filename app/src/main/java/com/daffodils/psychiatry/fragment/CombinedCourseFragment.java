@@ -44,9 +44,9 @@ public class CombinedCourseFragment extends Fragment {
 
     View root;
     public static Activity activity;
-    TextView txtCombinedCourse, txtAnyModDuration;
-    TextView txtmod1_topic, txtmod2_topic, txtmod3_topic, txtmod4_topic, txtmod5_topic, txtmod6_topic, txtmod7_topic, txtmod8_topic, txtmod9_topic, txtmod10_topic;
-    TextView txtSubsFullCourse, txtSubsMod1, txtSubsMod2, txtSubsMod3, txtSubsMod4, txtSubsMod5, txtSubsMod6, txtSubsMod7, txtSubsMod8, txtSubsMod9, txtSubsMod10;
+    TextView txtCombinedCourse, txtAnyModDuration, txtCC;
+    TextView txtmod1_topic, txtmod2_topic, txtmod3_topic, txtmod4_topic, txtmod5_topic, txtmod6_topic, txtmod7_topic, txtmod8_topic, txtmod9_topic, txtmod10_topic, txtmod11_topic;
+    TextView txtSubsFullCourse, txtSubsMod1, txtSubsMod2, txtSubsMod3, txtSubsMod4, txtSubsMod5, txtSubsMod6, txtSubsMod7, txtSubsMod8, txtSubsMod9, txtSubsMod10, txtSubsMod11;
     RelativeLayout lyCart;
     String Topic = "Neurobiological changes, Newer drugs , ECT, rTMS, Trials and Landmark studies, ICD-11 changes, DSM5 -R and other misc topics";
 
@@ -68,8 +68,12 @@ public class CombinedCourseFragment extends Fragment {
         txtmod8_topic = root.findViewById(R.id.mod8_topic);
         txtmod9_topic = root.findViewById(R.id.mod9_topic);
         txtmod10_topic = root.findViewById(R.id.mod10_topic);
+
         txtCombinedCourse = root.findViewById(R.id.txtCombinedCourse);
         txtAnyModDuration = root.findViewById(R.id.txtAnyModDuration);
+        txtCC = root.findViewById(R.id.tvCC);
+
+        txtCC.setPaintFlags(txtCC.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
         txtSubsFullCourse = root.findViewById(R.id.txtSubsFullCourse);
         txtSubsMod1 = root.findViewById(R.id.txtSubsMod1);
@@ -85,19 +89,20 @@ public class CombinedCourseFragment extends Fragment {
 
         lyCart = root.findViewById(R.id.lytCart);
 
-        txtmod7_topic.setText("");
-        txtmod8_topic.setText("");
+        txtmod9_topic.setText("");
+    //    txtmod8_topic.setText("");
         txtmod10_topic.setText("");
-        txtmod2_topic.setText("Schizophrenia, Mood disorders, Anxiety and Grief Disorders, Suicide, Mood Stabilizers, OCD, Body Dysmorphic disorder.");
+        txtmod2_topic.setText("Schizophrenia, Mood disorders, Anxiety and Grief Disorders, Suicide, Mood Stabilizers, OCD, Body Dysmorphic disorder, Sleep and Psychiatry, Somatoform Disorder, Dissociative Disorders, Factitious Disorders, Gender Identity Disorders, Sexual Disorders, Dementia, Special population in Psychiatry.");
         txtmod4_topic.setText("Sleep and Psychiatry, Somatoform Disorder, Dissociative Disorders, Factitious Disorders, Gender Identity Disorders, Sexual Disorders, Dementia, Special population in Psychiatry.");
         txtmod5_topic.setText("Criminal Responsibilty and Psychiatry, Fitness to stand trail, MHCA-2017, NDPS, RPWD, Informed consent, Medical Negliganece, Psychological, Autopsy, Testamentary Capacity, Psychiatrist in court, IDEAS, NMHS, NMHP, DMHP.");
         txtmod3_topic.setText("Alcohol, Cannabis & Endocannabinoid system, Opioids, Cocaine, Inhalants, Tobacco, Behavioral Addiction, Dual Diagnosis.");
         txtmod6_topic.setText("Intelligence, Emotional Quotient, Kindling, Imprinting, Theory of Mind, Learning, Memory, Expressed emotions, Coping Strategies, Defense Mechanism, Freud, Neofreud theories, Personality Testing.");
         txtmod1_topic.setText("Epilepsy, Consultation Liasion, Ect, rTMS, Soft Neurological Signs, Vascular Depression, Neurotransmitters and receptors, Limbic systems, Cerebral Dominance, Phantom Limb, Sterios Induced Psychosis, Depression in clinical setting, Headache.");
-        txtmod9_topic.setText("Detailed mental status examination, Psychopathology discussion, Cases on Schizophrenia, Bipolace disorder, Elderly Depression, Substance use disorder, Explanation of Token Economy, Lithium toxicity, Cognitive Behaviour therapy, Kirby's method, Treatment Substance Schizophrenia.");
+        txtmod7_topic.setText("Detailed mental status examination, Psychopathology discussion, Cases on Schizophrenia, Bipolace disorder, Elderly Depression, Substance use disorder, Explanation of Token Economy, Lithium toxicity, Cognitive Behaviour therapy, Kirby's method, Treatment Substance Schizophrenia.");
+        txtmod8_topic.setText("Pathways and receptors of Dopamine, Glutamate, GABA; NMDA Hypo functioning hypothesis of Schizophrenia, Serotonergic pathways and receptors, Hypnosis, anti-manic, antidepressants, antipsychotics, Clozapine, Individual antipsychotic drugs including Newer 3rd Gen antipsychotics, Depression and mania, SSRIs in detail, SPARI, SNRIs, Agomelatine, alpha blockers, SARIs,TCAs, Vortioxetin, Mood stabilizers, Lithium, Valproate and other mood stabilizers including special considerations, ADHD including individual drugs, Addiction, impulsivity, compulsivity including individual drugs, anxiety.");
 
 
-        txtCombinedCourse.setText("Combined Course 2022-23 : " + GlobalConst.COMBINED_COURSE_DURATION);
+        txtCombinedCourse.setText("Updated Foundation Course : " + GlobalConst.COMBINED_COURSE_DURATION);
         txtAnyModDuration.setText("Any Module(s) : " + GlobalConst.ANY_MODULE_DURATION);
 
         lyCart.setOnClickListener(new View.OnClickListener() {
@@ -549,6 +554,46 @@ public class CombinedCourseFragment extends Fragment {
                 alertDialog.show();
             }
         });
+
+//        txtSubsMod11.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
+//                alertDialog.setTitle("Add To Cart Module 11 ?");
+//                alertDialog.setMessage("Do you want to add Module 11 to Cart ?");
+//                alertDialog.setCancelable(false);
+//                final AlertDialog alertDialog1 = alertDialog.create();
+//
+//                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//
+//                        try {
+//                            if (!GlobalConst.User_id.isEmpty()){
+//                                //call web service
+//                                // subscribeModuleService(GlobalConst.Module5ID, GlobalConst.AnyModule);
+//                                addToCartService(GlobalConst.CModule11ID, GlobalConst.AnyModule);
+//                            } else {
+//
+//                                Intent i = new Intent(activity, RegisterActivity.class);
+//                                startActivity(i);
+//                                // activity.finish();
+//                                Toast.makeText(activity, "Kindly Register to ADD.", Toast.LENGTH_SHORT).show();
+//                                // Toast.makeText(activity, "Please Login to Subscribe.", Toast.LENGTH_SHORT).show();
+//                            }
+//
+//                        } catch (Exception e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                });
+//                alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        alertDialog1.dismiss();
+//                    }
+//                });
+//                alertDialog.show();
+//            }
+//        });
 
         return root;
 

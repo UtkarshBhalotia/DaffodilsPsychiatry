@@ -146,7 +146,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 SearchAdapter1 adapter = new SearchAdapter1(context, arrayList_Course);
 
-                airport_recycler_view.setHasFixedSize(true);
+            //    airport_recycler_view.setHasFixedSize(true);
                 RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(context);
                 airport_recycler_view.setLayoutManager(mLayoutManager);
                 airport_recycler_view.addItemDecoration(new DividerItemDecoration(context, LinearLayoutManager.VERTICAL));
@@ -231,7 +231,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 SearchAdapter adapter = new SearchAdapter(context, arrayList_Module);
 
-                airport_recycler_view.setHasFixedSize(true);
+             //   airport_recycler_view.setHasFixedSize(true);
                 RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(context);
                 airport_recycler_view.setLayoutManager(mLayoutManager);
                 airport_recycler_view.addItemDecoration(new DividerItemDecoration(context, LinearLayoutManager.VERTICAL));

@@ -11,6 +11,38 @@
     android:layout_height="match_parent">
 
     <TableRow
+        android:id="@+id/trCombinedCourse"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_5dp"
+        android:weightSum="3">
+
+        <TextView
+            android:background="@color/logocolor"
+            android:text="@string/title_combinedcourse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:padding="@dimen/margin_5dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:text="Rs 15499"
+            android:background="@color/red"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/margin_5dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+    </TableRow>
+
+    <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/margin_5dp"
@@ -28,16 +60,16 @@
             android:textColor="@color/white"/>
 
         <TextView
-            android:text="@string/full_price"
-            android:background="@color/red"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="18dp"
             android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:background="@color/red"
             android:padding="@dimen/margin_5dp"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:text="@string/full_price"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
     </TableRow>
 
@@ -127,38 +159,6 @@
 
         <TextView
             android:text="Rs 3500"
-            android:background="@color/red"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="18dp"
-            android:layout_gravity="center_horizontal"
-            android:padding="@dimen/margin_5dp"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/trCombinedCourse"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/margin_5dp"
-        android:weightSum="3">
-
-        <TextView
-            android:background="@color/logocolor"
-            android:text="@string/title_combinedcourse"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:padding="@dimen/margin_5dp"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
-
-        <TextView
-            android:text="Rs 18499"
             android:background="@color/red"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -296,7 +296,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="MODULE 1"
+                    android:text="Guidelines"
                     android:padding="@dimen/margin_5dp"
                     android:textColor="@color/logocolor"
                     android:layout_gravity="left"
@@ -401,7 +401,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="MODULE 2"
+                    android:text="Guidelines"
                     android:padding="@dimen/margin_5dp"
                     android:textColor="@color/logocolor"
                     android:layout_gravity="left"
@@ -506,7 +506,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="MODULE 3"
+                    android:text="Guidelines"
                     android:padding="@dimen/margin_5dp"
                     android:textColor="@color/logocolor"
                     android:layout_gravity="left"
@@ -611,7 +611,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="MODULE 4"
+                    android:text="Guidelines"
                     android:padding="@dimen/margin_5dp"
                     android:textColor="@color/logocolor"
                     android:layout_gravity="left"
@@ -716,7 +716,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="MODULE 5"
+                    android:text="Guidelines"
                     android:padding="@dimen/margin_5dp"
                     android:textColor="@color/logocolor"
                     android:layout_gravity="left"
@@ -821,7 +821,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="MODULE 6"
+                    android:text="Guidelines"
                     android:padding="@dimen/margin_5dp"
                     android:textColor="@color/logocolor"
                     android:layout_gravity="left"
@@ -926,7 +926,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="MODULE 7"
+                    android:text="Guidelines"
                     android:padding="@dimen/margin_5dp"
                     android:textColor="@color/logocolor"
                     android:layout_gravity="left"
@@ -1030,11 +1030,11 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="MODULE 8"
-                    android:padding="@dimen/margin_5dp"
-                    android:textColor="@color/logocolor"
+                    android:layout_height="49dp"
                     android:layout_gravity="left"
+                    android:padding="@dimen/margin_5dp"
+                    android:text="Guidelines"
+                    android:textColor="@color/logocolor"
                     android:textSize="14dp"
                     android:textStyle="bold" />
 
@@ -1135,11 +1135,11 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="MODULE 9"
-                    android:padding="@dimen/margin_5dp"
-                    android:textColor="@color/logocolor"
+                    android:layout_height="match_parent"
                     android:layout_gravity="left"
+                    android:padding="@dimen/margin_5dp"
+                    android:text="Guidelines"
+                    android:textColor="@color/logocolor"
                     android:textSize="14dp"
                     android:textStyle="bold" />
 

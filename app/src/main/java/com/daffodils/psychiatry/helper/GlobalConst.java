@@ -9,7 +9,7 @@ public class GlobalConst extends Application {
     public static String URL = "https://daffodilspsychiatry.com/DaffodilsServices.ashx";
 
     public static int MAJOR_VER = 2;
-    public static int MINOR_VER = 6;
+    public static int MINOR_VER = 8;
 
     public static String TOOLBAR_TITLE;
     public static String ERROR = "error";
@@ -53,8 +53,10 @@ public class GlobalConst extends Application {
     public static String FULL_COURSE_DURATION = "";
     public static String CRASH_COURSE_DURATION = "";
     public static String MRCPSYCH_DURATION = "";
-    public static String ANY_MODULE_DURATION = "";
+    public static String ANY_MODULE_DURATION = "2 Months";
     public static String COMBINED_COURSE_DURATION = "";
+    public static String UPDATED_FOUNDATION_COURSE_DURATION = "1 year";
+
 
     public static DecimalFormat formater = new DecimalFormat("#,##,##,###.00");
     public static String SETTING_CURRENCY_SYMBOL = "Rs ";
@@ -98,4 +100,6 @@ public class GlobalConst extends Application {
     public static String CModule8ID = "22";
     public static String CModule9ID = "23";
     public static String CModule10ID = "24";
+
+    public static String CModule11ID = "25";
 }

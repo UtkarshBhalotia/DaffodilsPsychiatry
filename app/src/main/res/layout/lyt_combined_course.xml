@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -56,22 +57,23 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tvCC"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
-                            android:text="Rs 18,499 "
+                            android:text="Rs 18,599 "
                             android:textColor="@color/txt_color"
                             android:textStyle="bold"
                             android:layout_marginRight="@dimen/margin_15dp"
                             android:textSize="19dp" />
 
                         <TextView
-                            android:visibility="gone"
+                            android:visibility="visible"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
                             android:background="@color/red"
-                            android:text="Rs 15,000 "
+                            android:text="Rs 15,400 "
                             android:textColor="@color/white"
                             android:textStyle="bold"
                             android:textSize="19dp" />
@@ -274,9 +276,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="@dimen/margin_5dp"
-                    android:gravity="center">
+                    android:padding="@dimen/margin_5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -284,8 +286,8 @@
                         android:layout_gravity="left"
                         android:text="@string/mod3"
                         android:textColor="@color/txt_color"
-                        android:textStyle="bold"
-                        android:textSize="18dp" />
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -293,19 +295,19 @@
                         android:layout_gravity="left"
                         android:text="Substance Use Disorders"
                         android:textColor="@color/txt_color"
-                        android:textStyle="normal"
-                        android:textSize="17dp" />
+                        android:textSize="17dp"
+                        android:textStyle="normal" />
 
                     <TextView
+                        android:id="@+id/mod3_topic"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Topics"
-                        android:id="@+id/mod3_topic"
                         android:paddingBottom="5dp"
+                        android:text="Topics"
                         android:textColor="@color/logocolor"
-                        android:textStyle="normal"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:textStyle="normal" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -320,8 +322,8 @@
                             android:layout_marginRight="30dp"
                             android:text="@string/mod3_price"
                             android:textColor="@color/red"
-                            android:textStyle="bold"
-                            android:textSize="18dp" />
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
 
 
                         <TextView
@@ -599,7 +601,6 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp">
@@ -624,7 +625,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Statistics"
+                        android:text="Clinical Case Discussion"
                         android:textColor="@color/txt_color"
                         android:textStyle="normal"
                         android:textSize="17dp" />
@@ -674,7 +675,8 @@
                             android:text="@string/title_addtocart"
                             android:textAllCaps="true"
                             android:textColor="@color/white"
-                            app:drawableEndCompat="@drawable/ic_cart" />
+                            app:drawableEndCompat="@drawable/ic_cart"
+                            tools:ignore="DuplicateIds" />
 
                     </LinearLayout>
 
@@ -705,7 +707,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Guidelines"
+                        android:text="Psychopharmacology"
                         android:textColor="@color/txt_color"
                         android:textStyle="normal"
                         android:textSize="17dp" />
@@ -774,7 +776,6 @@
                     android:orientation="vertical"
                     android:padding="@dimen/margin_5dp"
                     android:gravity="center">
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -783,12 +784,11 @@
                         android:textColor="@color/txt_color"
                         android:textStyle="bold"
                         android:textSize="18dp" />
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Clinical Case Discussion"
+                        android:text="Guidelines"
                         android:textColor="@color/txt_color"
                         android:textStyle="normal"
                         android:textSize="17dp" />
@@ -815,7 +815,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
                             android:layout_marginRight="30dp"
-                            android:text="Rs 3500"
+                            android:text="@string/mod8_price"
                             android:textColor="@color/red"
                             android:textStyle="bold"
                             android:textSize="18dp" />
@@ -845,6 +845,8 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -928,6 +930,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -957,7 +960,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Combined Course 2022-23 : "
+                        android:text="Updated Foundation Course : "
                         android:textColor="@color/logocolor"
                         android:textStyle="bold"
                         android:textSize="19dp" />
@@ -976,7 +979,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Crash Course 2022 : 3 Months"
+                        android:text="Crash Course : 3 Months"
                         android:textColor="@color/logocolor"
                         android:textStyle="normal"
                         android:visibility="gone"

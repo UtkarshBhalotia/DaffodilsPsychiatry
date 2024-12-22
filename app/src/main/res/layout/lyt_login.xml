@@ -241,7 +241,7 @@
                         android:layout_marginRight="@dimen/margin_15dp"
                         android:onClick="OnBtnClick"
                         android:padding="5dp"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:text="Forgot Password ?"
                         android:textColor="@color/red" />
 

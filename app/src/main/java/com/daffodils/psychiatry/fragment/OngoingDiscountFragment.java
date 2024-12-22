@@ -19,7 +19,7 @@ import static com.daffodils.psychiatry.R.layout.lyt_ongoing_discount;
 
 public class OngoingDiscountFragment extends Fragment {
 
-    TextView txtFFC, txtCombo;
+    TextView txtFFC, txtCombo, txtUFC;
     View root;
     Activity activity;
     LinearLayout llFullFound, llCrashCourse, llComboDisc;
@@ -33,6 +33,7 @@ public class OngoingDiscountFragment extends Fragment {
 
         txtFFC = root.findViewById(R.id.txtFFC);
         txtCombo = root.findViewById(R.id.txtCombo);
+        txtUFC = root.findViewById(R.id.txtUFC);
 
         llFullFound = root.findViewById(R.id.llFullFoundCourse);
         llComboDisc = root.findViewById(R.id.llComboDisc);
@@ -40,6 +41,7 @@ public class OngoingDiscountFragment extends Fragment {
 
         txtFFC.setPaintFlags(txtFFC.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         txtCombo.setPaintFlags(txtCombo.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        txtUFC.setPaintFlags(txtUFC.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
         llFullFound.setOnClickListener(new View.OnClickListener() {
             @Override

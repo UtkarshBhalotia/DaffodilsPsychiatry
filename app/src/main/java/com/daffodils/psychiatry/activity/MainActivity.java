@@ -80,50 +80,94 @@ public class MainActivity extends DrawerActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.navigation_home:
-                        if (!homeClicked) {
-                            fm.beginTransaction().add(R.id.container, homeFragment).show(homeFragment).hide(active).commit();
-                            homeClicked = true;
-                        } else {
-                            fm.beginTransaction().show(homeFragment).hide(active).commit();
-                        }
-                        active = homeFragment;
-                        return true;
+//                switch (item.getItemId()) {
+//                    case R.id.navigation_home:
+//                        if (!homeClicked) {
+//                            fm.beginTransaction().add(R.id.container, homeFragment).show(homeFragment).hide(active).commit();
+//                            homeClicked = true;
+//                        } else {
+//                            fm.beginTransaction().show(homeFragment).hide(active).commit();
+//                        }
+//                        active = homeFragment;
+//                        return true;
+//
+//                    case R.id.navigation_profile:
+//                        if (!profileClicked) {
+//                            fm.beginTransaction().add(R.id.container, profileFragment).show(profileFragment).hide(active).commit();
+//                            profileClicked = true;
+//                        } else {
+//                            fm.beginTransaction().show(profileFragment).hide(active).commit();
+//                        }
+//                        active = profileFragment;
+//                        return true;
+//
+//                    case R.id.navigation_about:
+//                        if (!aboutClicked) {
+//                            fm.beginTransaction().add(R.id.container, aboutusFragment).show(aboutusFragment).hide(active).commit();
+//                            aboutClicked = true;
+//                        } else {
+//                            fm.beginTransaction().show(aboutusFragment).hide(active).commit();
+//                        }
+//                        active = aboutusFragment;
+//                        return true;
+//
+//                    case R.id.navigation_support:
+//                        if (!helpClicked) {
+//                            fm.beginTransaction().add(R.id.container, helpFragment).show(helpFragment).hide(active).commit();
+//                            helpClicked = true;
+//                        } else {
+//                            fm.beginTransaction().show(helpFragment).hide(active).commit();
+//                        }
+//                        active = helpFragment;
+//                        return true;
+//
+//
+//
+//                }
 
-                    case R.id.navigation_profile:
-                        if (!profileClicked) {
-                            fm.beginTransaction().add(R.id.container, profileFragment).show(profileFragment).hide(active).commit();
-                            profileClicked = true;
-                        } else {
-                            fm.beginTransaction().show(profileFragment).hide(active).commit();
-                        }
-                        active = profileFragment;
-                        return true;
+                int id = item.getItemId();
 
-                    case R.id.navigation_about:
-                        if (!aboutClicked) {
-                            fm.beginTransaction().add(R.id.container, aboutusFragment).show(aboutusFragment).hide(active).commit();
-                            aboutClicked = true;
-                        } else {
-                            fm.beginTransaction().show(aboutusFragment).hide(active).commit();
-                        }
-                        active = aboutusFragment;
-                        return true;
+                if (id == R.id.navigation_home) {
+                    if (!homeClicked) {
+                        fm.beginTransaction().add(R.id.container, homeFragment).show(homeFragment).hide(active).commit();
+                        homeClicked = true;
+                    } else {
+                        fm.beginTransaction().show(homeFragment).hide(active).commit();
+                    }
+                    active = homeFragment;
+                    return true;
 
-                    case R.id.navigation_support:
-                        if (!helpClicked) {
-                            fm.beginTransaction().add(R.id.container, helpFragment).show(helpFragment).hide(active).commit();
-                            helpClicked = true;
-                        } else {
-                            fm.beginTransaction().show(helpFragment).hide(active).commit();
-                        }
-                        active = helpFragment;
-                        return true;
+                } else if (id == R.id.navigation_profile) {
+                    if (!profileClicked) {
+                        fm.beginTransaction().add(R.id.container, profileFragment).show(profileFragment).hide(active).commit();
+                        profileClicked = true;
+                    } else {
+                        fm.beginTransaction().show(profileFragment).hide(active).commit();
+                    }
+                    active = profileFragment;
+                    return true;
 
+                } else if (id == R.id.navigation_about) {
+                    if (!aboutClicked) {
+                        fm.beginTransaction().add(R.id.container, aboutusFragment).show(aboutusFragment).hide(active).commit();
+                        aboutClicked = true;
+                    } else {
+                        fm.beginTransaction().show(aboutusFragment).hide(active).commit();
+                    }
+                    active = aboutusFragment;
+                    return true;
 
-
+                } else if (id == R.id.navigation_support) {
+                    if (!helpClicked) {
+                        fm.beginTransaction().add(R.id.container, helpFragment).show(helpFragment).hide(active).commit();
+                        helpClicked = true;
+                    } else {
+                        fm.beginTransaction().show(helpFragment).hide(active).commit();
+                    }
+                    active = helpFragment;
+                    return true;
                 }
+
                 return false;
             }
         });
@@ -134,11 +178,11 @@ public class MainActivity extends DrawerActivity {
                 int id = item.getItemId();
 
                 switch (id) {
-                    case R.id.navigation_home:
-                    case R.id.navigation_profile:
-                    case R.id.navigation_about:
-                    case R.id.navigation_support:
-                        break;
+//                    case R.id.navigation_home:
+//                    case R.id.navigation_profile:
+//                    case R.id.navigation_about:
+//                    case R.id.navigation_support:
+       //                 break;
                 }
             }
         });
@@ -174,6 +218,7 @@ public class MainActivity extends DrawerActivity {
 
     @Override
     public void onBackPressed() {
+        super.onBackPressed();
         if (drawer_layout.isDrawerOpen(navigationView))
             drawer_layout.closeDrawers();
         else

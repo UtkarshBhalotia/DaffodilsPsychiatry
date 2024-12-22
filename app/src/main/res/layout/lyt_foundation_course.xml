@@ -24,30 +24,30 @@
                 <LinearLayout
                     android:id="@+id/llFullFoundCourse"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:layout_height="match_parent"
                     android:background="@color/lightes"
-                    android:padding="@dimen/margin_10dp"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Full Foundation Course 2021"
+                        android:text="Full Foundation Course"
                         android:textColor="@color/txt_color"
-                        android:textStyle="bold"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="All Modules "
                         android:paddingBottom="5dp"
+                        android:text="All Modules "
                         android:textColor="@color/logocolor"
-                        android:textStyle="normal"
-                        android:textSize="18dp" />
+                        android:textSize="18dp"
+                        android:textStyle="normal" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -60,21 +60,21 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
-                            android:text="Rs 32,000 "
-                            android:textColor="@color/txt_color"
-                            android:textStyle="bold"
                             android:layout_marginRight="@dimen/margin_15dp"
-                            android:textSize="19dp" />
+                            android:text="Rs 15,000 "
+                            android:textColor="@color/txt_color"
+                            android:textSize="19dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
                             android:background="@color/red"
-                            android:text="Rs 15,000 "
+                            android:text="Rs 12,499 "
                             android:textColor="@color/white"
-                            android:textStyle="bold"
-                            android:textSize="19dp" />
+                            android:textSize="19dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/txtSubsFullCourse"
@@ -874,7 +874,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Full Foundation Course 2021 : "
+                        android:text="Full Foundation Course : "
                         android:textColor="@color/logocolor"
                         android:textStyle="bold"
                         android:textSize="19dp" />
@@ -893,7 +893,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Crash Course 2022 : 3 Months"
+                        android:text="Crash Course : 3 Months"
                         android:textColor="@color/logocolor"
                         android:textStyle="normal"
                         android:visibility="gone"
