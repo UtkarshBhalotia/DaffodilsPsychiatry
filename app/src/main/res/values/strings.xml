@@ -15,11 +15,11 @@
     <string name ="title_books">Our Reference Books </string>
     <string name="title_discount">Ongoing Discounts</string>
     <string name="title_mrc_psych_paperb">MRCPsych Statistics Module</string>
-    <string name="title_foundation">Foundation Course</string>
+    <string name="title_foundation">Full Foundation Course (Old Ver.)</string>
     <string name="title_payment_details">Payment Details </string>
     <string name="title_crash">Crash Course</string>
     <string name="title_mrcPsych">MRCPsych Course</string>
-    <string name="title_combinedcourse">Updated Foundation Course</string>
+    <string name="title_combinedcourse">Updated Foundation Course 2.0</string>
     <string name="title_change_pass">Change Password</string>
     <string name="title_share">Share</string>
     <string name="title_logout">Logout</string>
@@ -77,7 +77,7 @@
     <string name="please_type_verification_code_sent_to">Please Enter OTP sent via SMS on</string>
 
     <!--Pricing Plans -->
-    <string name="full_found_course">FULL FOUNDATION COURSE</string>
+    <string name="full_found_course">FULL FOUNDATION COURSE (Old Ver.)</string>
     <string name="crash_course">CRASH COURSE</string>
 
     <string name="mod1"> <u>MODULE 1</u></string>
@@ -106,8 +106,9 @@
     <string name="paper3">PAPER 3</string>
     <string name="paper4">PAPER 4</string>
     <string name="paperb">PAPER B</string>
+    <string name= "combined_mod">Combined Adult Psychiatry (Part 1 &amp; Part 2)</string>
 
-    <string name="full_price">Rs 12499</string>
+    <string name="full_price">Rs 12,000</string>
     <string name="mod1_price">Rs 3500</string>
     <string name="mod2_price">Rs 5000</string>
     <string name="mod3_price">Rs 2500</string>
@@ -117,6 +118,7 @@
     <string name="mod7_price">Rs 2500</string>
     <string name="mod8_price">Rs 5000</string>
     <string name="mod9_price">Rs 5000</string>
+    <string name="combined_mod_price">Rs 7000</string>
 
     <string name="book1">Comprehensive Textbook of Psychiatry (CTP)</string>
     <string name="book2">Synopsis - Kaplan &amp; Saddock</string>

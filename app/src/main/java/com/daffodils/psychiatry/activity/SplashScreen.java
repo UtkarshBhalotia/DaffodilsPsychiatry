@@ -191,7 +191,7 @@ public class SplashScreen extends AppCompatActivity {
                                         GlobalConst.FULL_COURSE_DURATION = CourseDuration;
                                     }else if (CourseName.equals("Crash Course")){
                                         GlobalConst.CRASH_COURSE_DURATION = CourseDuration;
-                                    } else if (CourseName.equals("MRCPsych Course")){
+                                    } else if (CourseName.equals("MRCPsych Course 2022")){
                                         GlobalConst.MRCPSYCH_DURATION = CourseDuration;
                                     } else if (CourseName.equals("Combined Course")){
                                         GlobalConst.COMBINED_COURSE_DURATION = CourseDuration;

@@ -73,7 +73,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Rs 15,400 "
+                        android:text="Rs 18,599 "
                         android:textColor="@color/txt_color"
                         android:textStyle="bold"
                         android:layout_marginRight="@dimen/margin_15dp"
@@ -84,7 +84,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:background="@color/red"
-                        android:text="Rs 18,599 "
+                        android:text="Rs 15,499 "
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:textSize="19dp" />

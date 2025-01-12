@@ -102,7 +102,7 @@ public class CombinedCourseFragment extends Fragment {
         txtmod8_topic.setText("Pathways and receptors of Dopamine, Glutamate, GABA; NMDA Hypo functioning hypothesis of Schizophrenia, Serotonergic pathways and receptors, Hypnosis, anti-manic, antidepressants, antipsychotics, Clozapine, Individual antipsychotic drugs including Newer 3rd Gen antipsychotics, Depression and mania, SSRIs in detail, SPARI, SNRIs, Agomelatine, alpha blockers, SARIs,TCAs, Vortioxetin, Mood stabilizers, Lithium, Valproate and other mood stabilizers including special considerations, ADHD including individual drugs, Addiction, impulsivity, compulsivity including individual drugs, anxiety.");
 
 
-        txtCombinedCourse.setText("Updated Foundation Course : " + GlobalConst.COMBINED_COURSE_DURATION);
+        txtCombinedCourse.setText("Updated Foundation Course 2.0 : " + GlobalConst.COMBINED_COURSE_DURATION);
         txtAnyModDuration.setText("Any Module(s) : " + GlobalConst.ANY_MODULE_DURATION);
 
         lyCart.setOnClickListener(new View.OnClickListener() {
@@ -122,8 +122,8 @@ public class CombinedCourseFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
-                alertDialog.setTitle("Add To Cart Full Combined Course ?");
-                alertDialog.setMessage("Do you want to add Full Combined Course to Cart ?");
+                alertDialog.setTitle("Add To Cart Updated Foundation Course 2.0 ?");
+                alertDialog.setMessage("Do you want to add Updated Foundation Course 2.0 to Cart ?");
                 alertDialog.setCancelable(false);
                 final AlertDialog alertDialog1 = alertDialog.create();
 
@@ -132,7 +132,7 @@ public class CombinedCourseFragment extends Fragment {
 
                         try {
                             if (!GlobalConst.User_id.isEmpty()){
-                                addToCartService("15,16,17,18,19,20,21,22,23,24", GlobalConst.CombinedCourse);
+                                addToCartService("15,16,17,18,19,20,22,23,24,25", GlobalConst.CombinedCourse);
                             } else {
 
                                 Intent i = new Intent(activity, RegisterActivity.class);
@@ -413,7 +413,7 @@ public class CombinedCourseFragment extends Fragment {
                             if (!GlobalConst.User_id.isEmpty()){
                                 //call web service
                                 // subscribeModuleService(GlobalConst.Module7ID, GlobalConst.AnyModule);
-                                addToCartService(GlobalConst.CModule7ID, GlobalConst.AnyModule);
+                                addToCartService(GlobalConst.CModule9ID, GlobalConst.AnyModule);
                             } else {
 
                                 Intent i = new Intent(activity, RegisterActivity.class);
@@ -452,7 +452,7 @@ public class CombinedCourseFragment extends Fragment {
                             if (!GlobalConst.User_id.isEmpty()){
                                 //call web service
                                 // subscribeModuleService(GlobalConst.Module8ID, GlobalConst.AnyModule);
-                                addToCartService(GlobalConst.CModule8ID, GlobalConst.AnyModule);
+                                addToCartService(GlobalConst.CModule11ID, GlobalConst.AnyModule);
                             } else {
 
                                 Intent i = new Intent(activity, RegisterActivity.class);
@@ -491,7 +491,7 @@ public class CombinedCourseFragment extends Fragment {
                             if (!GlobalConst.User_id.isEmpty()){
                                 //call web service
                                 //subscribeModuleService(GlobalConst.Module9ID, GlobalConst.AnyModule);
-                                addToCartService(GlobalConst.CModule9ID, GlobalConst.AnyModule);
+                                addToCartService(GlobalConst.CModule8ID, GlobalConst.AnyModule);
                             } else {
 
                                 Intent i = new Intent(activity, RegisterActivity.class);

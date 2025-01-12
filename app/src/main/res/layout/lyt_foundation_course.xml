@@ -34,7 +34,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Full Foundation Course"
+                        android:text="@string/full_found_course"
                         android:textColor="@color/txt_color"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -71,7 +71,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
                             android:background="@color/red"
-                            android:text="Rs 12,499 "
+                            android:text="@string/full_price"
                             android:textColor="@color/white"
                             android:textSize="19dp"
                             android:textStyle="bold" />
@@ -874,7 +874,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Full Foundation Course : "
+                        android:text="@string/full_found_course"
                         android:textColor="@color/logocolor"
                         android:textStyle="bold"
                         android:textSize="19dp" />

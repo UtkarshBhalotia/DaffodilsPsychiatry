@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
 
     private ViewPager mPager;
     private LinearLayout mMarkersLayout;
-    private int size = 5;
+    private int size = 7;
     private Timer swipeTimer;
     private Handler handler;
     private Runnable Update;
@@ -63,8 +63,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         root = inflater.inflate(R.layout.home_fragment, container, false);
-        timerDelay = 3000;
-        timerWaiting = 3000;
+        timerDelay = 5000;
+        timerWaiting = 5000;
 
         activity = getActivity();
         setHasOptionsMenu(true);
